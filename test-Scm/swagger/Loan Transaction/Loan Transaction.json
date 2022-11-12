@@ -1,0 +1,153 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "Loan Transaction",
+    "description" : "This API is to retrieve Loan Transaction Details for specified loan account number.",
+    "version" : "2.0"
+  },
+  "servers" : [ {
+    "url" : "https://uatapi.tonikbank.com/openapi/v1/loans",
+    "x-name" : "Server1"
+  } ],
+  "paths" : {
+    "/transactions" : {
+      "get" : {
+        "tags" : [ "Transactions" ],
+        "summary" : "GETLoanTransaction",
+        "description" : "This API is to retrieve Loan Transaction Details for specified loan account number.",
+        "operationId" : "GETLoanTransaction",
+        "parameters" : [ {
+          "name" : "channelId",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "CRIF"
+        }, {
+          "name" : "startDate",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "25-06-2022"
+        }, {
+          "name" : "accountNumber",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "60810234760063"
+        }, {
+          "name" : "pageNumber",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "1"
+        }, {
+          "name" : "endDate",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "28-08-2022"
+        } ],
+        "responses" : {
+          "404" : {
+            "description" : "Response for endpoint GET-transactions",
+            "headers" : {
+              "X-Frame-Options" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Strict-Transport-Security" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "X-Content-Type-Options" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Content-Security-Policy" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Connection" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Content-Length" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "X-XSS-Protection" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Date" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Content-Type" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "required" : [ "fault" ],
+                  "type" : "object",
+                  "properties" : {
+                    "fault" : {
+                      "required" : [ "detail", "faultstring" ],
+                      "type" : "object",
+                      "properties" : {
+                        "faultstring" : {
+                          "type" : "string"
+                        },
+                        "detail" : {
+                          "required" : [ "errorcode" ],
+                          "type" : "object",
+                          "properties" : {
+                            "errorcode" : {
+                              "type" : "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "example" : "{\"fault\":{\"faultstring\":\"Unable to identify proxy for host: tonikvirtualhosthttps and url: \\/openapi\\/v1\\/loans\\/transactions\",\"detail\":{\"errorcode\":\"messaging.adaptors.http.flow.ApplicationNotFound\"}}}"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : { },
+  "x-original-swagger-version" : "2.0",
+  "tags" : [ ],
+  "security" : [ ],
+  "x-mock" : true
+}
