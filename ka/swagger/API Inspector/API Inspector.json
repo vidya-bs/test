@@ -1,0 +1,1801 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "API Inspector",
+    "version" : "2.0"
+  },
+  "servers" : [ {
+    "url" : "//gcp-api.apiwiz.io/",
+    "x-name" : "Server1"
+  } ],
+  "tags" : [ {
+    "name" : "post"
+  }, {
+    "name" : "get"
+  }, {
+    "name" : "update"
+  }, {
+    "name" : "Delete"
+  }, {
+    "name" : "agent"
+  }, {
+    "name" : "openapi"
+  }, {
+    "name" : "git integration"
+  } ],
+  "paths" : {
+    "/v1/inspector/api/request" : {
+      "post" : {
+        "tags" : [ "post" ],
+        "summary" : "requestt",
+        "operationId" : "request",
+        "parameters" : [ {
+          "name" : "content-type",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "application/json"
+        }, {
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "{{jsessionid}}"
+        } ],
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "required" : [ "basePath", "description", "headers", "hostName", "name", "resourcePath", "scheme", "verb" ],
+                "type" : "object",
+                "properties" : {
+                  "name" : {
+                    "type" : "string"
+                  },
+                  "description" : {
+                    "type" : "string"
+                  },
+                  "verb" : {
+                    "type" : "string"
+                  },
+                  "scheme" : {
+                    "type" : "string"
+                  },
+                  "hostName" : {
+                    "type" : "string"
+                  },
+                  "basePath" : {
+                    "type" : "string"
+                  },
+                  "resourcePath" : {
+                    "type" : "string"
+                  },
+                  "headers" : {
+                    "type" : "array",
+                    "items" : {
+                      "required" : [ "key", "value" ],
+                      "type" : "object",
+                      "properties" : {
+                        "key" : {
+                          "type" : "string"
+                        },
+                        "value" : {
+                          "type" : "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "additionalProperties" : {
+                  "type" : "object"
+                },
+                "description" : "Request Body"
+              }
+            }
+          },
+          "required" : false
+        },
+        "responses" : {
+          "400" : {
+            "description" : "Response for endpoint POST-/v1/inspector/api/request",
+            "headers" : {
+              "date" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "server" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-envoy-upstream-service-time" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "transfer-encoding" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "vary" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "content-type" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "required" : [ "error" ],
+                  "type" : "object",
+                  "properties" : {
+                    "error" : {
+                      "required" : [ "statusCode", "userMessage" ],
+                      "type" : "object",
+                      "properties" : {
+                        "userMessage" : {
+                          "type" : "string"
+                        },
+                        "statusCode" : {
+                          "type" : "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name" : "Request Body"
+      }
+    },
+    "/v1/inspector/api/collection" : {
+      "post" : {
+        "tags" : [ "post" ],
+        "summary" : "collection",
+        "operationId" : "collection",
+        "parameters" : [ {
+          "name" : "content-type",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "application/json"
+        }, {
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "{{jsessionid}}"
+        } ],
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "required" : [ "description", "folders", "name", "order" ],
+                "type" : "object",
+                "properties" : {
+                  "name" : {
+                    "type" : "string"
+                  },
+                  "description" : {
+                    "type" : "string"
+                  },
+                  "folders" : {
+                    "type" : "array",
+                    "items" : {
+                      "required" : [ "description", "name", "requests" ],
+                      "type" : "object",
+                      "properties" : {
+                        "name" : {
+                          "type" : "string"
+                        },
+                        "description" : {
+                          "type" : "string"
+                        },
+                        "requests" : {
+                          "type" : "array",
+                          "items" : {
+                            "required" : [ "basePath", "description", "headers", "hostName", "name", "resourcePath", "scheme", "verb" ],
+                            "type" : "object",
+                            "properties" : {
+                              "name" : {
+                                "type" : "string"
+                              },
+                              "description" : {
+                                "type" : "string"
+                              },
+                              "verb" : {
+                                "type" : "string"
+                              },
+                              "scheme" : {
+                                "type" : "string"
+                              },
+                              "hostName" : {
+                                "type" : "string"
+                              },
+                              "basePath" : {
+                                "type" : "string"
+                              },
+                              "resourcePath" : {
+                                "type" : "string"
+                              },
+                              "headers" : {
+                                "type" : "array",
+                                "items" : {
+                                  "required" : [ "key", "value" ],
+                                  "type" : "object",
+                                  "properties" : {
+                                    "key" : {
+                                      "type" : "string"
+                                    },
+                                    "value" : {
+                                      "type" : "string"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "order" : {
+                    "type" : "array",
+                    "items" : {
+                      "type" : "object"
+                    }
+                  }
+                },
+                "additionalProperties" : {
+                  "type" : "object"
+                },
+                "description" : "Request Body"
+              }
+            }
+          },
+          "required" : false
+        },
+        "responses" : {
+          "400" : {
+            "description" : "Response for endpoint POST-/v1/inspector/api/collection",
+            "headers" : {
+              "date" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "server" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-envoy-upstream-service-time" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "transfer-encoding" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "vary" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "content-type" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "required" : [ "error" ],
+                  "type" : "object",
+                  "properties" : {
+                    "error" : {
+                      "required" : [ "statusCode", "userMessage" ],
+                      "type" : "object",
+                      "properties" : {
+                        "userMessage" : {
+                          "type" : "string"
+                        },
+                        "statusCode" : {
+                          "type" : "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name" : "Request Body"
+      }
+    },
+    "/v1/inspector/collection" : {
+      "post" : {
+        "tags" : [ "post" ],
+        "summary" : "collection Copy",
+        "operationId" : "collection Copy",
+        "parameters" : [ {
+          "name" : "content-type",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "application/json"
+        }, {
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "{{jsessionid}}"
+        } ],
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "required" : [ "description", "folders", "name", "order", "requests" ],
+                "type" : "object",
+                "properties" : {
+                  "name" : {
+                    "type" : "string"
+                  },
+                  "description" : {
+                    "type" : "string"
+                  },
+                  "requests" : {
+                    "type" : "array",
+                    "items" : {
+                      "required" : [ "description", "headers", "hostName", "name", "queryParams", "verb" ],
+                      "type" : "object",
+                      "properties" : {
+                        "name" : {
+                          "type" : "string"
+                        },
+                        "description" : {
+                          "type" : "string"
+                        },
+                        "hostName" : {
+                          "type" : "array",
+                          "items" : {
+                            "type" : "string"
+                          }
+                        },
+                        "verb" : {
+                          "type" : "string"
+                        },
+                        "headers" : {
+                          "type" : "array",
+                          "items" : {
+                            "required" : [ "name", "value" ],
+                            "type" : "object",
+                            "properties" : {
+                              "name" : {
+                                "type" : "string"
+                              },
+                              "value" : {
+                                "type" : "string"
+                              }
+                            }
+                          }
+                        },
+                        "queryParams" : {
+                          "type" : "array",
+                          "items" : {
+                            "required" : [ "key", "value" ],
+                            "type" : "object",
+                            "properties" : {
+                              "key" : {
+                                "type" : "string"
+                              },
+                              "value" : {
+                                "type" : "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "folders" : {
+                    "type" : "array",
+                    "items" : {
+                      "required" : [ "description", "name", "order", "subFolders" ],
+                      "type" : "object",
+                      "properties" : {
+                        "name" : {
+                          "type" : "string"
+                        },
+                        "description" : {
+                          "type" : "string"
+                        },
+                        "subFolders" : {
+                          "type" : "array",
+                          "items" : {
+                            "required" : [ "description", "name", "order", "requests" ],
+                            "type" : "object",
+                            "properties" : {
+                              "name" : {
+                                "type" : "string"
+                              },
+                              "description" : {
+                                "type" : "string"
+                              },
+                              "requests" : {
+                                "type" : "array",
+                                "items" : {
+                                  "required" : [ "description", "headers", "hostName", "name", "queryParams", "verb" ],
+                                  "type" : "object",
+                                  "properties" : {
+                                    "name" : {
+                                      "type" : "string"
+                                    },
+                                    "description" : {
+                                      "type" : "string"
+                                    },
+                                    "hostName" : {
+                                      "type" : "array",
+                                      "items" : {
+                                        "type" : "string"
+                                      }
+                                    },
+                                    "verb" : {
+                                      "type" : "string"
+                                    },
+                                    "headers" : {
+                                      "type" : "array",
+                                      "items" : {
+                                        "required" : [ "name", "value" ],
+                                        "type" : "object",
+                                        "properties" : {
+                                          "name" : {
+                                            "type" : "string"
+                                          },
+                                          "value" : {
+                                            "type" : "string"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "queryParams" : {
+                                      "type" : "array",
+                                      "items" : {
+                                        "required" : [ "key", "value" ],
+                                        "type" : "object",
+                                        "properties" : {
+                                          "key" : {
+                                            "type" : "string"
+                                          },
+                                          "value" : {
+                                            "type" : "string"
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "order" : {
+                                "type" : "array",
+                                "items" : {
+                                  "type" : "object"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "order" : {
+                          "type" : "array",
+                          "items" : {
+                            "type" : "object"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "order" : {
+                    "type" : "array",
+                    "items" : {
+                      "type" : "object"
+                    }
+                  }
+                },
+                "additionalProperties" : {
+                  "type" : "object"
+                },
+                "description" : "Request Body"
+              }
+            }
+          },
+          "required" : false
+        },
+        "x-codegen-request-body-name" : "Request Body"
+      }
+    },
+    "/v1/inspector/environment" : {
+      "post" : {
+        "tags" : [ "post" ],
+        "summary" : "environement",
+        "operationId" : "environement",
+        "parameters" : [ {
+          "name" : "content-type",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "application/json"
+        }, {
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "{{jsessionid}}"
+        } ],
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "required" : [ "name", "values" ],
+                "type" : "object",
+                "properties" : {
+                  "name" : {
+                    "type" : "string"
+                  },
+                  "values" : {
+                    "type" : "array",
+                    "items" : {
+                      "required" : [ "key", "type", "value" ],
+                      "type" : "object",
+                      "properties" : {
+                        "key" : {
+                          "type" : "string"
+                        },
+                        "value" : {
+                          "type" : "string"
+                        },
+                        "type" : {
+                          "type" : "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "additionalProperties" : {
+                  "type" : "object"
+                },
+                "description" : "Request Body"
+              }
+            }
+          },
+          "required" : false
+        },
+        "x-codegen-request-body-name" : "Request Body"
+      }
+    },
+    "/v1/inspector/api/uploadPostmanEnvironment" : {
+      "post" : {
+        "tags" : [ "post" ],
+        "summary" : "convert postman environment",
+        "operationId" : "convert postman environment",
+        "parameters" : [ {
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "{{jsessionid}}"
+        } ]
+      }
+    },
+    "/v1/inspector/api/uploadPostmanCollection" : {
+      "post" : {
+        "tags" : [ "post" ],
+        "summary" : "convert postman collection",
+        "operationId" : "convert postman collection",
+        "parameters" : [ {
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "{{jsessionid}}"
+        } ]
+      }
+    },
+    "/v1/inspector/api/request/63200da192cd581facc5eb14" : {
+      "get" : {
+        "tags" : [ "get" ],
+        "summary" : "request",
+        "operationId" : "request",
+        "parameters" : [ {
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "{{jsessionid}}"
+        }, {
+          "name" : "oas",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "2.0"
+        } ]
+      }
+    },
+    "/v1/inspector/api/collection/63200f3892cd581facc5eb22" : {
+      "get" : {
+        "tags" : [ "get" ],
+        "summary" : "collection",
+        "operationId" : "collection",
+        "parameters" : [ {
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "{{jsessionid}}"
+        } ]
+      }
+    },
+    "/v1/inspector/api/environment/62ce90fd2134112b564bb350" : {
+      "get" : {
+        "tags" : [ "get" ],
+        "summary" : "environement",
+        "operationId" : "environement",
+        "parameters" : [ {
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "{{jsessionid}}"
+        }, {
+          "name" : "environmentId",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "62c80dd969caf45ab37df15c"
+        } ]
+      },
+      "put" : {
+        "tags" : [ "update" ],
+        "summary" : "environement",
+        "operationId" : "environement",
+        "parameters" : [ {
+          "name" : "content-type",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "application/json"
+        }, {
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "{{jsessionid}}"
+        } ],
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "required" : [ "name", "variables" ],
+                "type" : "object",
+                "properties" : {
+                  "name" : {
+                    "type" : "string"
+                  },
+                  "variables" : {
+                    "type" : "array",
+                    "items" : {
+                      "required" : [ "key", "type", "value" ],
+                      "type" : "object",
+                      "properties" : {
+                        "key" : {
+                          "type" : "string"
+                        },
+                        "value" : {
+                          "type" : "string"
+                        },
+                        "type" : {
+                          "type" : "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "additionalProperties" : {
+                  "type" : "object"
+                },
+                "description" : "Request Body"
+              }
+            }
+          },
+          "required" : false
+        },
+        "x-codegen-request-body-name" : "Request Body"
+      }
+    },
+    "/v1/inspector/api/environment" : {
+      "get" : {
+        "tags" : [ "get" ],
+        "summary" : "environement Copy",
+        "operationId" : "environement Copy",
+        "parameters" : [ {
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "{{jsessionid}}"
+        }, {
+          "name" : "environmentId",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "62c80dd969caf45ab37df15c"
+        } ]
+      }
+    },
+    "/v1/inspector/api/folder/62cef53060ba7902c77c237e" : {
+      "get" : {
+        "tags" : [ "get" ],
+        "summary" : "folder",
+        "operationId" : "folder",
+        "parameters" : [ {
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "{{jsessionid}}"
+        } ]
+      }
+    },
+    "/v1/inspector/api/history/63200da192cd581facc5eb14" : {
+      "get" : {
+        "tags" : [ "get" ],
+        "summary" : "get execute history",
+        "operationId" : "get execute history",
+        "parameters" : [ {
+          "name" : "x-tenant",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "80264bbd-6f76-40c4-8c3a-ac70f8183c26"
+        }, {
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "{{jsessionid}}"
+        } ]
+      }
+    },
+    "/v1/inspector/api/request/62c97e68f0b93c693d18b801" : {
+      "put" : {
+        "tags" : [ "update" ],
+        "summary" : "request",
+        "operationId" : "request",
+        "parameters" : [ {
+          "name" : "content-type",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "application/json"
+        }, {
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "{{jsessionid}}"
+        }, {
+          "name" : "oas",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "2.0"
+        } ],
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "required" : [ "basePath", "description", "headers", "hostName", "name", "pathSuffix", "queryParams", "verb" ],
+                "type" : "object",
+                "properties" : {
+                  "name" : {
+                    "type" : "string"
+                  },
+                  "description" : {
+                    "type" : "string"
+                  },
+                  "hostName" : {
+                    "type" : "string"
+                  },
+                  "basePath" : {
+                    "type" : "string"
+                  },
+                  "pathSuffix" : {
+                    "type" : "string"
+                  },
+                  "verb" : {
+                    "type" : "string"
+                  },
+                  "headers" : {
+                    "type" : "array",
+                    "items" : {
+                      "required" : [ "name", "value" ],
+                      "type" : "object",
+                      "properties" : {
+                        "name" : {
+                          "type" : "string"
+                        },
+                        "value" : {
+                          "type" : "string"
+                        }
+                      }
+                    }
+                  },
+                  "queryParams" : {
+                    "type" : "array",
+                    "items" : {
+                      "required" : [ "name", "value" ],
+                      "type" : "object",
+                      "properties" : {
+                        "name" : {
+                          "type" : "string"
+                        },
+                        "value" : {
+                          "type" : "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "additionalProperties" : {
+                  "type" : "object"
+                },
+                "description" : "Request Body"
+              }
+            }
+          },
+          "required" : false
+        },
+        "x-codegen-request-body-name" : "Request Body"
+      }
+    },
+    "/v1/inspector/api/collection/62c97e68f0b93c693d18b7fd" : {
+      "put" : {
+        "tags" : [ "update" ],
+        "summary" : "collection",
+        "operationId" : "collection",
+        "parameters" : [ {
+          "name" : "content-type",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "application/json"
+        }, {
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "{{jsessionid}}"
+        } ],
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "required" : [ "description", "folders", "id", "name", "order", "requests" ],
+                "type" : "object",
+                "properties" : {
+                  "id" : {
+                    "type" : "string"
+                  },
+                  "name" : {
+                    "type" : "string"
+                  },
+                  "description" : {
+                    "type" : "string"
+                  },
+                  "requests" : {
+                    "type" : "array",
+                    "items" : {
+                      "required" : [ "basePath", "description", "headers", "hostName", "id", "isEncryption", "name", "parentCollectionId", "pathSuffix", "queryParams", "variables", "verb" ],
+                      "type" : "object",
+                      "properties" : {
+                        "id" : {
+                          "type" : "string"
+                        },
+                        "name" : {
+                          "type" : "string"
+                        },
+                        "description" : {
+                          "type" : "string"
+                        },
+                        "parentCollectionId" : {
+                          "type" : "string"
+                        },
+                        "hostName" : {
+                          "type" : "string"
+                        },
+                        "basePath" : {
+                          "type" : "string"
+                        },
+                        "pathSuffix" : {
+                          "type" : "string"
+                        },
+                        "verb" : {
+                          "type" : "string"
+                        },
+                        "variables" : {
+                          "type" : "array",
+                          "items" : {
+                            "type" : "object"
+                          }
+                        },
+                        "headers" : {
+                          "type" : "array",
+                          "items" : {
+                            "required" : [ "isEncryption", "name", "value" ],
+                            "type" : "object",
+                            "properties" : {
+                              "name" : {
+                                "type" : "string"
+                              },
+                              "value" : {
+                                "type" : "string"
+                              },
+                              "isEncryption" : {
+                                "type" : "boolean"
+                              }
+                            }
+                          }
+                        },
+                        "queryParams" : {
+                          "type" : "array",
+                          "items" : {
+                            "required" : [ "name", "value" ],
+                            "type" : "object",
+                            "properties" : {
+                              "name" : {
+                                "type" : "string"
+                              },
+                              "value" : {
+                                "type" : "string"
+                              }
+                            }
+                          }
+                        },
+                        "isEncryption" : {
+                          "type" : "boolean"
+                        }
+                      }
+                    }
+                  },
+                  "folders" : {
+                    "type" : "array",
+                    "items" : {
+                      "required" : [ "description", "id", "name", "order", "parentCollectionId", "subFolders" ],
+                      "type" : "object",
+                      "properties" : {
+                        "id" : {
+                          "type" : "string"
+                        },
+                        "name" : {
+                          "type" : "string"
+                        },
+                        "description" : {
+                          "type" : "string"
+                        },
+                        "parentCollectionId" : {
+                          "type" : "string"
+                        },
+                        "subFolders" : {
+                          "type" : "array",
+                          "items" : {
+                            "required" : [ "description", "id", "name", "order", "parentFolderId", "requests" ],
+                            "type" : "object",
+                            "properties" : {
+                              "id" : {
+                                "type" : "string"
+                              },
+                              "name" : {
+                                "type" : "string"
+                              },
+                              "description" : {
+                                "type" : "string"
+                              },
+                              "parentFolderId" : {
+                                "type" : "string"
+                              },
+                              "order" : {
+                                "type" : "array",
+                                "items" : {
+                                  "type" : "object"
+                                }
+                              },
+                              "requests" : {
+                                "type" : "array",
+                                "items" : {
+                                  "required" : [ "basePath", "description", "headers", "hostName", "id", "isEncryption", "name", "parentFolderId", "pathSuffix", "queryParams", "variables", "verb" ],
+                                  "type" : "object",
+                                  "properties" : {
+                                    "id" : {
+                                      "type" : "string"
+                                    },
+                                    "name" : {
+                                      "type" : "string"
+                                    },
+                                    "description" : {
+                                      "type" : "string"
+                                    },
+                                    "parentFolderId" : {
+                                      "type" : "string"
+                                    },
+                                    "hostName" : {
+                                      "type" : "string"
+                                    },
+                                    "basePath" : {
+                                      "type" : "string"
+                                    },
+                                    "pathSuffix" : {
+                                      "type" : "string"
+                                    },
+                                    "verb" : {
+                                      "type" : "string"
+                                    },
+                                    "variables" : {
+                                      "type" : "array",
+                                      "items" : {
+                                        "type" : "object"
+                                      }
+                                    },
+                                    "headers" : {
+                                      "type" : "array",
+                                      "items" : {
+                                        "required" : [ "isEncryption", "name", "value" ],
+                                        "type" : "object",
+                                        "properties" : {
+                                          "name" : {
+                                            "type" : "string"
+                                          },
+                                          "value" : {
+                                            "type" : "string"
+                                          },
+                                          "isEncryption" : {
+                                            "type" : "boolean"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "queryParams" : {
+                                      "type" : "array",
+                                      "items" : {
+                                        "required" : [ "name", "value" ],
+                                        "type" : "object",
+                                        "properties" : {
+                                          "name" : {
+                                            "type" : "string"
+                                          },
+                                          "value" : {
+                                            "type" : "string"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "isEncryption" : {
+                                      "type" : "boolean"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "order" : {
+                          "type" : "array",
+                          "items" : {
+                            "type" : "object"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "order" : {
+                    "type" : "array",
+                    "items" : {
+                      "type" : "object"
+                    }
+                  }
+                },
+                "additionalProperties" : {
+                  "type" : "object"
+                },
+                "description" : "Request Body"
+              }
+            }
+          },
+          "required" : false
+        },
+        "x-codegen-request-body-name" : "Request Body"
+      }
+    },
+    "/v1/inspector/api/folder/62c97842b8587a03fb7bb72e" : {
+      "put" : {
+        "tags" : [ "update" ],
+        "summary" : "folder",
+        "operationId" : "folder",
+        "parameters" : [ {
+          "name" : "content-type",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "application/json"
+        }, {
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "{{jsessionid}}"
+        } ],
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "required" : [ "description", "name", "order", "subFolders" ],
+                "type" : "object",
+                "properties" : {
+                  "name" : {
+                    "type" : "string"
+                  },
+                  "description" : {
+                    "type" : "string"
+                  },
+                  "subFolders" : {
+                    "type" : "array",
+                    "items" : {
+                      "required" : [ "description", "name", "order", "requests" ],
+                      "type" : "object",
+                      "properties" : {
+                        "name" : {
+                          "type" : "string"
+                        },
+                        "description" : {
+                          "type" : "string"
+                        },
+                        "requests" : {
+                          "type" : "array",
+                          "items" : {
+                            "required" : [ "basePath", "description", "headers", "hostName", "name", "pathSuffix", "queryParams", "verb" ],
+                            "type" : "object",
+                            "properties" : {
+                              "name" : {
+                                "type" : "string"
+                              },
+                              "description" : {
+                                "type" : "string"
+                              },
+                              "hostName" : {
+                                "type" : "string"
+                              },
+                              "basePath" : {
+                                "type" : "string"
+                              },
+                              "pathSuffix" : {
+                                "type" : "string"
+                              },
+                              "verb" : {
+                                "type" : "string"
+                              },
+                              "headers" : {
+                                "type" : "array",
+                                "items" : {
+                                  "required" : [ "name", "value" ],
+                                  "type" : "object",
+                                  "properties" : {
+                                    "name" : {
+                                      "type" : "string"
+                                    },
+                                    "value" : {
+                                      "type" : "string"
+                                    }
+                                  }
+                                }
+                              },
+                              "queryParams" : {
+                                "type" : "array",
+                                "items" : {
+                                  "required" : [ "name", "value" ],
+                                  "type" : "object",
+                                  "properties" : {
+                                    "name" : {
+                                      "type" : "string"
+                                    },
+                                    "value" : {
+                                      "type" : "string"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "order" : {
+                          "type" : "array",
+                          "items" : {
+                            "type" : "object"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "order" : {
+                    "type" : "array",
+                    "items" : {
+                      "type" : "object"
+                    }
+                  }
+                },
+                "additionalProperties" : {
+                  "type" : "object"
+                },
+                "description" : "Request Body"
+              }
+            }
+          },
+          "required" : false
+        },
+        "x-codegen-request-body-name" : "Request Body"
+      }
+    },
+    "/v1/inspector/api/collection/62e0d05de8d17d4ca45cbb06" : {
+      "delete" : {
+        "tags" : [ "Delete" ],
+        "summary" : "collection",
+        "operationId" : "collection",
+        "parameters" : [ {
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "{{jsessionid}}"
+        } ]
+      }
+    },
+    "/v1/inspector/api/folder/62c97b2a53cbda718a5bacfe" : {
+      "delete" : {
+        "tags" : [ "Delete" ],
+        "summary" : "folder",
+        "operationId" : "folder",
+        "parameters" : [ {
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "{{jsessionid}}"
+        } ]
+      }
+    },
+    "/v1/inspector/api/request/62c9a8f9b05acc1795b514a3" : {
+      "delete" : {
+        "tags" : [ "Delete" ],
+        "summary" : "request",
+        "operationId" : "request",
+        "parameters" : [ {
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "{{jsessionid}}"
+        } ]
+      }
+    },
+    "/v1/inspector/api/environment/62df9859f7fd3069102f1f4b" : {
+      "delete" : {
+        "tags" : [ "Delete" ],
+        "summary" : "environment",
+        "operationId" : "environment",
+        "parameters" : [ {
+          "name" : "content-type",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "application/json"
+        }, {
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "{{jsessionid}}"
+        } ],
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "required" : [ "description", "name", "order", "subFolders" ],
+                "type" : "object",
+                "properties" : {
+                  "name" : {
+                    "type" : "string"
+                  },
+                  "description" : {
+                    "type" : "string"
+                  },
+                  "subFolders" : {
+                    "type" : "array",
+                    "items" : {
+                      "required" : [ "description", "name", "order", "requests" ],
+                      "type" : "object",
+                      "properties" : {
+                        "name" : {
+                          "type" : "string"
+                        },
+                        "description" : {
+                          "type" : "string"
+                        },
+                        "requests" : {
+                          "type" : "array",
+                          "items" : {
+                            "required" : [ "basePath", "description", "headers", "hostName", "name", "pathSuffix", "queryParams", "verb" ],
+                            "type" : "object",
+                            "properties" : {
+                              "name" : {
+                                "type" : "string"
+                              },
+                              "description" : {
+                                "type" : "string"
+                              },
+                              "hostName" : {
+                                "type" : "string"
+                              },
+                              "basePath" : {
+                                "type" : "string"
+                              },
+                              "pathSuffix" : {
+                                "type" : "string"
+                              },
+                              "verb" : {
+                                "type" : "string"
+                              },
+                              "headers" : {
+                                "type" : "array",
+                                "items" : {
+                                  "required" : [ "name", "value" ],
+                                  "type" : "object",
+                                  "properties" : {
+                                    "name" : {
+                                      "type" : "string"
+                                    },
+                                    "value" : {
+                                      "type" : "string"
+                                    }
+                                  }
+                                }
+                              },
+                              "queryParams" : {
+                                "type" : "array",
+                                "items" : {
+                                  "required" : [ "name", "value" ],
+                                  "type" : "object",
+                                  "properties" : {
+                                    "name" : {
+                                      "type" : "string"
+                                    },
+                                    "value" : {
+                                      "type" : "string"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "order" : {
+                          "type" : "array",
+                          "items" : {
+                            "type" : "object"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "order" : {
+                    "type" : "array",
+                    "items" : {
+                      "type" : "object"
+                    }
+                  }
+                },
+                "additionalProperties" : {
+                  "type" : "object"
+                },
+                "description" : "Request Body"
+              }
+            }
+          },
+          "required" : false
+        },
+        "x-codegen-request-body-name" : "Request Body"
+      }
+    },
+    "/v1/inspector/agent/execute/6320216792cd581facc5eb28/62d13df2332a7733a5017628" : {
+      "post" : {
+        "tags" : [ "agent" ],
+        "summary" : "execute",
+        "operationId" : "execute",
+        "parameters" : [ {
+          "name" : "x-tenant",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "b4349714-47c7-4605-a81c-df509fc7e653"
+        }, {
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "{{jsessionid}}"
+        }, {
+          "name" : "type",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "request"
+        } ]
+      }
+    },
+    "/v1/inspector/agent/execute-collection/630361b424b0d23896ad5433/630361b224b0d23896ad5431" : {
+      "post" : {
+        "tags" : [ "agent" ],
+        "summary" : "execute Copy",
+        "operationId" : "execute Copy",
+        "parameters" : [ {
+          "name" : "x-tenant",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "b4349714-47c7-4605-a81c-df509fc7e653"
+        }, {
+          "name" : "type",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "COLLECTION"
+        }, {
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "{{jsessionid}}"
+        } ]
+      }
+    },
+    "/v1/inspector/api/create-spec" : {
+      "post" : {
+        "tags" : [ "openapi" ],
+        "summary" : "createSpec Copy",
+        "operationId" : "createSpec Copy",
+        "parameters" : [ {
+          "name" : "oasVersion",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "3.0"
+        }, {
+          "name" : "x-tenant",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "80264bbd-6f76-40c4-8c3a-ac70f8183c26"
+        }, {
+          "name" : "id",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "630361b424b0d23896ad5433"
+        }, {
+          "name" : "type",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "COLLECTION"
+        }, {
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "{{jsessionid}}"
+        } ]
+      }
+    },
+    "/v1/inspector/api/uploadswagger" : {
+      "post" : {
+        "tags" : [ "git integration" ],
+        "summary" : "Upload swagger",
+        "operationId" : "Upload swagger",
+        "parameters" : [ {
+          "name" : "content-type",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "application/json"
+        }, {
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "{{jsessionid}}"
+        } ],
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "required" : [ "branch", "folderName", "hostUrl", "repoName", "scmSource", "swagger", "swaggerName", "token" ],
+                "type" : "object",
+                "properties" : {
+                  "swagger" : {
+                    "type" : "string"
+                  },
+                  "repoName" : {
+                    "type" : "string"
+                  },
+                  "branch" : {
+                    "type" : "string"
+                  },
+                  "hostUrl" : {
+                    "type" : "string"
+                  },
+                  "folderName" : {
+                    "type" : "string"
+                  },
+                  "token" : {
+                    "type" : "string"
+                  },
+                  "scmSource" : {
+                    "type" : "string"
+                  },
+                  "swaggerName" : {
+                    "type" : "string"
+                  }
+                },
+                "additionalProperties" : {
+                  "type" : "object"
+                },
+                "description" : "Request Body"
+              }
+            }
+          },
+          "required" : false
+        },
+        "x-codegen-request-body-name" : "Request Body"
+      }
+    },
+    "/{context-path}/v1/users/login" : {
+      "post" : {
+        "tags" : [ "API Inspector" ],
+        "summary" : "login",
+        "description" : "dummy",
+        "operationId" : "login",
+        "parameters" : [ {
+          "name" : "Content-Type",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "application/json"
+        }, {
+          "name" : "x-apikey",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "XeX0u28Ya1a3CBm5tihMQFteeA6fZTy8avUIsJ0WnNOaEAM90Hcv9G2xo5z5hI4WMyHffxTAbP2LcXK4u6n5Pw=="
+        }, {
+          "name" : "context-path",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "itorix"
+        }, {
+          "name" : "content-type",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "application/json"
+        } ],
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "required" : [ "loginId", "password", "workspaceId" ],
+                "type" : "object",
+                "properties" : {
+                  "loginId" : {
+                    "type" : "string"
+                  },
+                  "password" : {
+                    "type" : "string"
+                  },
+                  "workspaceId" : {
+                    "type" : "string"
+                  }
+                },
+                "additionalProperties" : {
+                  "type" : "object"
+                },
+                "description" : "Request Body"
+              }
+            }
+          },
+          "required" : false
+        },
+        "responses" : {
+          "301" : {
+            "description" : "Response for endpoint POST-/{{context-path}}/v1/users/login",
+            "headers" : {
+              "date" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "server" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "content-length" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-envoy-upstream-service-time" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "location" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Response for endpoint POST-/{{context-path}}/v1/users/login",
+            "headers" : {
+              "date" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "server" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "content-length" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "connection" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name" : "Request Body"
+      }
+    }
+  },
+  "components" : { },
+  "x-original-swagger-version" : "2.0",
+  "security" : [ ],
+  "x-mock" : true,
+  "x-metadata" : {
+    "metadata" : {
+      "swaggerName" : "54314036935f445f99ca8e17f59c289e",
+      "revision" : 3,
+      "documentation" : [ ],
+      "category" : [ {
+        "name" : "Unsorted",
+        "paths" : [ "/v1/inspector/api/request", "/v1/inspector/api/collection", "/v1/inspector/collection", "/v1/inspector/environment", "/v1/inspector/api/uploadPostmanEnvironment", "/v1/inspector/api/uploadPostmanCollection", "/v1/inspector/api/request/63200da192cd581facc5eb14", "/v1/inspector/api/collection/63200f3892cd581facc5eb22", "/v1/inspector/api/environment/62ce90fd2134112b564bb350", "/v1/inspector/api/environment", "/v1/inspector/api/folder/62cef53060ba7902c77c237e", "/v1/inspector/api/history/63200da192cd581facc5eb14", "/v1/inspector/api/request/62c97e68f0b93c693d18b801", "/v1/inspector/api/collection/62c97e68f0b93c693d18b7fd", "/v1/inspector/api/folder/62c97842b8587a03fb7bb72e", "/v1/inspector/api/collection/62e0d05de8d17d4ca45cbb06", "/v1/inspector/api/folder/62c97b2a53cbda718a5bacfe", "/v1/inspector/api/request/62c9a8f9b05acc1795b514a3", "/v1/inspector/api/environment/62df9859f7fd3069102f1f4b", "/v1/inspector/agent/execute/6320216792cd581facc5eb28/62d13df2332a7733a5017628", "/v1/inspector/agent/execute-collection/630361b424b0d23896ad5433/630361b224b0d23896ad5431", "/v1/inspector/api/create-spec", "/v1/inspector/api/uploadswagger", "/{context-path}/v1/users/login" ]
+      } ]
+    }
+  }
+}
