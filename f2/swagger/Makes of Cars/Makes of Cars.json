@@ -1,5 +1,4 @@
 {
-  "openapi" : "3.0.1",
   "info" : {
     "title" : "Makes of Cars",
     "description" : "Returns a list of makes of cars.\n\nWebsite - https://vpic.nhtsa.dot.gov/api/",
