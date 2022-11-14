@@ -1,0 +1,5556 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "Generic-API-V1",
+    "description" : "This API is used to get generic system messages.",
+    "version" : "v1.0.0"
+  },
+  "paths" : {
+    "/appmessages" : {
+      "x-description" : "add App Messages",
+      "post" : {
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "description" : "",
+                "$ref" : "#/components/schemas/addAppMessagesReq"
+              }
+            }
+          }
+        },
+        "summary" : "add App Messages",
+        "description" : "add App Messages",
+        "operationId" : "AddMessagesPost",
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/addAppMessagesRes"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad request",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Resource not found",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "405" : {
+            "description" : "Method Not Allowed",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Not Acceptable",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "415" : {
+            "description" : "Unsupported Media Type",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "429" : {
+            "description" : "Too many requests",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "501" : {
+            "description" : "Not Implemented",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "502" : {
+            "description" : "Bad Gateway",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "Gateway Timeout",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          }
+        },
+        "parameters" : [ {
+          "name" : "Authorization",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "",
+            "type" : "string",
+            "example" : "Bearer tixEmRm8lSitF5GMssnN4HaaQTZn"
+          },
+          "description" : "Bearer Access Token ",
+          "example" : "Bearer tixEmRm8lSitF5GMssnN4HaaQTZn"
+        }, {
+          "name" : "Accept",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "",
+            "type" : "string"
+          },
+          "description" : "Type of content they expect/prefer as response"
+        }, {
+          "name" : "Content-Type",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "",
+            "type" : "string"
+          },
+          "description" : "Request content type or MIME type\nNOTE : Manadtory for all APIs with request body"
+        } ]
+      },
+      "patch" : {
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "description" : "",
+                "$ref" : "#/components/schemas/updateAppMessagesReq"
+              }
+            }
+          }
+        },
+        "operationId" : "AppMessagesPatch",
+        "summary" : "update App Messages",
+        "description" : "update App Messages",
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/updateAppMessagesRes"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad request",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Resource not found",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "405" : {
+            "description" : "Method Not Allowed",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Not Acceptable",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "415" : {
+            "description" : "Unsupported Media Type",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "429" : {
+            "description" : "Too many requests",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "501" : {
+            "description" : "Not Implemented",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "502" : {
+            "description" : "Bad Gateway",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "Gateway Timeout",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          }
+        },
+        "parameters" : [ {
+          "name" : "Authorization",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "",
+            "type" : "string"
+          },
+          "description" : "Bearer Access Token "
+        }, {
+          "name" : "Content-Type",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "",
+            "type" : "string"
+          },
+          "description" : "Request content type or MIME type\nNOTE : Manadtory for all APIs with request body"
+        }, {
+          "name" : "Accept",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "",
+            "type" : "string"
+          },
+          "description" : "Type of content they expect/prefer as response"
+        } ]
+      }
+    },
+    "/barangay" : {
+      "x-description" : "POST Barangay",
+      "post" : {
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "description" : "",
+                "$ref" : "#/components/schemas/barangayReq"
+              }
+            }
+          }
+        },
+        "operationId" : "PostBarangay",
+        "summary" : "PostBarangay",
+        "description" : "PostBarangay",
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/barangayRes"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad request",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Resource not found",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "405" : {
+            "description" : "Method Not Allowed",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Not Acceptable",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "415" : {
+            "description" : "Unsupported Media Type",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "429" : {
+            "description" : "Too many requests",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "501" : {
+            "description" : "Not Implemented",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "502" : {
+            "description" : "Bad Gateway",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "Gateway Timeout",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          }
+        },
+        "parameters" : [ {
+          "name" : "Authorization",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "Bearer Access Token ",
+            "type" : "string",
+            "example" : "Bearer tixEmRm8lSitF5GMssnN4HaaQTZn"
+          },
+          "description" : "Bearer Access Token ",
+          "example" : "Bearer tixEmRm8lSitF5GMssnN4HaaQTZn"
+        }, {
+          "name" : "Content-Type",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "",
+            "type" : "string"
+          },
+          "description" : "Request content type or MIME type\nNOTE : Manadtory for all APIs with request body"
+        }, {
+          "name" : "Accept",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "",
+            "type" : "string"
+          },
+          "description" : "Type of content they expect/prefer as response"
+        } ]
+      }
+    },
+    "/countries" : {
+      "x-description" : "To fetch country list",
+      "get" : {
+        "operationId" : "CountryListGet",
+        "summary" : "To fetch country list",
+        "description" : "To fetch country list",
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/getCountryListRes"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad request",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Resource not found",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "405" : {
+            "description" : "Method Not Allowed",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Not Acceptable",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "415" : {
+            "description" : "Unsupported Media Type",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "429" : {
+            "description" : "Too many requests",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "501" : {
+            "description" : "Not Implemented",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "502" : {
+            "description" : "Bad Gateway",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "Gateway Timeout",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          }
+        },
+        "parameters" : [ {
+          "name" : "Authorization",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "Bearer Access Token",
+            "type" : "string",
+            "example" : "Bearer tixEmRm8lSitF5GMssnN4HaaQTZn"
+          },
+          "description" : "Bearer Access Token ",
+          "example" : "Bearer tixEmRm8lSitF5GMssnN4HaaQTZn"
+        }, {
+          "name" : "Accept",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "",
+            "type" : "string"
+          },
+          "description" : "Type of content they expect/prefer as response"
+        } ]
+      }
+    },
+    "/customrules" : {
+      "x-description" : "To Get Customer rules ",
+      "get" : {
+        "operationId" : "Customrules",
+        "summary" : "To get custom rules",
+        "description" : "To get custom rules",
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/customrulesRes"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad request",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Resource not found",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "405" : {
+            "description" : "Method Not Allowed",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Not Acceptable",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "415" : {
+            "description" : "Unsupported Media Type",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "429" : {
+            "description" : "Too many requests",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "501" : {
+            "description" : "Not Implemented",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "502" : {
+            "description" : "Bad Gateway",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "Gateway Timeout",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          }
+        },
+        "parameters" : [ {
+          "name" : "Authorization",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "Bearer Access Token",
+            "type" : "string",
+            "example" : "Bearer ZbqQMALO1ne0g2TnSRbrHYMG5AbY"
+          },
+          "description" : "Bearer Access Token",
+          "example" : "Bearer ZbqQMALO1ne0g2TnSRbrHYMG5AbY"
+        }, {
+          "name" : "Accept",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "",
+            "type" : "string"
+          },
+          "description" : "Type of content they expect/prefer as response"
+        } ]
+      }
+    },
+    "/listofvalues" : {
+      "x-description" : "get to list of values",
+      "post" : {
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "description" : "",
+                "$ref" : "#/components/schemas/ListOfValuesReq"
+              }
+            }
+          }
+        },
+        "operationId" : "GetListOfValues",
+        "summary" : "get to list of values",
+        "description" : "get to list of values",
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ListOfValuesRes"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad request",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Resource not found",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "405" : {
+            "description" : "Method Not Allowed",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Not Acceptable",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "415" : {
+            "description" : "Unsupported Media Type",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "429" : {
+            "description" : "Too many requests",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "501" : {
+            "description" : "Not Implemented",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "502" : {
+            "description" : "Bad Gateway",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "Gateway Timeout",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          }
+        },
+        "parameters" : [ {
+          "name" : "Authorization",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "Bearer access token ",
+            "type" : "string",
+            "example" : "Bearer ZbqQMALO1ne0g2TnSRbrHYMG5AbY"
+          },
+          "description" : "Bearer access token ",
+          "example" : "Bearer ZbqQMALO1ne0g2TnSRbrHYMG5AbY"
+        }, {
+          "name" : "Content-Type",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "",
+            "type" : "string"
+          },
+          "description" : "Request content type or MIME type\nNOTE : Manadtory for all APIs with request body"
+        }, {
+          "name" : "Accept",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "",
+            "type" : "string"
+          },
+          "description" : "Type of content they expect/prefer as response"
+        } ]
+      },
+      "patch" : {
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "description" : "",
+                "$ref" : "#/components/schemas/updateListOfValuesReq"
+              }
+            }
+          }
+        },
+        "operationId" : "ListOfValuesPatch",
+        "summary" : "Update to list of values",
+        "description" : "Update to list of values",
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/updateListOfValuesRes"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad request",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Resource not found",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "405" : {
+            "description" : "Method Not Allowed",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Not Acceptable",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "415" : {
+            "description" : "Unsupported Media Type",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "429" : {
+            "description" : "Too many requests",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "501" : {
+            "description" : "Not Implemented",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "502" : {
+            "description" : "Bad Gateway",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "Gateway Timeout",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          }
+        },
+        "parameters" : [ {
+          "name" : "Authorization",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "Bearer Access Token ",
+            "type" : "string",
+            "example" : "Bearer ZbqQMALO1ne0g2TnSRbrHYMG5AbY"
+          },
+          "description" : "Bearer Access Token ",
+          "example" : "Bearer ZbqQMALO1ne0g2TnSRbrHYMG5AbY"
+        }, {
+          "name" : "Content-Type",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "",
+            "type" : "string"
+          },
+          "description" : "Request content type or MIME type\nNOTE : Manadtory for all APIs with request body"
+        }, {
+          "name" : "Accept",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "",
+            "type" : "string"
+          },
+          "description" : "Type of content they expect/prefer as response"
+        } ]
+      },
+      "delete" : {
+        "operationId" : "ListOfValuesDelete",
+        "summary" : "delete list of values",
+        "description" : "delete list of values",
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/deleteListOfValuesRes"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad request",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Resource not found",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "405" : {
+            "description" : "Method Not Allowed",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Not Acceptable",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "415" : {
+            "description" : "Unsupported Media Type",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "429" : {
+            "description" : "Too many requests",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "501" : {
+            "description" : "Not Implemented",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "502" : {
+            "description" : "Bad Gateway",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "Gateway Timeout",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          }
+        },
+        "parameters" : [ {
+          "name" : "Authorization ",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "",
+            "type" : "string"
+          },
+          "description" : "Bearer Access Token "
+        }, {
+          "name" : "Accept",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "",
+            "type" : "string"
+          },
+          "description" : "Type of content they expect/prefer as response"
+        }, {
+          "name" : "id ",
+          "required" : true,
+          "style" : "form",
+          "in" : "query",
+          "schema" : {
+            "description" : "",
+            "type" : "string",
+            "example" : "60"
+          }
+        }, {
+          "name" : "catagoryType",
+          "required" : true,
+          "style" : "form",
+          "in" : "query",
+          "schema" : {
+            "description" : "",
+            "type" : "string",
+            "example" : "8"
+          }
+        }, {
+          "name" : "order",
+          "required" : false,
+          "style" : "form",
+          "in" : "query",
+          "schema" : {
+            "description" : "",
+            "type" : "string",
+            "example" : "0"
+          }
+        }, {
+          "name" : "topOrder",
+          "required" : false,
+          "style" : "form",
+          "in" : "query",
+          "schema" : {
+            "description" : "",
+            "type" : "string",
+            "example" : "0"
+          }
+        } ]
+      }
+    },
+    "/postcodes" : {
+      "x-description" : "Fetch Post Code Details",
+      "get" : {
+        "operationId" : "FetchPostCode",
+        "summary" : "Fetch Post Code Details",
+        "description" : "Fetch Post Code Details",
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/FetchPsCodeDtlRes"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad request",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Resource not found",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "405" : {
+            "description" : "Method Not Allowed",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Not Acceptable",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "415" : {
+            "description" : "Unsupported Media Type",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "429" : {
+            "description" : "Too many requests",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "501" : {
+            "description" : "Not Implemented",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "502" : {
+            "description" : "Bad Gateway",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "Gateway Timeout",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          }
+        },
+        "parameters" : [ {
+          "name" : "Authorization",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "Bearer Access Token ",
+            "type" : "string",
+            "example" : "Bearer ZbqQMALO1ne0g2TnSRbrHYMG5AbY"
+          },
+          "description" : "Bearer access token ",
+          "example" : "Bearer ZbqQMALO1ne0g2TnSRbrHYMG5AbY"
+        }, {
+          "name" : "Accept",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "",
+            "type" : "string"
+          },
+          "description" : "Type of content they expect/prefer as response"
+        }, {
+          "name" : "clientinfo",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "",
+            "type" : "string"
+          },
+          "description" : "client information token."
+        } ]
+      }
+    },
+    "/reportissue" : {
+      "x-description" : "This API to validate the customer reporting the issue faced while using the application at any stage.\nThe reported log file will be uploaded to S3 bucket with the specified Bucket name.",
+      "post" : {
+        "requestBody" : {
+          "content" : {
+            "multipart/form-data" : {
+              "schema" : {
+                "description" : "",
+                "$ref" : "#/components/schemas/validateCustReportIssueReq"
+              }
+            }
+          }
+        },
+        "operationId" : "ReportIssue",
+        "summary" : "This API to validate the customer reporting the issue faced while using the application at any stage. The reported log file will be uploaded to S3 bucket with the specified Bucket name.",
+        "description" : "This API to validate the customer reporting the issue faced while using the application at any stage.\nThe reported log file will be uploaded to S3 bucket with the specified Bucket name.",
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/validateCustReportIssueRes"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad request",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Resource not found",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "405" : {
+            "description" : "Method Not Allowed",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Not Acceptable",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "415" : {
+            "description" : "Unsupported Media Type",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "429" : {
+            "description" : "Too many requests",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "501" : {
+            "description" : "Not Implemented",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "502" : {
+            "description" : "Bad Gateway",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "Gateway Timeout",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          }
+        },
+        "parameters" : [ {
+          "name" : "Authorization",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "Bearer Access Token",
+            "type" : "string",
+            "example" : "Bearer ZbqQMALO1ne0g2TnSRbrHYMG5AbY"
+          },
+          "description" : "Bearer Access Token ",
+          "example" : "Bearer ZbqQMALO1ne0g2TnSRbrHYMG5AbY"
+        }, {
+          "name" : "Content-Type",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "",
+            "type" : "string"
+          },
+          "description" : "Request content type or MIME type\nNOTE : Manadtory for all APIs with request body"
+        }, {
+          "name" : "Accept",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "",
+            "type" : "string"
+          },
+          "description" : "Type of content they expect/prefer as response"
+        }, {
+          "name" : "clientInfo",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "",
+            "type" : "string"
+          },
+          "description" : "clientinfo token."
+        } ]
+      }
+    },
+    "/appmessages/{module-id}" : {
+      "summary" : "get App Messages",
+      "x-description" : "get App Messages",
+      "parameters" : [ {
+        "name" : "module-id",
+        "in" : "path",
+        "required" : true,
+        "style" : "simple",
+        "example" : "",
+        "schema" : {
+          "description" : "Module ID",
+          "type" : "string"
+        }
+      } ],
+      "get" : {
+        "operationId" : "AppMessagesGet",
+        "summary" : "get App Messages",
+        "description" : "get App Messages",
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/getAppMessagesRes"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad request",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Resource not found",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "405" : {
+            "description" : "Method Not Allowed",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Not Acceptable",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "415" : {
+            "description" : "Unsupported Media Type",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "429" : {
+            "description" : "Too many requests",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "501" : {
+            "description" : "Not Implemented",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "502" : {
+            "description" : "Bad Gateway",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "Gateway Timeout",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          }
+        },
+        "parameters" : [ {
+          "name" : "Authorization",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "",
+            "type" : "string",
+            "example" : "Bearer tixEmRm8lSitF5GMssnN4HaaQTZn"
+          },
+          "description" : "Bearer Access Token ",
+          "example" : "Bearer tixEmRm8lSitF5GMssnN4HaaQTZn"
+        }, {
+          "name" : "Accept",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "",
+            "type" : "string"
+          },
+          "description" : "Type of content they expect/prefer as response"
+        } ]
+      }
+    },
+    "/listofvalues/{id}" : {
+      "summary" : "get List Of Values",
+      "x-description" : "get List Of Values",
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "style" : "simple",
+        "example" : "",
+        "schema" : {
+          "description" : "",
+          "type" : "string"
+        }
+      } ],
+      "get" : {
+        "operationId" : "ListOfValuesGet",
+        "summary" : "get List Of Values",
+        "description" : "get List Of Values",
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/getListOfValuesRes"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad request",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Resource not found",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "405" : {
+            "description" : "Method Not Allowed",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Not Acceptable",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "415" : {
+            "description" : "Unsupported Media Type",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "429" : {
+            "description" : "Too many requests",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "501" : {
+            "description" : "Not Implemented",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "502" : {
+            "description" : "Bad Gateway",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "Gateway Timeout",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          }
+        },
+        "parameters" : [ {
+          "name" : "Authorization",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "Bearer Access Token ",
+            "type" : "string",
+            "example" : "Bearer ZbqQMALO1ne0g2TnSRbrHYMG5AbY"
+          },
+          "description" : "Bearer Access Token ",
+          "example" : "Bearer ZbqQMALO1ne0g2TnSRbrHYMG5AbY"
+        }, {
+          "name" : "Accept",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "",
+            "type" : "string"
+          },
+          "description" : "Type of content they expect/prefer as response"
+        } ]
+      }
+    },
+    "/listofvalues/{id}/{catagoryType}" : {
+      "summary" : "get ListOfValues by categoryType",
+      "x-description" : "get ListOfValues by categoryType",
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "style" : "simple",
+        "example" : "",
+        "schema" : {
+          "description" : "",
+          "type" : "string"
+        }
+      }, {
+        "name" : "catagoryType",
+        "in" : "path",
+        "required" : true,
+        "style" : "simple",
+        "example" : "",
+        "schema" : {
+          "description" : "",
+          "type" : "string"
+        }
+      } ],
+      "get" : {
+        "operationId" : "ListOfValues",
+        "summary" : "get List Of Values",
+        "description" : "get List Of Values",
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/getListOfValuesRes"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad request",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Resource not found",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "405" : {
+            "description" : "Method Not Allowed",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Not Acceptable",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "415" : {
+            "description" : "Unsupported Media Type",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "429" : {
+            "description" : "Too many requests",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "501" : {
+            "description" : "Not Implemented",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "502" : {
+            "description" : "Bad Gateway",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "Gateway Timeout",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          }
+        },
+        "parameters" : [ {
+          "name" : "Authorization",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "Bearer Access Token ",
+            "type" : "string",
+            "example" : "Bearer ZbqQMALO1ne0g2TnSRbrHYMG5AbY"
+          },
+          "description" : "Bearer Access Token ",
+          "example" : "Bearer ZbqQMALO1ne0g2TnSRbrHYMG5AbY"
+        }, {
+          "name" : "Accept",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "",
+            "type" : "string"
+          },
+          "description" : "Type of content they expect/prefer as response"
+        } ]
+      }
+    },
+    "/appmessages/{messageCode}" : {
+      "x-description" : "delete App Messages",
+      "parameters" : [ {
+        "name" : "messageCode",
+        "in" : "path",
+        "required" : true,
+        "style" : "simple",
+        "example" : "LN_BACK_TOPUP_MSG",
+        "schema" : {
+          "description" : "message code",
+          "type" : "string",
+          "example" : "LN_BACK_TOPUP_MSG"
+        },
+        "description" : "message code"
+      } ],
+      "delete" : {
+        "operationId" : "AddMessagesDelete",
+        "summary" : "delete App Messages",
+        "description" : "delete App Messages",
+        "responses" : {
+          "200" : {
+            "description" : "Ok",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/updateAppMessagesRes"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad request",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Resource not found",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "405" : {
+            "description" : "Method Not Allowed",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Not Acceptable",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "415" : {
+            "description" : "Unsupported Media Type",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "429" : {
+            "description" : "Too many requests",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "501" : {
+            "description" : "Not Implemented",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "502" : {
+            "description" : "Bad Gateway",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          },
+          "504" : {
+            "description" : "Gateway Timeout",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/ErrorSchema"
+                }
+              }
+            }
+          }
+        },
+        "parameters" : [ {
+          "name" : "Authorization",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "",
+            "type" : "string",
+            "example" : "Bearer tixEmRm8lSitF5GMssnN4HaaQTZn"
+          },
+          "description" : "Bearer Access Token",
+          "example" : "Bearer tixEmRm8lSitF5GMssnN4HaaQTZn"
+        }, {
+          "name" : "Accept",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "",
+            "type" : "string"
+          },
+          "description" : "Type of content they expect/prefer as response"
+        }, {
+          "name" : "Content-Type",
+          "required" : true,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "",
+            "type" : "string"
+          },
+          "description" : "Request content type or MIME type\nNOTE : Manadtory for all APIs with request body"
+        } ]
+      }
+    }
+  },
+  "servers" : [ {
+    "x-name" : "DEV Server",
+    "x-hostName" : "devapi.tonikbank.com",
+    "url" : "https://devapi.tonikbank.com/v1/generic",
+    "x-schema" : "https://",
+    "x-basePath" : "/v1/generic"
+  }, {
+    "x-hostName" : "uatapi.tonikbank.com",
+    "url" : "https://uatapi.tonikbank.com/v1/generic",
+    "x-name" : "UAT Server",
+    "x-basePath" : "/v1/generic",
+    "x-schema" : "https://"
+  }, {
+    "x-name" : "TEST Server",
+    "x-schema" : "https://",
+    "x-hostName" : "testapi.tonikbank.com",
+    "url" : "https://testapi.tonikbank.com/v1/generic",
+    "x-basePath" : "/v1/generic"
+  } ],
+  "tags" : [ {
+    "name" : "pet",
+    "description" : "Everything about your Pets",
+    "externalDocs" : {
+      "description" : "Find out more",
+      "url" : "http://swagger.io"
+    }
+  } ],
+  "security" : [ ],
+  "components" : {
+    "schemas" : {
+      "ListOfValuesReq" : {
+        "type" : "object",
+        "required" : [ "value", "title", "checkBoxStatus", "catagoryType", "order", "topOrder", "groupName" ],
+        "properties" : {
+          "value" : {
+            "type" : "string",
+            "example" : "Find a well-lit place so that the camera can accurately scan your face.",
+            "description" : "Value "
+          },
+          "title" : {
+            "type" : "string",
+            "example" : "Get enough light",
+            "description" : "Title "
+          },
+          "checkBoxStatus" : {
+            "type" : "string",
+            "description" : "Check box status"
+          },
+          "catagoryType" : {
+            "type" : "string",
+            "example" : "8",
+            "description" : "Category type"
+          },
+          "order" : {
+            "type" : "number",
+            "example" : "1",
+            "description" : "Order"
+          },
+          "topOrder" : {
+            "type" : "number",
+            "example" : "0",
+            "description" : "Top order"
+          },
+          "groupName" : {
+            "type" : "string",
+            "example" : "selfieIntroScreen",
+            "description" : "Group name"
+          }
+        }
+      },
+      "updateListOfValuesReq" : {
+        "type" : "object",
+        "required" : [ "value", "description", "title", "checkBoxStatus", "catagoryType", "order", "topOrder", "groupName", "id" ],
+        "properties" : {
+          "value" : {
+            "type" : "string",
+            "example" : "Tonik is regulated by the Bangko Sentral ng Pilipinas (BSP).",
+            "description" : "value"
+          },
+          "description" : {
+            "type" : "string",
+            "example" : "Tonik is regulated by the Bangko Sentral ng Pilipinas (BSP).",
+            "description" : "Description"
+          },
+          "title" : {
+            "type" : "string",
+            "example" : "Banking you can trust",
+            "description" : "Title "
+          },
+          "checkBoxStatus" : {
+            "type" : "string",
+            "description" : "Check box status"
+          },
+          "catagoryType" : {
+            "type" : "string",
+            "example" : "8",
+            "description" : "Category type"
+          },
+          "order" : {
+            "type" : "number",
+            "example" : "1",
+            "description" : "Order"
+          },
+          "topOrder" : {
+            "type" : "number",
+            "example" : "0",
+            "description" : "Top order"
+          },
+          "groupName" : {
+            "type" : "string",
+            "example" : "verifydetailsinfo",
+            "description" : "Group name"
+          },
+          "id" : {
+            "type" : "number",
+            "example" : "60",
+            "description" : "Id"
+          }
+        }
+      },
+      "deleteListOfValuesReq" : {
+        "type" : "object",
+        "required" : [ "value", "title", "checkBoxStatus", "catagoryType", "order", "topOrder", "groupName" ],
+        "properties" : {
+          "value" : {
+            "type" : "string",
+            "example" : "Find a well-lit place so that the camera can accurately scan your face.",
+            "description" : "Value "
+          },
+          "title" : {
+            "type" : "string",
+            "example" : "Get enough light",
+            "description" : "Title "
+          },
+          "checkBoxStatus" : {
+            "type" : "string",
+            "description" : "Check box status"
+          },
+          "catagoryType" : {
+            "type" : "string",
+            "example" : "8",
+            "description" : "Category type"
+          },
+          "order" : {
+            "type" : "number",
+            "example" : "1",
+            "description" : "Order"
+          },
+          "topOrder" : {
+            "type" : "number",
+            "example" : "0",
+            "description" : "Top order"
+          },
+          "groupName" : {
+            "type" : "string",
+            "example" : "selfieIntroScreen",
+            "description" : "Group name"
+          }
+        }
+      },
+      "validateCustReportIssueReq" : {
+        "type" : "object",
+        "required" : [ "userDesc", "category" ],
+        "properties" : {
+          "test_file" : {
+            "type" : "string",
+            "example" : "Test.log",
+            "description" : "test_file",
+            "format" : "binary"
+          },
+          "userId" : {
+            "type" : "string",
+            "example" : "17t608",
+            "description" : "userId"
+          },
+          "userDesc" : {
+            "type" : "string",
+            "example" : "app_crash",
+            "description" : "userDesc"
+          },
+          "mobileNo" : {
+            "type" : "string",
+            "description" : "mobileNo"
+          },
+          "custId" : {
+            "type" : "string",
+            "description" : "custId"
+          },
+          "emailId" : {
+            "type" : "string",
+            "example" : "demo@gmail.com",
+            "description" : "emailId"
+          },
+          "fullName" : {
+            "type" : "string",
+            "example" : "a b c",
+            "description" : "fullName"
+          },
+          "category" : {
+            "type" : "string",
+            "example" : "app_crash",
+            "description" : "category"
+          },
+          "kycStatus" : {
+            "type" : "string",
+            "example" : "shqhh",
+            "description" : "kycStatus"
+          }
+        }
+      },
+      "customrulesRes" : {
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "type" : "object",
+            "properties" : {
+              "Percentage_Configuration" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "ADDRUPD" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "TDMIN" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "REFERRAL_BONUS" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "selectedValues" : {
+                      "type" : "string",
+                      "description" : "Selected values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    },
+                    "selectedIndex" : {
+                      "type" : "string",
+                      "description" : "Selected Index "
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "CDD JIRA REVIEW" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "selectedValues" : {
+                      "type" : "string",
+                      "description" : "Selected Values "
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display Order"
+                    },
+                    "selectedIndex" : {
+                      "type" : "string",
+                      "description" : "Selected Index "
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "Onboarding Evaluation" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code "
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "selectedValues" : {
+                      "type" : "string",
+                      "description" : "Selected Values "
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component Level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display Order"
+                    },
+                    "selectedIndex" : {
+                      "type" : "string",
+                      "description" : "Selected Index "
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "APP_VERSION_CHECK" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values "
+                    },
+                    "selectedValues" : {
+                      "type" : "string",
+                      "description" : "Selected Values "
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    },
+                    "selectedIndex" : {
+                      "type" : "string",
+                      "description" : "Selected Index "
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "BKYCMAX" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component Level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type "
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "MARIGN05" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    }
+                  },
+                  "required" : [ "code", "values" ],
+                  "description" : "Code "
+                }
+              },
+              "App_Configuration" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code "
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "selectedValues" : {
+                      "type" : "string",
+                      "description" : "Selected Values "
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    },
+                    "selectedIndex" : {
+                      "type" : "string",
+                      "description" : "Selected index "
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "OFW CONFIGURATION" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "selectedValues" : {
+                      "type" : "string",
+                      "description" : "Selected Values "
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    },
+                    "selectedIndex" : {
+                      "type" : "string",
+                      "description" : "Selected Index "
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "REDIS_CACHE" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code "
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "OTP_CONFIGURATION" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "selectedValues" : {
+                      "type" : "string"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    },
+                    "selectedIndex" : {
+                      "type" : "string",
+                      "description" : "Selected Index"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "NATIONALID_CHECK_ENABLE" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "selectedValues" : {
+                      "type" : "string",
+                      "description" : "Selected Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    },
+                    "selectedIndex" : {
+                      "type" : "string",
+                      "description" : "Selected Index "
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "FLOATING_INT_50K_ABOVE" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "selectedValues" : {
+                      "type" : "string",
+                      "description" : "Selected Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display Order "
+                    },
+                    "selectedIndex" : {
+                      "type" : "string",
+                      "description" : "Selected Index"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "TERMS AND CONDITIONS VERSION" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display Order"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "BKYC_STASH_COUNT" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "RENTED" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "Fraud Score Check Date" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "WITHHOLD_TAX" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "selectedValues" : {
+                      "type" : "string",
+                      "description" : "Selected Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display Order "
+                    },
+                    "selectedIndex" : {
+                      "type" : "string",
+                      "description" : "Selected Index "
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "NAME EDIT" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "TD Configration" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "TDMAXNO" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "MARIGN75" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "NO_DAYS" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "STASH_AMT" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display Order"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "STASH_MARGIN_VALUE" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "Fraud Score Validation" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display Order"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "LOAN_CONFIGURATION" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "Credolab Config" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "INTRSTTD" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "ERLYWD" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "TONIKVALUE" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "STASHCONTRI" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component Level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "DAON_CONFIGURATION" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "selectedValues" : {
+                      "type" : "string",
+                      "description" : "Selected Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display Order"
+                    },
+                    "selectedIndex" : {
+                      "type" : "string",
+                      "description" : "Selected Index "
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "SKYCMAX" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "FKYCMAX" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display Order"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "FLOATING_INT_50K" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "selectedValues" : {
+                      "type" : "string",
+                      "description" : "Selected values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    },
+                    "selectedIndex" : {
+                      "type" : "string",
+                      "description" : "Selected Index"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "Creadolab Score Sub Type" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "SKYC_STASH_COUNT" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "PURPOSE OF ACCOUNT VERSION CHECK" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "CDD RULES" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "selectedValues" : {
+                      "type" : "string",
+                      "description" : "Selected Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component Level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    },
+                    "selectedIndex" : {
+                      "type" : "string",
+                      "description" : "Selected Index "
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "Audit Configuratuion" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "selectedValues" : {
+                      "type" : "string",
+                      "description" : "Selected Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Components level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    },
+                    "selectedIndex" : {
+                      "type" : "string",
+                      "description" : "Selected Index "
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "app_test_config" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "CDD_BLOCK_USERS" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "selectedValues" : {
+                      "type" : "string",
+                      "description" : "Selected Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display Order "
+                    },
+                    "selectedIndex" : {
+                      "type" : "string",
+                      "description" : "Selected Index"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "CDD_REVIEW_JIRA_REASON_CATEGORY" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "selectedValues" : {
+                      "type" : "string",
+                      "description" : "Selected Values "
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    },
+                    "selectedIndex" : {
+                      "type" : "string",
+                      "description" : "Selected Index"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "ADMIN AUDIT FLAG" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "selectedValues" : {
+                      "type" : "string",
+                      "description" : "Selected Values"
+                    },
+                    "componentLabel" : {
+                      "type" : "string",
+                      "description" : "Component Level"
+                    },
+                    "groupName" : {
+                      "type" : "string",
+                      "description" : "Group Name"
+                    },
+                    "componentType" : {
+                      "type" : "string",
+                      "description" : "Component Type"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    },
+                    "selectedIndex" : {
+                      "type" : "string",
+                      "description" : "Selected Index"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              },
+              "APPMSG_HASHKEY" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string",
+                      "description" : "Code"
+                    },
+                    "values" : {
+                      "type" : "string",
+                      "description" : "Values"
+                    },
+                    "displayOrder" : {
+                      "type" : "integer",
+                      "description" : "Display order"
+                    }
+                  },
+                  "required" : [ "code", "values" ]
+                }
+              }
+            }
+          },
+          "meta" : {
+            "type" : "object",
+            "properties" : {
+              "totalPages" : {
+                "type" : "integer"
+              }
+            },
+            "required" : [ "totalPages" ]
+          },
+          "status" : {
+            "type" : "object",
+            "properties" : {
+              "code" : {
+                "type" : "string"
+              },
+              "message" : {
+                "type" : "string"
+              }
+            },
+            "required" : [ "code", "message" ]
+          }
+        },
+        "required" : [ "data", "meta", "status" ]
+      },
+      "ListOfValuesRes" : {
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "type" : "object",
+            "description" : "data"
+          },
+          "meta" : {
+            "properties" : {
+              "totalPages" : {
+                "type" : "number",
+                "example" : 0,
+                "description" : "totalPages"
+              }
+            },
+            "type" : "object",
+            "description" : "meta",
+            "required" : [ "totalPages" ]
+          },
+          "status" : {
+            "properties" : {
+              "code" : {
+                "type" : "string",
+                "example" : "00",
+                "description" : "code"
+              },
+              "message" : {
+                "type" : "string",
+                "example" : "Success",
+                "description" : "message"
+              }
+            },
+            "type" : "object",
+            "description" : "status",
+            "required" : [ "code", "message" ]
+          }
+        },
+        "required" : [ "meta", "status" ]
+      },
+      "addAppMessagesRes" : {
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "type" : "object"
+          },
+          "meta" : {
+            "required" : [ "totalPages" ],
+            "properties" : {
+              "totalPages" : {
+                "type" : "number",
+                "example" : 0
+              }
+            },
+            "type" : "object",
+            "description" : "meta"
+          },
+          "status" : {
+            "properties" : {
+              "code" : {
+                "type" : "string",
+                "example" : "00",
+                "description" : "code"
+              },
+              "message" : {
+                "type" : "string",
+                "example" : "Success",
+                "description" : "message"
+              }
+            },
+            "type" : "object",
+            "description" : "status",
+            "required" : [ "code", "message" ]
+          }
+        },
+        "required" : [ "meta", "status" ]
+      },
+      "barangayRes" : {
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "type" : "object",
+            "description" : "data"
+          },
+          "meta" : {
+            "properties" : {
+              "totalPages" : {
+                "type" : "number",
+                "description" : "totalPages"
+              }
+            },
+            "type" : "object",
+            "description" : "meta",
+            "required" : [ "totalPages" ]
+          },
+          "status" : {
+            "properties" : {
+              "code" : {
+                "type" : "string",
+                "example" : "00",
+                "description" : "code"
+              },
+              "message" : {
+                "type" : "string",
+                "example" : "Success",
+                "description" : "message"
+              }
+            },
+            "type" : "object",
+            "description" : "status",
+            "required" : [ "code", "message" ]
+          }
+        },
+        "required" : [ "meta", "status" ]
+      },
+      "deleteListOfValuesRes" : {
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "type" : "object",
+            "description" : "data"
+          },
+          "meta" : {
+            "properties" : {
+              "totalPages" : {
+                "type" : "number",
+                "example" : 0,
+                "description" : "totalPages"
+              }
+            },
+            "type" : "object",
+            "description" : "meta",
+            "required" : [ "totalPages" ]
+          },
+          "status" : {
+            "properties" : {
+              "code" : {
+                "type" : "string",
+                "example" : "00",
+                "description" : "code"
+              },
+              "message" : {
+                "type" : "string",
+                "example" : "Success",
+                "description" : "message"
+              }
+            },
+            "type" : "object",
+            "description" : "status",
+            "required" : [ "code", "message" ]
+          }
+        },
+        "required" : [ "meta", "status" ]
+      },
+      "getListOfValuesRes" : {
+        "type" : "object",
+        "required" : [ "data", "meta", "status" ],
+        "properties" : {
+          "data" : {
+            "required" : [ "list" ],
+            "properties" : {
+              "list" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "id" : {
+                      "type" : "string",
+                      "example" : "1",
+                      "description" : "Id"
+                    },
+                    "value" : {
+                      "type" : "string",
+                      "example" : "Employed",
+                      "description" : "Value"
+                    },
+                    "displayOrder" : {
+                      "type" : "string",
+                      "example" : "1",
+                      "description" : "Display order"
+                    }
+                  },
+                  "required" : [ "id", "value", "displayOrder" ]
+                },
+                "description" : "list"
+              }
+            },
+            "type" : "object",
+            "description" : "data"
+          },
+          "meta" : {
+            "properties" : {
+              "totalPages" : {
+                "type" : "number",
+                "example" : 0,
+                "description" : "totalPages"
+              }
+            },
+            "type" : "object",
+            "description" : "meta",
+            "required" : [ "totalPages" ]
+          },
+          "status" : {
+            "properties" : {
+              "code" : {
+                "type" : "string",
+                "example" : "00",
+                "description" : "code"
+              },
+              "message" : {
+                "type" : "string",
+                "example" : "Success",
+                "description" : "message"
+              }
+            },
+            "type" : "object",
+            "description" : "status",
+            "required" : [ "code", "message" ]
+          }
+        }
+      },
+      "updateAppMessagesRes" : {
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "type" : "object"
+          },
+          "meta" : {
+            "properties" : {
+              "totalPages" : {
+                "type" : "number",
+                "example" : 0,
+                "description" : "totalPages"
+              }
+            },
+            "type" : "object",
+            "description" : "meta",
+            "required" : [ "totalPages" ]
+          },
+          "status" : {
+            "properties" : {
+              "code" : {
+                "type" : "string",
+                "example" : "00",
+                "description" : "code"
+              },
+              "message" : {
+                "type" : "string",
+                "example" : "Success",
+                "description" : "message"
+              }
+            },
+            "type" : "object",
+            "description" : "status",
+            "required" : [ "code", "message" ]
+          }
+        },
+        "required" : [ "meta", "status" ]
+      },
+      "updateListOfValuesRes" : {
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "type" : "object",
+            "description" : "data"
+          },
+          "meta" : {
+            "properties" : {
+              "totalPages" : {
+                "type" : "number",
+                "description" : "totalPages"
+              }
+            },
+            "type" : "object",
+            "description" : "meta",
+            "required" : [ "totalPages" ]
+          },
+          "status" : {
+            "properties" : {
+              "code" : {
+                "type" : "string",
+                "example" : "00",
+                "description" : "code"
+              },
+              "message" : {
+                "type" : "string",
+                "example" : "Success",
+                "description" : "message"
+              }
+            },
+            "type" : "object",
+            "description" : "status",
+            "required" : [ "code", "message" ]
+          }
+        },
+        "required" : [ "meta", "status" ]
+      },
+      "validateCustReportIssueRes" : {
+        "type" : "object",
+        "required" : [ "meta", "status" ],
+        "properties" : {
+          "data" : {
+            "type" : "object",
+            "description" : "data"
+          },
+          "meta" : {
+            "properties" : {
+              "totalPages" : {
+                "type" : "number",
+                "example" : 0,
+                "description" : "totalPages"
+              }
+            },
+            "type" : "object",
+            "description" : "meta",
+            "required" : [ "totalPages" ]
+          },
+          "status" : {
+            "required" : [ "code", "message" ],
+            "properties" : {
+              "code" : {
+                "type" : "string",
+                "example" : "00",
+                "description" : "code"
+              },
+              "message" : {
+                "type" : "string",
+                "example" : "Success",
+                "description" : "message"
+              }
+            },
+            "type" : "object",
+            "description" : "status"
+          }
+        }
+      },
+      "updateAppMessagesReq" : {
+        "type" : "object",
+        "required" : [ "messageCode", "messageDescription", "moduleId" ],
+        "properties" : {
+          "messageCode" : {
+            "type" : "string",
+            "example" : "SCRF1301_VIEW_BILL_INFO",
+            "description" : "message code "
+          },
+          "messageDescription" : {
+            "type" : "string",
+            "example" : "Keep track of your bills and \nrecent payments.",
+            "description" : "message discription"
+          },
+          "moduleId" : {
+            "type" : "string",
+            "example" : "billpay",
+            "description" : "Module name"
+          }
+        }
+      },
+      "addAppMessagesReq" : {
+        "type" : "object",
+        "required" : [ "messageCode", "messageDescription", "moduleId" ],
+        "properties" : {
+          "messageCode" : {
+            "type" : "string",
+            "example" : "SCRF201_ZERO_FEE_LINK",
+            "description" : "message code "
+          },
+          "messageDescription" : {
+            "type" : "string",
+            "example" : "https:////tonikbank.com/faq/cards/physical-card/#what-is-the-difference-between-physical-debit-card-and-bancnet-enabled-card",
+            "description" : "message discription"
+          },
+          "moduleId" : {
+            "type" : "string",
+            "example" : "cards",
+            "description" : "Module name"
+          }
+        }
+      },
+      "getAppMessagesRes" : {
+        "type" : "object",
+        "required" : [ "data", "meta", "status" ],
+        "properties" : {
+          "data" : {
+            "required" : [ "messageList" ],
+            "properties" : {
+              "messageList" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "id" : {
+                      "type" : "number",
+                      "example" : 1363
+                    },
+                    "messageCode" : {
+                      "type" : "string",
+                      "example" : "ACC_CLOSED_BTN1"
+                    },
+                    "messageDescription" : {
+                      "type" : "string",
+                      "example" : "CLOSE APP"
+                    },
+                    "moduleId" : {
+                      "type" : "string",
+                      "example" : "onboarding"
+                    },
+                    "moduleName" : {
+                      "type" : "string",
+                      "example" : "onboarding"
+                    }
+                  },
+                  "required" : [ "id", "messageCode", "messageDescription", "moduleId", "moduleName" ]
+                }
+              }
+            },
+            "type" : "object",
+            "description" : "data"
+          },
+          "meta" : {
+            "properties" : {
+              "totalPages" : {
+                "type" : "number",
+                "example" : 0,
+                "description" : "totalPages"
+              }
+            },
+            "type" : "object",
+            "description" : "meta",
+            "required" : [ "totalPages" ]
+          },
+          "status" : {
+            "properties" : {
+              "code" : {
+                "type" : "string",
+                "example" : "00",
+                "description" : "code"
+              },
+              "message" : {
+                "type" : "string",
+                "example" : "Success",
+                "description" : "message"
+              }
+            },
+            "type" : "object",
+            "description" : "status",
+            "required" : [ "code", "message" ]
+          }
+        }
+      },
+      "getCountryListRes" : {
+        "type" : "object",
+        "required" : [ "data", "meta", "status" ],
+        "properties" : {
+          "data" : {
+            "required" : [ "countryList" ],
+            "properties" : {
+              "countryList" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "id" : {
+                      "type" : "string",
+                      "example" : "169",
+                      "description" : "ID"
+                    },
+                    "countryName" : {
+                      "type" : "string",
+                      "example" : "Philippines",
+                      "description" : "Country name"
+                    },
+                    "countryCode" : {
+                      "type" : "string",
+                      "example" : "63",
+                      "description" : "Country code"
+                    },
+                    "shortName1" : {
+                      "type" : "string",
+                      "example" : "PH",
+                      "description" : "Short name 1"
+                    },
+                    "shortName2" : {
+                      "type" : "string",
+                      "example" : "PHL",
+                      "description" : "Short name 1"
+                    },
+                    "displayName" : {
+                      "type" : "string",
+                      "example" : "Philippines (+63)",
+                      "description" : "Display name"
+                    },
+                    "highRiskFlag" : {
+                      "type" : "string",
+                      "example" : "N",
+                      "description" : "Flag"
+                    },
+                    "isOnboardingAllowed" : {
+                      "type" : "string",
+                      "example" : "Y",
+                      "description" : "Onboarding allowed or not"
+                    }
+                  },
+                  "required" : [ "id", "countryName", "countryCode", "shortName1", "shortName2", "displayName", "highRiskFlag", "isOnboardingAllowed" ]
+                },
+                "description" : "countryList"
+              }
+            },
+            "type" : "object",
+            "description" : "data"
+          },
+          "meta" : {
+            "type" : "object",
+            "properties" : {
+              "totalPages" : {
+                "type" : "number",
+                "description" : "totalPages",
+                "example" : "0"
+              }
+            },
+            "description" : "meta",
+            "required" : [ "totalPages" ]
+          },
+          "status" : {
+            "type" : "object",
+            "properties" : {
+              "code" : {
+                "type" : "string",
+                "description" : "code",
+                "example" : "00"
+              },
+              "message" : {
+                "type" : "string",
+                "description" : "message",
+                "example" : "Success"
+              }
+            },
+            "description" : "status",
+            "required" : [ "code", "message" ]
+          }
+        }
+      },
+      "FetchPsCodeDtlRes" : {
+        "type" : "object",
+        "required" : [ "data", "meta", "status" ],
+        "properties" : {
+          "data" : {
+            "required" : [ "postCodesList" ],
+            "properties" : {
+              "postCodesList" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "provcode" : {
+                      "type" : "string",
+                      "example" : "ZMB",
+                      "description" : "Province code"
+                    },
+                    "province" : {
+                      "type" : "string",
+                      "example" : "ZAMBALES",
+                      "description" : "Province"
+                    },
+                    "crifCode" : {
+                      "type" : "string",
+                      "example" : "CF1307",
+                      "description" : "Crif code"
+                    },
+                    "cities" : {
+                      "type" : "array",
+                      "items" : {
+                        "type" : "object",
+                        "properties" : {
+                          "city" : {
+                            "type" : "string",
+                            "example" : "SUBIC",
+                            "description" : "City"
+                          },
+                          "barangays" : {
+                            "type" : "array",
+                            "items" : {
+                              "type" : "object",
+                              "properties" : {
+                                "barangay" : {
+                                  "type" : "string",
+                                  "example" : "ANINGWAY SACATIHAN",
+                                  "description" : "Barangay"
+                                },
+                                "zipcode" : {
+                                  "type" : "string",
+                                  "example" : "2209",
+                                  "description" : "Zip code"
+                                }
+                              },
+                              "required" : [ "barangay", "zipcode" ]
+                            },
+                            "description" : "Barangays"
+                          }
+                        },
+                        "required" : [ "city", "barangays" ]
+                      },
+                      "description" : "cities"
+                    }
+                  },
+                  "required" : [ "provcode", "province", "cities" ]
+                },
+                "description" : "postCodesList"
+              }
+            },
+            "type" : "object",
+            "description" : "data"
+          },
+          "meta" : {
+            "properties" : {
+              "totalPages" : {
+                "type" : "number",
+                "description" : "totalPages"
+              }
+            },
+            "type" : "object",
+            "description" : "meta",
+            "required" : [ "totalPages" ]
+          },
+          "status" : {
+            "properties" : {
+              "code" : {
+                "type" : "string",
+                "example" : "00",
+                "description" : "code"
+              },
+              "message" : {
+                "type" : "string",
+                "example" : "Success",
+                "description" : "message"
+              }
+            },
+            "type" : "object",
+            "description" : "status",
+            "required" : [ "code", "message" ]
+          }
+        }
+      },
+      "ErrorSchema" : {
+        "type" : "object",
+        "required" : [ "errors" ],
+        "oneOf" : [ {
+          "$ref" : "#/components/schemas/ErrorSchema"
+        }, {
+          "$ref" : "#/components/schemas/validateCustReportIssueReq"
+        }, {
+          "$ref" : "#/components/schemas/customrulesRes"
+        }, {
+          "type" : "object",
+          "properties" : {
+            "errors" : {
+              "type" : "array",
+              "items" : {
+                "type" : "object",
+                "properties" : {
+                  "code" : {
+                    "type" : "string",
+                    "example" : "Security-1016"
+                  },
+                  "userMessage" : {
+                    "type" : "string",
+                    "example" : "Please check the request variables and\ntry again later."
+                  },
+                  "info" : {
+                    "type" : "string",
+                    "example" : "https://developers.myapi.com/errors/#Security-1016"
+                  }
+                },
+                "required" : [ "code", "userMessage" ]
+              }
+            }
+          }
+        } ]
+      },
+      "DeleteAppMessagesRes" : {
+        "type" : "object",
+        "required" : [ "data", "meta", "status" ],
+        "description" : "Description ",
+        "oneOf" : [ {
+          "$ref" : "#/components/schemas/ListOfValuesReq"
+        }, {
+          "$ref" : "#/components/schemas/ListOfValuesRes"
+        }, {
+          "type" : "object",
+          "properties" : {
+            "data" : {
+              "type" : "object",
+              "description" : "data"
+            },
+            "meta" : {
+              "properties" : {
+                "totalPages" : {
+                  "type" : "number",
+                  "example" : 0,
+                  "description" : "totalPages"
+                }
+              },
+              "type" : "object",
+              "description" : "meta"
+            },
+            "status" : {
+              "properties" : {
+                "code" : {
+                  "type" : "string",
+                  "example" : "00",
+                  "description" : "code"
+                },
+                "message" : {
+                  "type" : "string",
+                  "example" : "Success",
+                  "description" : "message"
+                }
+              },
+              "type" : "object",
+              "description" : "status"
+            }
+          }
+        } ],
+        "anyOf" : [ {
+          "$ref" : "#/components/schemas/ListOfValuesReq"
+        }, {
+          "$ref" : "#/components/schemas/ListOfValuesRes"
+        }, {
+          "type" : "object",
+          "properties" : {
+            "data" : {
+              "type" : "object",
+              "description" : "data"
+            },
+            "meta" : {
+              "properties" : {
+                "totalPages" : {
+                  "type" : "number",
+                  "example" : 0,
+                  "description" : "totalPages"
+                }
+              },
+              "type" : "object",
+              "description" : "meta"
+            },
+            "status" : {
+              "properties" : {
+                "code" : {
+                  "type" : "string",
+                  "example" : "00",
+                  "description" : "code"
+                },
+                "message" : {
+                  "type" : "string",
+                  "example" : "Success",
+                  "description" : "message"
+                }
+              },
+              "type" : "object",
+              "description" : "status"
+            }
+          }
+        } ]
+      },
+      "getSystemMessagesRes" : {
+        "type" : "object",
+        "required" : [ "data", "meta", "status" ],
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/deleteListOfValuesRes"
+        }, {
+          "$ref" : "#/components/schemas/getListOfValuesRes"
+        }, {
+          "$ref" : "#/components/schemas/updateAppMessagesRes"
+        }, {
+          "type" : "object",
+          "properties" : {
+            "data" : {
+              "type" : "array",
+              "items" : {
+                "type" : "object",
+                "properties" : {
+                  "messageCode" : {
+                    "type" : "string",
+                    "example" : "SCRF1121_OWNERSHIPDATA"
+                  },
+                  "module" : {
+                    "type" : "string",
+                    "example" : "loan"
+                  },
+                  "subModule" : {
+                    "type" : "string",
+                    "example" : "hel"
+                  },
+                  "value" : {
+                    "required" : [ "ownershipData" ],
+                    "properties" : {
+                      "ownershipData" : {
+                        "type" : "array",
+                        "items" : {
+                          "type" : "object",
+                          "properties" : {
+                            "value" : {
+                              "type" : "string",
+                              "example" : "Single ownership"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "type" : "object"
+                  }
+                }
+              }
+            },
+            "meta" : {
+              "required" : [ "totalPages" ],
+              "properties" : {
+                "totalPages" : {
+                  "type" : "number",
+                  "example" : 1
+                }
+              },
+              "type" : "object"
+            },
+            "status" : {
+              "required" : [ "code", "message" ],
+              "properties" : {
+                "code" : {
+                  "type" : "string",
+                  "example" : "00"
+                },
+                "message" : {
+                  "type" : "string",
+                  "example" : "Success"
+                }
+              },
+              "type" : "object"
+            }
+          }
+        } ],
+        "description" : "Messages Response "
+      },
+      "barangayReq" : {
+        "type" : "object",
+        "description" : "To test inheritance ",
+        "example" : "quewtyruiopadjkdfjjgkcbhvnkfj",
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/DeleteAppMessagesRes"
+        }, {
+          "$ref" : "#/components/schemas/ListOfValuesRes"
+        }, {
+          "$ref" : "#/components/schemas/getSystemMessagesRes"
+        }, {
+          "type" : "object",
+          "properties" : {
+            "data" : {
+              "type" : "object"
+            },
+            "meta" : {
+              "properties" : {
+                "totalPages" : {
+                  "type" : "number",
+                  "example" : 1
+                }
+              },
+              "type" : "object"
+            },
+            "status" : {
+              "properties" : {
+                "code" : {
+                  "type" : "string",
+                  "example" : "00"
+                },
+                "message" : {
+                  "type" : "string",
+                  "example" : "Success"
+                }
+              },
+              "type" : "object"
+            }
+          }
+        } ],
+        "required" : [ "data", "meta" ]
+      },
+      "DeleteAppMessagesReq" : {
+        "type" : "object",
+        "required" : [ "messageDescription", "moduleId" ],
+        "description" : "Description ",
+        "example" : "qwijdwmdwkaodjoincskcmlcwopdwkfmkefeij",
+        "oneOf" : [ {
+          "$ref" : "#/components/schemas/DeleteAppMessagesRes"
+        }, {
+          "type" : "object",
+          "properties" : {
+            "messageCode" : {
+              "type" : "string",
+              "example" : "SCRF1301_VIEW_BILL_INFO",
+              "description" : "message code"
+            },
+            "messageDescription" : {
+              "type" : "string",
+              "example" : "Keep track of your bills and \nrecent payments.",
+              "description" : "message discription"
+            },
+            "moduleId" : {
+              "type" : "string",
+              "example" : "billpay",
+              "description" : "Module name"
+            }
+          }
+        } ]
+      }
+    }
+  },
+  "x-mock" : true,
+  "x-metadata" : {
+    "metadata" : {
+      "swaggerName" : "4aa2915b7976435cbec0f1f8e0052b42",
+      "revision" : 1,
+      "documentation" : [ ],
+      "category" : [ {
+        "name" : "Unsorted",
+        "paths" : [ "/appmessages", "/barangay", "/countries", "/customrules", "/listofvalues", "/postcodes", "/reportissue", "/appmessages/{module-id}", "/listofvalues/{id}", "/listofvalues/{id}/{catagoryType}", "/appmessages/{messageCode}" ]
+      } ]
+    }
+  }
+}
