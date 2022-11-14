@@ -1,32 +1,50 @@
 {
   "openapi" : "3.0.1",
   "info" : {
-    "title" : "New Request",
-    "description" : "dummy",
+    "title" : "Vehicle",
+    "description" : "The Vehicles endpoint returns information about all of the Studio Ghibli vechiles. This includes cars, ships, and planes.",
     "version" : "2.0"
   },
   "servers" : [ {
-    "url" : "https://postman-echo.com/",
-    "x-name" : "Server1"
+    "url" : "https://ghibliapi.herokuapp.com/"
   } ],
   "paths" : {
-    "/post" : {
-      "post" : {
-        "tags" : [ "New Collection" ],
-        "summary" : "New Request",
-        "description" : "dummy",
-        "operationId" : "New Request",
+    "/vehicles" : {
+      "get" : {
+        "tags" : [ "Studio Ghibli" ],
+        "summary" : "Vehicle",
+        "description" : "The Vehicles endpoint returns information about all of the Studio Ghibli vechiles. This includes cars, ships, and planes.",
+        "operationId" : "Vehicle",
+        "parameters" : [ {
+          "name" : "xyz",
+          "in" : "header",
+          "schema" : { },
+          "example" : "123"
+        }, {
+          "name" : "Cookie",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "cookie=123"
+        } ],
         "responses" : {
           "200" : {
-            "description" : "Response for endpoint POST-post",
+            "description" : "Response for endpoint GET-vehicles",
             "headers" : {
-              "set-cookie" : {
+              "Transfer-Encoding" : {
                 "description" : "response header",
                 "schema" : {
                   "type" : "string"
                 }
               },
-              "ETag" : {
+              "Server" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "X-Content-Type-Options" : {
                 "description" : "response header",
                 "schema" : {
                   "type" : "string"
@@ -38,19 +56,55 @@
                   "type" : "string"
                 }
               },
-              "Vary" : {
-                "description" : "response header",
-                "schema" : {
-                  "type" : "string"
-                }
-              },
-              "Content-Length" : {
+              "Pragma" : {
                 "description" : "response header",
                 "schema" : {
                   "type" : "string"
                 }
               },
               "Date" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Via" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Cache-Control" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Etag" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Access-Control-Allow-Credentials" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Vary" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Expires" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "X-Powered-By" : {
                 "description" : "response header",
                 "schema" : {
                   "type" : "string"
@@ -66,100 +120,41 @@
             "content" : {
               "*/*" : {
                 "schema" : {
-                  "required" : [ "args", "data", "files", "form", "headers", "url" ],
-                  "type" : "object",
-                  "properties" : {
-                    "args" : {
-                      "type" : "object"
-                    },
-                    "data" : {
-                      "type" : "object"
-                    },
-                    "files" : {
-                      "type" : "object"
-                    },
-                    "form" : {
-                      "type" : "object"
-                    },
-                    "headers" : {
-                      "required" : [ "accept", "accept-encoding", "content-length", "cookie", "host", "user-agent", "x-amzn-trace-id", "x-b3-parentspanid", "x-b3-sampled", "x-b3-spanid", "x-b3-traceid", "x-forwarded-port", "x-forwarded-proto" ],
-                      "type" : "object",
-                      "properties" : {
-                        "x-forwarded-proto" : {
-                          "type" : "string"
-                        },
-                        "x-forwarded-port" : {
-                          "type" : "string"
-                        },
-                        "host" : {
-                          "type" : "string"
-                        },
-                        "x-amzn-trace-id" : {
-                          "type" : "string"
-                        },
-                        "content-length" : {
-                          "type" : "string"
-                        },
-                        "accept" : {
-                          "type" : "string"
-                        },
-                        "x-b3-traceid" : {
-                          "type" : "string"
-                        },
-                        "x-b3-spanid" : {
-                          "type" : "string"
-                        },
-                        "x-b3-parentspanid" : {
-                          "type" : "string"
-                        },
-                        "x-b3-sampled" : {
-                          "type" : "string"
-                        },
-                        "user-agent" : {
-                          "type" : "string"
-                        },
-                        "cookie" : {
-                          "type" : "string"
-                        },
-                        "accept-encoding" : {
+                  "type" : "array",
+                  "example" : "[\n  {\n    \"id\": \"4e09b023-f650-4747-9ab9-eacf14540cfb\",\n    \"name\": \"Air Destroyer Goliath\",\n    \"description\": \"A military airship utilized by the government to access Laputa\",\n    \"vehicle_class\": \"Airship\",\n    \"length\": \"1,000\",\n    \"pilot\": \"https://ghibliapi.herokuapp.com/people/40c005ce-3725-4f15-8409-3e1b1b14b583\",\n    \"films\": [\n      \"https://ghibliapi.herokuapp.com/films/2baf70d1-42bb-4437-b551-e5fed5a87abe\"\n    ],\n    \"url\": \"https://ghibliapi.herokuapp.com/vehicles/4e09b023-f650-4747-9ab9-eacf14540cfb\"\n  },\n  {\n    \"id\": \"d8f893b5-1dd9-41a1-9918-0099c1aa2de8\",\n    \"name\": \"Red Wing\",\n    \"description\": \"An experimental aircraft captured by Porco. Named Savoia S.21\",\n    \"vehicle_class\": \"Airplane\",\n    \"length\": \"20\",\n    \"pilot\": \"https://ghibliapi.herokuapp.com/people/6523068d-f5a9-4150-bf5b-76abe6fb42c3\",\n    \"films\": [\n      \"https://ghibliapi.herokuapp.com/films/ebbb6b7c-945c-41ee-a792-de0e43191bd8\"\n    ],\n    \"url\": \"https://ghibliapi.herokuapp.com/vehicles/d8f893b5-1dd9-41a1-9918-0099c1aa2de8\"\n  },\n  {\n    \"id\": \"923d70c9-8f15-4972-ad53-0128b261d628\",\n    \"name\": \"Sosuke's Boat\",\n    \"description\": \"A toy boat where Sosuke plays\",\n    \"vehicle_class\": \"Boat\",\n    \"length\": \"10\",\n    \"pilot\": \"https://ghibliapi.herokuapp.com/people/a10f64f3-e0b6-4a94-bf30-87ad8bc51607\",\n    \"films\": [\n      \"https://ghibliapi.herokuapp.com/films/758bf02e-3122-46e0-884e-67cf83df1786\"\n    ],\n    \"url\": \"https://ghibliapi.herokuapp.com/vehicles/923d70c9-8f15-4972-ad53-0128b261d628\"\n  }\n]",
+                  "items" : {
+                    "required" : [ "description", "films", "id", "length", "name", "pilot", "url", "vehicle_class" ],
+                    "type" : "object",
+                    "properties" : {
+                      "id" : {
+                        "type" : "string"
+                      },
+                      "name" : {
+                        "type" : "string"
+                      },
+                      "description" : {
+                        "type" : "string"
+                      },
+                      "vehicle_class" : {
+                        "type" : "string"
+                      },
+                      "length" : {
+                        "type" : "string"
+                      },
+                      "pilot" : {
+                        "type" : "string"
+                      },
+                      "films" : {
+                        "type" : "array",
+                        "items" : {
                           "type" : "string"
                         }
+                      },
+                      "url" : {
+                        "type" : "string"
                       }
-                    },
-                    "url" : {
-                      "type" : "string"
                     }
-                  },
-                  "example" : "{\"args\":{},\"data\":{},\"files\":{},\"form\":{},\"headers\":{\"x-forwarded-proto\":\"https\",\"x-forwarded-port\":\"443\",\"host\":\"postman-echo.com\",\"x-amzn-trace-id\":\"Root=1-63724ac3-7a1420112f1a5b4c4084bd1e\",\"content-length\":\"0\",\"accept\":\"*/*\",\"x-b3-traceid\":\"f37d18864822c2e77a04dfa270c1a035\",\"x-b3-spanid\":\"f55be2f5a82d8e8b\",\"x-b3-parentspanid\":\"48011f4912d3e5f2\",\"x-b3-sampled\":\"0\",\"user-agent\":\"Apache-HttpClient/4.5.13 (Java/11.0.16)\",\"cookie\":\"sails.sid=s%3Ad97koJhaPFxr6MhrKaPsy2aJE_5y09Vz.5qwh4aH604kM5xdy4m%2B9vRwrmeCZZgzsyVogxZfsgyA\",\"accept-encoding\":\"gzip,deflate\"},\"json\":null,\"url\":\"https://postman-echo.com/post/\"}"
-                }
-              }
-            }
-          },
-          "404" : {
-            "description" : "Response for endpoint POST-post",
-            "headers" : {
-              "Transfer-Encoding" : {
-                "description" : "response header",
-                "schema" : {
-                  "type" : "string"
-                }
-              },
-              "set-cookie" : {
-                "description" : "response header",
-                "schema" : {
-                  "type" : "string"
-                }
-              },
-              "Connection" : {
-                "description" : "response header",
-                "schema" : {
-                  "type" : "string"
-                }
-              },
-              "Date" : {
-                "description" : "response header",
-                "schema" : {
-                  "type" : "string"
+                  }
                 }
               }
             }
@@ -169,8 +164,5 @@
     }
   },
   "components" : { },
-  "x-original-swagger-version" : "2.0",
-  "tags" : [ ],
-  "security" : [ ],
-  "x-mock" : true
+  "x-original-swagger-version" : "2.0"
 }
