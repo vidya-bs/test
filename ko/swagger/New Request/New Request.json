@@ -3,7 +3,7 @@
   "info" : {
     "title" : "New Request",
     "description" : "dummy",
-    "version" : "2.0"
+    "version" : "3.0"
   },
   "servers" : [ {
     "url" : "https://ghibliapi.herokuapp.com/",
