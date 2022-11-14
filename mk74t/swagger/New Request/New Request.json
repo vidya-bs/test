@@ -1,0 +1,176 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "New Request",
+    "description" : "dummy",
+    "version" : "2.0"
+  },
+  "servers" : [ {
+    "url" : "https://postman-echo.com/",
+    "x-name" : "Server1"
+  } ],
+  "paths" : {
+    "/post" : {
+      "post" : {
+        "tags" : [ "New Collection" ],
+        "summary" : "New Request",
+        "description" : "dummy",
+        "operationId" : "New Request",
+        "responses" : {
+          "200" : {
+            "description" : "Response for endpoint POST-post",
+            "headers" : {
+              "set-cookie" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "ETag" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Connection" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Vary" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Content-Length" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Date" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Content-Type" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "required" : [ "args", "data", "files", "form", "headers", "url" ],
+                  "type" : "object",
+                  "properties" : {
+                    "args" : {
+                      "type" : "object"
+                    },
+                    "data" : {
+                      "type" : "object"
+                    },
+                    "files" : {
+                      "type" : "object"
+                    },
+                    "form" : {
+                      "type" : "object"
+                    },
+                    "headers" : {
+                      "required" : [ "accept", "accept-encoding", "content-length", "cookie", "host", "user-agent", "x-amzn-trace-id", "x-b3-parentspanid", "x-b3-sampled", "x-b3-spanid", "x-b3-traceid", "x-forwarded-port", "x-forwarded-proto" ],
+                      "type" : "object",
+                      "properties" : {
+                        "x-forwarded-proto" : {
+                          "type" : "string"
+                        },
+                        "x-forwarded-port" : {
+                          "type" : "string"
+                        },
+                        "host" : {
+                          "type" : "string"
+                        },
+                        "x-amzn-trace-id" : {
+                          "type" : "string"
+                        },
+                        "content-length" : {
+                          "type" : "string"
+                        },
+                        "accept" : {
+                          "type" : "string"
+                        },
+                        "x-b3-traceid" : {
+                          "type" : "string"
+                        },
+                        "x-b3-spanid" : {
+                          "type" : "string"
+                        },
+                        "x-b3-parentspanid" : {
+                          "type" : "string"
+                        },
+                        "x-b3-sampled" : {
+                          "type" : "string"
+                        },
+                        "user-agent" : {
+                          "type" : "string"
+                        },
+                        "cookie" : {
+                          "type" : "string"
+                        },
+                        "accept-encoding" : {
+                          "type" : "string"
+                        }
+                      }
+                    },
+                    "url" : {
+                      "type" : "string"
+                    }
+                  },
+                  "example" : "{\"args\":{},\"data\":{},\"files\":{},\"form\":{},\"headers\":{\"x-forwarded-proto\":\"https\",\"x-forwarded-port\":\"443\",\"host\":\"postman-echo.com\",\"x-amzn-trace-id\":\"Root=1-63724ac3-7a1420112f1a5b4c4084bd1e\",\"content-length\":\"0\",\"accept\":\"*/*\",\"x-b3-traceid\":\"f37d18864822c2e77a04dfa270c1a035\",\"x-b3-spanid\":\"f55be2f5a82d8e8b\",\"x-b3-parentspanid\":\"48011f4912d3e5f2\",\"x-b3-sampled\":\"0\",\"user-agent\":\"Apache-HttpClient/4.5.13 (Java/11.0.16)\",\"cookie\":\"sails.sid=s%3Ad97koJhaPFxr6MhrKaPsy2aJE_5y09Vz.5qwh4aH604kM5xdy4m%2B9vRwrmeCZZgzsyVogxZfsgyA\",\"accept-encoding\":\"gzip,deflate\"},\"json\":null,\"url\":\"https://postman-echo.com/post/\"}"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Response for endpoint POST-post",
+            "headers" : {
+              "Transfer-Encoding" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "set-cookie" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Connection" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Date" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : { },
+  "x-original-swagger-version" : "2.0",
+  "tags" : [ ],
+  "security" : [ ],
+  "x-mock" : true
+}
