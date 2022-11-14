@@ -1,0 +1,162 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "Book",
+    "description" : "The API allows requesting information on one or more books using ISBNs, OCLC Numbers, LCCNs and OLIDs (Open Library IDs).",
+    "version" : "2.0"
+  },
+  "servers" : [ {
+    "url" : "https://openlibrary.org/api",
+    "x-name" : "Server1"
+  } ],
+  "paths" : {
+    "/books" : {
+      "get" : {
+        "tags" : [ "Open Library" ],
+        "summary" : "Book",
+        "description" : "The API allows requesting information on one or more books using ISBNs, OCLC Numbers, LCCNs and OLIDs (Open Library IDs).",
+        "operationId" : "Book",
+        "parameters" : [ {
+          "name" : "format",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "json"
+        }, {
+          "name" : "bibkeys",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "ISBN:0201558025,LCCN:93005405"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Response for endpoint GET-books",
+            "headers" : {
+              "Transfer-Encoding" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Referrer-Policy" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Server" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Access-Control-Allow-Method" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Access-Control-Allow-Origin" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Connection" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "X-OL-Stats" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Access-Control-Max-Age" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Date" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Content-Type" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "required" : [ "ISBN:0201558025", "LCCN:93005405" ],
+                  "type" : "object",
+                  "properties" : {
+                    "ISBN:0201558025" : {
+                      "required" : [ "bib_key", "info_url", "preview", "preview_url", "thumbnail_url" ],
+                      "type" : "object",
+                      "properties" : {
+                        "bib_key" : {
+                          "type" : "string"
+                        },
+                        "info_url" : {
+                          "type" : "string"
+                        },
+                        "preview" : {
+                          "type" : "string"
+                        },
+                        "preview_url" : {
+                          "type" : "string"
+                        },
+                        "thumbnail_url" : {
+                          "type" : "string"
+                        }
+                      }
+                    },
+                    "LCCN:93005405" : {
+                      "required" : [ "bib_key", "info_url", "preview", "preview_url", "thumbnail_url" ],
+                      "type" : "object",
+                      "properties" : {
+                        "bib_key" : {
+                          "type" : "string"
+                        },
+                        "info_url" : {
+                          "type" : "string"
+                        },
+                        "preview" : {
+                          "type" : "string"
+                        },
+                        "preview_url" : {
+                          "type" : "string"
+                        },
+                        "thumbnail_url" : {
+                          "type" : "string"
+                        }
+                      }
+                    }
+                  },
+                  "example" : "{\"ISBN:0201558025\": {\"bib_key\": \"ISBN:0201558025\", \"info_url\": \"https://openlibrary.org/books/OL1429049M/Concrete_mathematics\", \"preview\": \"restricted\", \"preview_url\": \"https://archive.org/details/concretemathemat00grah_444\", \"thumbnail_url\": \"https://covers.openlibrary.org/b/id/135182-S.jpg\"}, \"LCCN:93005405\": {\"bib_key\": \"LCCN:93005405\", \"info_url\": \"https://openlibrary.org/books/OL1397864M/Zen_speaks\", \"preview\": \"borrow\", \"preview_url\": \"https://archive.org/details/zenspeaksshoutso0000caiz\", \"thumbnail_url\": \"https://covers.openlibrary.org/b/id/240726-S.jpg\"}}"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : { },
+  "x-original-swagger-version" : "2.0",
+  "tags" : [ ],
+  "security" : [ ],
+  "x-mock" : true
+}
