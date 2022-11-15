@@ -17,7 +17,7 @@
         "description" : "dummy",
         "operationId" : "New Request",
         "parameters" : [ {
-          "name" : "test",
+          "name" : "tests",
           "in" : "header",
           "schema" : {
             "type" : "string"
