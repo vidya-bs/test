@@ -7,7 +7,7 @@
   },
   "servers" : [ {
     "url" : "https://dummyjson.com/products",
-    "x-name" : "Server1"
+    "x-name" : "Server"
   } ],
   "paths" : {
     "/1" : {
