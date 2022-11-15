@@ -1,0 +1,165 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "PostNotifyAckDeliveryAndRead",
+    "description" : "To send Read and delivery acknowledgement",
+    "version" : "1.0"
+  },
+  "servers" : [ {
+    "url" : "https://api.tonikbank.com/v1/notify",
+    "x-name" : "Server1"
+  } ],
+  "paths" : {
+    "/notification-status" : {
+      "post" : {
+        "tags" : [ "Notify-API-V1" ],
+        "summary" : "PostNotifyAckDeliveryAndRead",
+        "description" : "To send Read and delivery acknowledgement",
+        "operationId" : "PostNotifyAckDeliveryAndRead",
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "Bearer tixEmRm8lSitF5GMssnN4HaaQTZn"
+        }, {
+          "name" : "Accept",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "application / json"
+        }, {
+          "name" : "content-type",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "application/json"
+        }, {
+          "name" : "tonikusertoken",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5Q1hRY09DNmF4QmZLMDJGWFNJb2p3UlJaeTFoemVZamNlVWRxTzR2VzR3PSIsImV4cCI6MTY1MjI5OTEwNywidXNlcklkIjoiOUNYUWNPQzZheEJmSzAyRlhTSW9qd1JSWnkxaHplWWpjZVVkcU80dlc0dz0iLCJpYXQiOjE2NTIyNjMxMDcsImNoYW5uZWxJZCI6IkJ3RmFBYVJjYmxSMmJudTh1akpYbjRoVSsxMzEwODdNMitKbHgrOVg5VmM9In0.yFYwGCHrd7dynElBbVokpZRLDQrpWedRMkpTR459mPg - oo4 - C74rDFxh44N5MXWXJT17EWRJHNFPznpCUHZLTw"
+        }, {
+          "name" : "clientinfo",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "deviceos = Ios11 && devicename = tangy && appversion = 1.0 && deviceid = 8 c629fe466014c4ab5a22f72587fb4a3kdZ1F8Xx && ip = 192.168 .0 .10 && geoloc = 1.280894: 103.849252 && channelid = MB && userId = 11 f1bb81381a44449f4d0a5b4be46d98"
+        } ],
+        "responses" : {
+          "401" : {
+            "description" : "Response for endpoint POST-notification-status",
+            "headers" : {
+              "Strict-Transport-Security" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Access-Control-Allow-Origin" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Access-Control-Allow-Methods" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "WWW-Authenticate" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Connection" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Content-Length" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Access-Control-Max-Age" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Date" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Access-Control-Allow-Headers" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Content-Type" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-message-Correlation-Id" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "required" : [ "errors" ],
+                  "type" : "object",
+                  "properties" : {
+                    "errors" : {
+                      "type" : "array",
+                      "items" : {
+                        "required" : [ "code", "info", "userMessage" ],
+                        "type" : "object",
+                        "properties" : {
+                          "code" : {
+                            "type" : "string"
+                          },
+                          "userMessage" : {
+                            "type" : "string"
+                          },
+                          "info" : {
+                            "type" : "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "example" : "{\"errors\":[{\"code\":\"Security-1001\",\"userMessage\":\"Invalid Access Token\",\"info\":\"https://developers.myapi.com/errors/#Security-1001\"}]}"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : { },
+  "x-original-swagger-version" : "2.0",
+  "tags" : [ ],
+  "security" : [ ],
+  "x-mock" : true
+}
