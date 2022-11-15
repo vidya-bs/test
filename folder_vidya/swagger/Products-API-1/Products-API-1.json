@@ -1,0 +1,3718 @@
+{
+  "openapi" : "3.0.1",
+  "infos" : {
+    "title" : "Products-API-1",
+    "description" : "Swagger Documentation for Products API",
+    "termsOfService" : "https://www.apiwiz.org/terms",
+    "contact" : {
+      "name" : "Service Desk",
+      "url" : "https://apiwiz.io/legal",
+      "email" : "service.desk@apiwiz.org"
+    },
+    "license" : {
+      "name" : "open-license",
+      "url" : "https://www.apiwiz.org/open-licence"
+    },
+    "version" : "v1.0.0"
+  },
+  "servers" : [ {
+    "url" : "https://gcp-mock.apiwiz.io/itorix/v1/products",
+    "x-name" : "Server1"
+  } ],
+  "tags" : [ {
+    "name" : "Get details of products",
+    "description" : "Grouping to handle product information"
+  }, {
+    "name" : "Search products from a catalog",
+    "description" : "Grouping to handle product information"
+  }, {
+    "name" : "Get details of product catagories",
+    "description" : "Grouping to handle product information"
+  }, {
+    "name" : "Delete a product ID from catalog",
+    "description" : "Grouping to handle product information"
+  }, {
+    "name" : "Create and update product ID in a catalog",
+    "description" : "Grouping to handle product information"
+  } ],
+  "paths" : {
+    "/" : {
+      "get" : {
+        "tags" : [ "Get details of products" ],
+        "summary" : "Get all products",
+        "description" : "Get all products",
+        "operationId" : "get-allproducts",
+        "parameters" : [ {
+          "name" : "Accept",
+          "in" : "header",
+          "description" : "Response Content Media Type",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 1
+          },
+          "example" : "application/json",
+          "x-key" : 1
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "description" : "Access token to access API resources",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 2
+          },
+          "example" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+          "x-key" : 2
+        }, {
+          "name" : "x-tenant",
+          "in" : "header",
+          "description" : "Unique client or workspace identifier",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 3
+          },
+          "example" : "b4349714-47c7-4605-a81c-df509fc7e653",
+          "x-key" : 3
+        }, {
+          "name" : "auth-token",
+          "in" : "header",
+          "description" : "Auth-Token",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 4
+          },
+          "example" : "abcd",
+          "x-key" : 4
+        }, {
+          "name" : "limit",
+          "in" : "query",
+          "schema" : {
+            "type" : "string",
+            "x-key" : "parameter1"
+          },
+          "example" : "10",
+          "x-key" : "parameter1"
+        }, {
+          "name" : "skip",
+          "in" : "query",
+          "schema" : {
+            "type" : "string",
+            "x-key" : "parameter2"
+          },
+          "example" : "10",
+          "x-key" : "parameter2"
+        }, {
+          "name" : "select",
+          "in" : "query",
+          "schema" : {
+            "type" : "string",
+            "x-key" : "parameter3"
+          },
+          "example" : "title",
+          "x-key" : "parameter3"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Get all products",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/getProductsResp"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad request",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "405" : {
+            "description" : "Method Not Allowed",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Not Acceptable",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "429" : {
+            "description" : "Too Many Requests",
+            "headers" : {
+              "Retry-After" : {
+                "description" : "Number in seconds to wait",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "oAuth2" : [ "GET", "POST", "DELETE", "PUT" ]
+        } ]
+      },
+      "x-description" : "Get all products"
+    },
+    "/search" : {
+      "get" : {
+        "tags" : [ "Search products from a catalog" ],
+        "summary" : "Search Products",
+        "description" : "Search Products",
+        "operationId" : "get-searchproducts",
+        "parameters" : [ {
+          "name" : "Accept",
+          "in" : "header",
+          "description" : "Response Content Media Type",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 1
+          },
+          "example" : "application/json",
+          "x-key" : 1
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "description" : "Access token to access API resources",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 2
+          },
+          "example" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+          "x-key" : 2
+        }, {
+          "name" : "x-tenant",
+          "in" : "header",
+          "description" : "Unique client or workspace identifier",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 3
+          },
+          "example" : "b4349714-47c7-4605-a81c-df509fc7e653",
+          "x-key" : 3
+        }, {
+          "name" : "q",
+          "in" : "query",
+          "schema" : {
+            "type" : "string",
+            "x-key" : 4
+          },
+          "example" : "phone",
+          "x-key" : 4
+        }, {
+          "name" : "auth-token",
+          "in" : "header",
+          "description" : "auth-token",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 5
+          },
+          "example" : "abcd",
+          "x-key" : 5
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Search Products",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/searchProductsResp"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad request",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "405" : {
+            "description" : "Method Not Allowed",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Not Acceptable",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "429" : {
+            "description" : "Too Many Requests",
+            "headers" : {
+              "Retry-After" : {
+                "description" : "Number in seconds to wait",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "oAuth2" : [ "GET", "POST", "DELETE", "PUT" ]
+        } ]
+      },
+      "x-description" : "Search Products"
+    },
+    "/categories" : {
+      "get" : {
+        "tags" : [ "Get details of product catagories" ],
+        "summary" : "Get all products categories",
+        "description" : "Get all products categories",
+        "operationId" : "get-productcategories",
+        "parameters" : [ {
+          "name" : "Accept",
+          "in" : "header",
+          "description" : "Response Content Media Type",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 1
+          },
+          "example" : "application/json",
+          "x-key" : 1
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "description" : "Access token to access API resources",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 2
+          },
+          "example" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+          "x-key" : 2
+        }, {
+          "name" : "x-tenant",
+          "in" : "header",
+          "description" : "Unique client or workspace identifier",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 3
+          },
+          "example" : "b4349714-47c7-4605-a81c-df509fc7e653",
+          "x-key" : 3
+        }, {
+          "name" : "auth-token",
+          "in" : "header",
+          "description" : "auth-token",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 4
+          },
+          "example" : "abcd",
+          "x-key" : 4
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Get all products categories",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/getProductsCategoryResp"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad request",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "405" : {
+            "description" : "Method Not Allowed",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Not Acceptable",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "429" : {
+            "description" : "Too Many Requests",
+            "headers" : {
+              "Retry-After" : {
+                "description" : "Number in seconds to wait",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "oAuth2" : [ "GET", "POST", "DELETE", "PUT" ]
+        } ]
+      },
+      "x-description" : "Get all products categories"
+    },
+    "/category/{categoryName}" : {
+      "get" : {
+        "tags" : [ "Get details of product catagories" ],
+        "summary" : "Get products of a category",
+        "description" : "Products of a category",
+        "operationId" : "get-productsofcategory",
+        "parameters" : [ {
+          "name" : "categoryName",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "smartphones"
+        }, {
+          "name" : "Accept",
+          "in" : "header",
+          "description" : "Response Content Media Type",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 1
+          },
+          "example" : "application/json",
+          "x-key" : 1
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "description" : "Access token to access API resources",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 2
+          },
+          "example" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+          "x-key" : 2
+        }, {
+          "name" : "x-tenant",
+          "in" : "header",
+          "description" : "Unique client or workspace identifier",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 3
+          },
+          "example" : "b4349714-47c7-4605-a81c-df509fc7e653",
+          "x-key" : 3
+        }, {
+          "name" : "auth-token",
+          "in" : "header",
+          "description" : "Auth-token",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 4
+          },
+          "example" : "abcd",
+          "x-key" : 4
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Schema to get details of a product ID in the catalog",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/getProductsByCategoryResp"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad request",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "405" : {
+            "description" : "Method Not Allowed",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Not Acceptable",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "429" : {
+            "description" : "Too Many Requests",
+            "headers" : {
+              "Retry-After" : {
+                "description" : "Number in seconds to wait",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "oAuth2" : [ "GET", "POST", "DELETE", "PUT" ]
+        } ]
+      },
+      "x-description" : "Get products of a category"
+    },
+    "/add" : {
+      "post" : {
+        "tags" : [ "Create and update product ID in a catalog" ],
+        "summary" : "Add a new product",
+        "description" : "Add a new product",
+        "operationId" : "post-addproduct",
+        "parameters" : [ {
+          "name" : "Accept",
+          "in" : "header",
+          "description" : "Response Content Media Type",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 1
+          },
+          "example" : "application/json",
+          "x-key" : 1
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "description" : "Access token to access API resources",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 2
+          },
+          "example" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+          "x-key" : 2
+        }, {
+          "name" : "x-tenant",
+          "in" : "header",
+          "description" : "Unique client or workspace identifier",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 3
+          },
+          "example" : "b4349714-47c7-4605-a81c-df509fc7e653",
+          "x-key" : 3
+        }, {
+          "name" : "Content-Type",
+          "in" : "header",
+          "description" : "Request content media type",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 4
+          },
+          "example" : "application/json",
+          "x-key" : 4
+        }, {
+          "name" : "auth-token",
+          "in" : "header",
+          "description" : "Auth-token",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 5
+          },
+          "example" : "abcd",
+          "x-key" : 5
+        } ],
+        "requestBody" : {
+          "description" : "Schema to add a new product ID to the catalog",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/addNewProduct"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Schema to add product details",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/productResp"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad request",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "405" : {
+            "description" : "Method Not Allowed",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Not Acceptable",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "429" : {
+            "description" : "Too Many Requests",
+            "headers" : {
+              "Retry-After" : {
+                "description" : "Number in seconds to wait",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "oAuth2" : [ "GET", "POST", "DELETE", "PUT" ]
+        } ],
+        "x-codegen-request-body-name" : "addNewProduct"
+      },
+      "x-description" : "Add a new product"
+    },
+    "/{id}" : {
+      "get" : {
+        "tags" : [ "Get details of products" ],
+        "summary" : "Get a single product",
+        "description" : "Get a single product",
+        "operationId" : "get-singleproduct",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "1"
+        }, {
+          "name" : "Accept",
+          "in" : "header",
+          "description" : "Response Content Media Type",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 1
+          },
+          "example" : "application/json",
+          "x-key" : 1
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "description" : "Access token to access API resources",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 2
+          },
+          "example" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+          "x-key" : 2
+        }, {
+          "name" : "x-tenant",
+          "in" : "header",
+          "description" : "Unique client or workspace identifier",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 3
+          },
+          "example" : "b4349714-47c7-4605-a81c-df509fc7e653",
+          "x-key" : 3
+        }, {
+          "name" : "auth-token",
+          "in" : "header",
+          "description" : "auth-token",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 4
+          },
+          "example" : "abcd",
+          "x-key" : 4
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Schema to get a single product",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/getProductDetails"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad request",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "405" : {
+            "description" : "Method Not Allowed",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Not Acceptable",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "429" : {
+            "description" : "Too Many Requests",
+            "headers" : {
+              "Retry-After" : {
+                "description" : "Number in seconds to wait",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "oAuth2" : [ "GET", "POST", "DELETE", "PUT" ]
+        } ]
+      },
+      "put" : {
+        "tags" : [ "Create and update product ID in a catalog" ],
+        "summary" : "Update a product",
+        "description" : "Update a product",
+        "operationId" : "put-updateproduct",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "Accept",
+          "in" : "header",
+          "description" : "Response Content Media Type",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 1
+          },
+          "example" : "application/json",
+          "x-key" : 1
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "description" : "Access token to access API resources",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 2
+          },
+          "example" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+          "x-key" : 2
+        }, {
+          "name" : "x-tenant",
+          "in" : "header",
+          "description" : "Unique client or workspace identifier",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 3
+          },
+          "example" : "b4349714-47c7-4605-a81c-df509fc7e653",
+          "x-key" : 3
+        }, {
+          "name" : "Content-Type",
+          "in" : "header",
+          "description" : "Request content media type",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 4
+          },
+          "example" : "application/json",
+          "x-key" : 4
+        }, {
+          "name" : "auth-token",
+          "in" : "header",
+          "description" : "Auth-token",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 5
+          },
+          "example" : "abcd",
+          "x-key" : 5
+        } ],
+        "requestBody" : {
+          "description" : "Schema to update product details",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/updateProductsByID"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Schema to update product details",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/updateProductsByIDResp"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad request",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "405" : {
+            "description" : "Method Not Allowed",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Not Acceptable",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "429" : {
+            "description" : "Too Many Requests",
+            "headers" : {
+              "Retry-After" : {
+                "description" : "Number in seconds to wait",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "oAuth2" : [ "GET", "POST", "DELETE", "PUT" ]
+        } ],
+        "x-codegen-request-body-name" : "updateProduct"
+      },
+      "delete" : {
+        "tags" : [ "Delete a product ID from catalog" ],
+        "summary" : "Delete a product",
+        "description" : "Delete a product",
+        "operationId" : "delete-product",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "Accept",
+          "in" : "header",
+          "description" : "Response Content Media Type",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 1
+          },
+          "example" : "application/json",
+          "x-key" : 1
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "description" : "Access token to access API resources",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 2
+          },
+          "example" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+          "x-key" : 2
+        }, {
+          "name" : "x-tenant",
+          "in" : "header",
+          "description" : "Unique client or workspace identifier",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 3
+          },
+          "example" : "b4349714-47c7-4605-a81c-df509fc7e653",
+          "x-key" : 3
+        }, {
+          "name" : "auth-token",
+          "in" : "header",
+          "description" : "Auth-token",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "x-key" : 4
+          },
+          "example" : "abcd",
+          "x-key" : 4
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Schema to delete a single product",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/deleteProductsByIDResp"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad request",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "405" : {
+            "description" : "Method Not Allowed",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Not Acceptable",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "429" : {
+            "description" : "Too Many Requests",
+            "headers" : {
+              "Retry-After" : {
+                "description" : "Number in seconds to wait",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "headers" : {
+              "Content-Length" : {
+                "description" : "Response content length in kilo bytes",
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "Content-Type" : {
+                "description" : "Response content media type",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-server" : {
+                "description" : "Server which processed the request",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/errors"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "oAuth2" : [ "GET", "POST", "DELETE", "PUT" ]
+        } ]
+      },
+      "x-description" : "Get a single product"
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "getProductsResp" : {
+        "type" : "object",
+        "properties" : {
+          "products" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "number",
+                  "example" : 1
+                },
+                "title" : {
+                  "type" : "string",
+                  "example" : "iPhone 9"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "An apple mobile which is nothing like apple"
+                },
+                "price" : {
+                  "type" : "number",
+                  "example" : 549
+                },
+                "discountPercentage" : {
+                  "type" : "number",
+                  "example" : 12.96
+                },
+                "rating" : {
+                  "type" : "number",
+                  "example" : 4.69
+                },
+                "stock" : {
+                  "type" : "number",
+                  "example" : 94
+                },
+                "brand" : {
+                  "type" : "string",
+                  "example" : "Apple"
+                },
+                "category" : {
+                  "type" : "string",
+                  "example" : "smartphones"
+                },
+                "thumbnail" : {
+                  "type" : "string",
+                  "example" : "https://dummyjson.com/image/i/products/1/thumbnail.jpg"
+                },
+                "images" : {
+                  "type" : "array",
+                  "example" : [ "https://dummyjson.com/image/i/products/1/1.jpg", "https://dummyjson.com/image/i/products/1/2.jpg", "https://dummyjson.com/image/i/products/1/3.jpg", "https://dummyjson.com/image/i/products/1/4.jpg", "https://dummyjson.com/image/i/products/1/thumbnail.jpg" ],
+                  "items" : {
+                    "type" : "string"
+                  }
+                }
+              }
+            }
+          },
+          "total" : {
+            "type" : "number",
+            "example" : 100
+          },
+          "skip" : {
+            "type" : "number",
+            "example" : 0
+          },
+          "limit" : {
+            "type" : "number",
+            "example" : 30
+          }
+        }
+      },
+      "getProductDetails" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "number",
+            "example" : 1
+          },
+          "title" : {
+            "type" : "string",
+            "example" : "iPhone 9"
+          },
+          "description" : {
+            "type" : "string",
+            "example" : "An apple mobile which is nothing like apple"
+          },
+          "price" : {
+            "type" : "number",
+            "example" : 549
+          },
+          "discountPercentage" : {
+            "type" : "number",
+            "example" : 12.96
+          },
+          "rating" : {
+            "type" : "number",
+            "example" : 4.69
+          },
+          "stock" : {
+            "type" : "number",
+            "example" : 94
+          },
+          "brand" : {
+            "type" : "string",
+            "example" : "Apple"
+          },
+          "category" : {
+            "type" : "string",
+            "example" : "smartphones"
+          },
+          "thumbnail" : {
+            "type" : "string",
+            "example" : "https://dummyjson.com/image/i/products/1/thumbnail.jpg"
+          },
+          "images" : {
+            "type" : "array",
+            "example" : [ "https://dummyjson.com/image/i/products/1/1.jpg", "https://dummyjson.com/image/i/products/1/2.jpg", "https://dummyjson.com/image/i/products/1/3.jpg", "https://dummyjson.com/image/i/products/1/4.jpg", "https://dummyjson.com/image/i/products/1/thumbnail.jpg" ],
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "searchProductsResp" : {
+        "type" : "object",
+        "properties" : {
+          "products" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "number",
+                  "example" : 1
+                },
+                "title" : {
+                  "type" : "string",
+                  "example" : "iPhone 9"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "An apple mobile which is nothing like apple"
+                },
+                "price" : {
+                  "type" : "number",
+                  "example" : 549
+                },
+                "discountPercentage" : {
+                  "type" : "number",
+                  "example" : 12.96
+                },
+                "rating" : {
+                  "type" : "number",
+                  "example" : 4.69
+                },
+                "stock" : {
+                  "type" : "number",
+                  "example" : 94
+                },
+                "brand" : {
+                  "type" : "string",
+                  "example" : "Apple"
+                },
+                "category" : {
+                  "type" : "string",
+                  "example" : "smartphones"
+                },
+                "thumbnail" : {
+                  "type" : "string",
+                  "example" : "https://dummyjson.com/image/i/products/1/thumbnail.jpg"
+                },
+                "images" : {
+                  "type" : "array",
+                  "example" : [ "https://dummyjson.com/image/i/products/1/1.jpg", "https://dummyjson.com/image/i/products/1/2.jpg", "https://dummyjson.com/image/i/products/1/3.jpg", "https://dummyjson.com/image/i/products/1/4.jpg", "https://dummyjson.com/image/i/products/1/thumbnail.jpg" ],
+                  "items" : {
+                    "type" : "string"
+                  }
+                }
+              }
+            }
+          },
+          "total" : {
+            "type" : "number",
+            "example" : 4
+          },
+          "skip" : {
+            "type" : "number",
+            "example" : 0
+          },
+          "limit" : {
+            "type" : "number",
+            "example" : 4
+          }
+        }
+      },
+      "skipProductResp" : {
+        "type" : "object",
+        "properties" : {
+          "products" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "number",
+                  "example" : 11
+                },
+                "title" : {
+                  "type" : "string",
+                  "example" : "perfume Oil"
+                },
+                "price" : {
+                  "type" : "number",
+                  "example" : 13
+                }
+              }
+            }
+          },
+          "total" : {
+            "type" : "number",
+            "example" : 100
+          },
+          "skip" : {
+            "type" : "string",
+            "example" : "10"
+          },
+          "limit" : {
+            "type" : "number",
+            "example" : 10
+          }
+        }
+      },
+      "getProductsCategoryResp" : {
+        "type" : "object",
+        "properties" : {
+          "0" : {
+            "type" : "string",
+            "example" : "smartphones"
+          },
+          "1" : {
+            "type" : "string",
+            "example" : "laptops"
+          },
+          "2" : {
+            "type" : "string",
+            "example" : "fragrances"
+          },
+          "3" : {
+            "type" : "string",
+            "example" : "skincare"
+          },
+          "4" : {
+            "type" : "string",
+            "example" : "groceries"
+          },
+          "5" : {
+            "type" : "string",
+            "example" : "home-decoration"
+          },
+          "6" : {
+            "type" : "string",
+            "example" : "furniture"
+          },
+          "7" : {
+            "type" : "string",
+            "example" : "tops"
+          },
+          "8" : {
+            "type" : "string",
+            "example" : "womens-dresses"
+          },
+          "9" : {
+            "type" : "string",
+            "example" : "womens-shoes"
+          },
+          "10" : {
+            "type" : "string",
+            "example" : "mens-shirts"
+          },
+          "11" : {
+            "type" : "string",
+            "example" : "mens-shoes"
+          },
+          "12" : {
+            "type" : "string",
+            "example" : "mens-watches"
+          },
+          "13" : {
+            "type" : "string",
+            "example" : "womens-watches"
+          },
+          "14" : {
+            "type" : "string",
+            "example" : "womens-bags"
+          },
+          "15" : {
+            "type" : "string",
+            "example" : "womens-jewellery"
+          },
+          "16" : {
+            "type" : "string",
+            "example" : "sunglasses"
+          },
+          "17" : {
+            "type" : "string",
+            "example" : "automotive"
+          },
+          "18" : {
+            "type" : "string",
+            "example" : "motorcycle"
+          },
+          "19" : {
+            "type" : "string",
+            "example" : "lighting"
+          }
+        }
+      },
+      "getProductsByCategoryResp" : {
+        "type" : "object",
+        "properties" : {
+          "products" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "number",
+                  "example" : 1
+                },
+                "title" : {
+                  "type" : "string",
+                  "example" : "iPhone 9"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "An apple mobile which is nothing like apple"
+                },
+                "price" : {
+                  "type" : "number",
+                  "example" : 549
+                },
+                "discountPercentage" : {
+                  "type" : "number",
+                  "example" : 12.96
+                },
+                "rating" : {
+                  "type" : "number",
+                  "example" : 4.69
+                },
+                "stock" : {
+                  "type" : "number",
+                  "example" : 94
+                },
+                "brand" : {
+                  "type" : "string",
+                  "example" : "Apple"
+                },
+                "category" : {
+                  "type" : "string",
+                  "example" : "smartphones"
+                },
+                "thumbnail" : {
+                  "type" : "string",
+                  "example" : "https://dummyjson.com/image/i/products/1/thumbnail.jpg"
+                },
+                "images" : {
+                  "type" : "array",
+                  "example" : [ "https://dummyjson.com/image/i/products/1/1.jpg", "https://dummyjson.com/image/i/products/1/2.jpg", "https://dummyjson.com/image/i/products/1/3.jpg", "https://dummyjson.com/image/i/products/1/4.jpg", "https://dummyjson.com/image/i/products/1/thumbnail.jpg" ],
+                  "items" : {
+                    "type" : "string"
+                  }
+                }
+              }
+            }
+          },
+          "total" : {
+            "type" : "number",
+            "example" : 5
+          },
+          "skip" : {
+            "type" : "number",
+            "example" : 0
+          },
+          "limit" : {
+            "type" : "number",
+            "example" : 5
+          }
+        }
+      },
+      "productResp" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "number",
+            "example" : 101
+          },
+          "title" : {
+            "type" : "string",
+            "example" : "BMW Pencil"
+          }
+        }
+      },
+      "updateProductsByIDResp" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "example" : "1"
+          },
+          "title" : {
+            "type" : "string",
+            "example" : "iPhone Galaxy +1"
+          },
+          "price" : {
+            "type" : "number",
+            "example" : 549
+          },
+          "stock" : {
+            "type" : "number",
+            "example" : 94
+          },
+          "rating" : {
+            "type" : "number",
+            "example" : 4.69
+          },
+          "images" : {
+            "type" : "array",
+            "example" : [ "https://dummyjson.com/image/i/products/1/1.jpg", "https://dummyjson.com/image/i/products/1/2.jpg", "https://dummyjson.com/image/i/products/1/3.jpg", "https://dummyjson.com/image/i/products/1/4.jpg", "https://dummyjson.com/image/i/products/1/thumbnail.jpg" ],
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "thumbnail" : {
+            "type" : "string",
+            "example" : "https://dummyjson.com/image/i/products/1/thumbnail.jpg"
+          },
+          "description" : {
+            "type" : "string",
+            "example" : "An apple mobile which is nothing like apple"
+          },
+          "brand" : {
+            "type" : "string",
+            "example" : "Apple"
+          },
+          "category" : {
+            "type" : "string",
+            "example" : "smartphones"
+          }
+        }
+      },
+      "errors" : {
+        "type" : "object",
+        "properties" : {
+          "error" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object",
+              "properties" : {
+                "code" : {
+                  "type" : "string"
+                },
+                "userMessage" : {
+                  "type" : "string"
+                },
+                "systemMessage" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "deleteProductsByIDResp" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "number",
+            "example" : 1
+          },
+          "title" : {
+            "type" : "string",
+            "example" : "iPhone 9"
+          },
+          "description" : {
+            "type" : "string",
+            "example" : "An apple mobile which is nothing like apple"
+          },
+          "price" : {
+            "type" : "number",
+            "example" : 549
+          },
+          "discountPercentage" : {
+            "type" : "number",
+            "example" : 12.96
+          },
+          "rating" : {
+            "type" : "number",
+            "example" : 4.69
+          },
+          "stock" : {
+            "type" : "number",
+            "example" : 94
+          },
+          "brand" : {
+            "type" : "string",
+            "example" : "Apple"
+          },
+          "category" : {
+            "type" : "string",
+            "example" : "smartphones"
+          },
+          "thumbnail" : {
+            "type" : "string",
+            "example" : "https://dummyjson.com/image/i/products/1/thumbnail.jpg"
+          },
+          "images" : {
+            "type" : "array",
+            "example" : [ "https://dummyjson.com/image/i/products/1/1.jpg", "https://dummyjson.com/image/i/products/1/2.jpg", "https://dummyjson.com/image/i/products/1/3.jpg", "https://dummyjson.com/image/i/products/1/4.jpg", "https://dummyjson.com/image/i/products/1/thumbnail.jpg" ],
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "isDeleted" : {
+            "type" : "boolean",
+            "example" : true
+          },
+          "deletedOn" : {
+            "type" : "string",
+            "example" : "2022-09-05T06:56:02.260Z"
+          }
+        }
+      },
+      "updateProductsByID" : {
+        "type" : "object",
+        "properties" : {
+          "title" : {
+            "type" : "string",
+            "example" : "iPhone Galaxy +1"
+          }
+        }
+      },
+      "addNewProduct" : {
+        "type" : "object",
+        "properties" : {
+          "title" : {
+            "type" : "string",
+            "example" : "BMW Pencil"
+          }
+        }
+      }
+    },
+    "responses" : {
+      "400ErrorResponse" : {
+        "description" : "Bad request",
+        "headers" : {
+          "Content-Length" : {
+            "description" : "Response content length in kilo bytes",
+            "schema" : {
+              "type" : "integer"
+            }
+          },
+          "Content-Type" : {
+            "description" : "Response content media type",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "x-server" : {
+            "description" : "Server which processed the request",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        },
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/errors"
+            }
+          }
+        }
+      },
+      "401ErrorResponse" : {
+        "description" : "Unauthorized",
+        "headers" : {
+          "Content-Length" : {
+            "description" : "Response content length in kilo bytes",
+            "schema" : {
+              "type" : "integer"
+            }
+          },
+          "Content-Type" : {
+            "description" : "Response content media type",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "x-server" : {
+            "description" : "Server which processed the request",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        },
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/errors"
+            }
+          }
+        }
+      },
+      "403ErrorResponse" : {
+        "description" : "Forbidden",
+        "headers" : {
+          "Content-Length" : {
+            "description" : "Response content length in kilo bytes",
+            "schema" : {
+              "type" : "integer"
+            }
+          },
+          "Content-Type" : {
+            "description" : "Response content media type",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "x-server" : {
+            "description" : "Server which processed the request",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        },
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/errors"
+            }
+          }
+        }
+      },
+      "404ErrorResponse" : {
+        "description" : "Not found",
+        "headers" : {
+          "Content-Length" : {
+            "description" : "Response content length in kilo bytes",
+            "schema" : {
+              "type" : "integer"
+            }
+          },
+          "Content-Type" : {
+            "description" : "Response content media type",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "x-server" : {
+            "description" : "Server which processed the request",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        },
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/errors"
+            }
+          }
+        }
+      },
+      "405ErrorResponse" : {
+        "description" : "Method Not Allowed",
+        "headers" : {
+          "Content-Length" : {
+            "description" : "Response content length in kilo bytes",
+            "schema" : {
+              "type" : "integer"
+            }
+          },
+          "Content-Type" : {
+            "description" : "Response content media type",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "x-server" : {
+            "description" : "Server which processed the request",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        },
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/errors"
+            }
+          }
+        }
+      },
+      "406ErrorResponse" : {
+        "description" : "Not Acceptable",
+        "headers" : {
+          "Content-Length" : {
+            "description" : "Response content length in kilo bytes",
+            "schema" : {
+              "type" : "integer"
+            }
+          },
+          "Content-Type" : {
+            "description" : "Response content media type",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "x-server" : {
+            "description" : "Server which processed the request",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        },
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/errors"
+            }
+          }
+        }
+      },
+      "415ErrorResponse" : {
+        "description" : "Unsupported Media Type",
+        "headers" : {
+          "Content-Length" : {
+            "description" : "Response content length in kilo bytes",
+            "schema" : {
+              "type" : "integer"
+            }
+          },
+          "Content-Type" : {
+            "description" : "Response content media type",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "x-server" : {
+            "description" : "Server which processed the request",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        },
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/errors"
+            }
+          }
+        }
+      },
+      "429ErrorResponse" : {
+        "description" : "Too Many Requests",
+        "headers" : {
+          "Retry-After" : {
+            "description" : "Number in seconds to wait",
+            "schema" : {
+              "type" : "integer"
+            }
+          },
+          "Content-Length" : {
+            "description" : "Response content length in kilo bytes",
+            "schema" : {
+              "type" : "integer"
+            }
+          },
+          "Content-Type" : {
+            "description" : "Response content media type",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "x-server" : {
+            "description" : "Server which processed the request",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        },
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/errors"
+            }
+          }
+        }
+      },
+      "500ErrorResponse" : {
+        "description" : "Internal Server Error",
+        "headers" : {
+          "Content-Length" : {
+            "description" : "Response content length in kilo bytes",
+            "schema" : {
+              "type" : "integer"
+            }
+          },
+          "Content-Type" : {
+            "description" : "Response content media type",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "x-server" : {
+            "description" : "Server which processed the request",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        },
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/errors"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "oAuth2" : {
+        "type" : "oauth2",
+        "description" : "Security scheme to access APIs for product related details",
+        "flows" : {
+          "clientCredentials" : {
+            "tokenUrl" : "https://dev-api.apiwiz.io/v1/security/token",
+            "scopes" : {
+              "GET" : "Resources have access to get details of a product",
+              "POST" : "Resources have access to create details of a product",
+              "PUT" : "Resources have access to update details of a product",
+              "DELETE" : "Resources have access to delete details of a product"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x-servers" : [ {
+    "description" : "Sandbox Server",
+    "url" : "https://gcp-mock.apiwiz.io/"
+  }, {
+    "description" : "DEV Server",
+    "url" : "https://dev-api.apiwiz.io/"
+  }, {
+    "description" : "QAT Server",
+    "url" : "https://uat-api.apiwiz.io/"
+  }, {
+    "description" : "Stage Server",
+    "url" : "https://stage-api.apiwiz.io/"
+  }, {
+    "description" : "Production Server",
+    "url" : "https://prod-api.apiwiz.io/"
+  } ],
+  "x-mock" : true,
+  "x-metadata" : {
+    "metadata" : {
+      "swaggerName" : "de86d9c230da434f8377c4f6a1a51570",
+      "revision" : 1,
+      "documentation" : [ {
+        "title" : "E-commerce API Guide",
+        "summary" : "E-Commerce APIs help developers transfer information from one software to another and then use this data in a single user interface",
+        "content" : "<h2> Developers use our APIs to build E-Commerce functionality into their software products and to integrate with E-Commerce systems.</h2> \n\n# API Overview \nE-Commerce APIs give you access to a set of secure domain API features for use in your own app. They strive to be <a href=http://en.wikipedia.org/wiki/Representational_state_transfer target='_blank'>RESTful</a> and are organized around the main resources from the E-Commerce Domains. OAuth 2.0 is used as the API Authorization framework.  \n  \n# API Security and Access  \nE-Commerce use the OAuth 2.0 Protocol to authorize calls. OAuth is an industry-standard open standard for authorization used by many companies to provide secure access to protected resources.  \n  \n<b>OAuth 2.0 Authentication Flow</b>  \n  \nHere is an overview of the E-Commerce API authentication flow:  \n  \n![OAuthFlow Image](https://docs.oracle.com/cd/E55956_01/doc.11123/oauth_guide/content/images/oauth/oauth_web_server_flow.png)  \n  \n<b>API Request Authentication And Access Token</b>  \n  \nTo obtain an access token for an application, the developer should call the **/v1/security/token** token API. The token API authenticates incoming request using HTTP Basic Auth with OAuth grant type as client credentials.  \n  \n<b>Request format:</b>  \n  \n*https://api.apiwiz.com/v1/security/token?grant_type=client_credentials -H \"authorization: Basic <YOUR BASE64 encoded <Client-Id>:<Secret>>\"*  \n  \n<b>Sample Request:</b>  \n  \n*curl -X GET https://api.apiwiz.com/v1/security/token?grant_type=client_credentials -H \"authorization: Basic VkxFTld3d0UmdvR3RNHV0SEFYbjJUQ2dxd3dUSw\"*  \n  \n<b>Sample Response:</b>\\  \n{\\  \n\"issued_at\": \"1492119111853\",\\  \n\"scope\": \"\",\\  \n\"expires_in\": \"3599\",\\  \n\"token_type\": \"BearerToken\",\\  \n\"access_token\": \"r4KHptxVij8Dkf8hkTkmMQF0xFRo\",\\  \n\"refresh_token_expires_in\": \"0\"\\  \n}  \n  \nE-Commerce issued access tokens can be used to access all APIs. Tokens have a finite lifetime. A partner app can keeping track of the **expires_in** value returned in the response from the token API. Expired or unauthorized token get '401: Unauthorized error' response. The default token TTL (Time-To-Live) is 1 hour.  \n  \nOnce authenticated using the above token API, every API request must pass in the access_token value in the API request header with the header element <b>*Authorization:Bearer <access_token value>*</b>.  \n  \n<b>Sample Request:</b>  \n  \n*curl -X GET https://api.apiwiz.com/v1/products/12344343 -H <b>\"Authorization:Bearer elwhf280dkj3098usdlkf0309erfjw\"</b> -H \"applicationUserId:tester\" -H \"activityId:09iej390ui90u\" -H \"sessionId: lierj890\" -H \"dealerCode: 12321312\"*  \n  \nTo get the Basic authentication credentials to access the Oauth API you need to create or register for an app in Apigee. For any assistance with permission to Apigee you can contact support@apiwiz.com.  \n  \n# Input/Output Format \n\nBoth the request body and response data are formatted as <a href=http://www.json.org/ target='_blank'>JSON</a>\n\n# Date Format \n\nAll timestamps (both those sent in requests and those returned in responses) should be formatted as shown in our API examples. We support <a href=https://www.ietf.org/rfc/rfc3339.txt target='_blank'>RFC 3339</a> timestamps. The preferred way to pass in a date is by converting the time to UTC such as this: `2013-04-17T09:12:36-00:00`.  \nIn cases where timestamps are rounded to a given day, you may omit the time component, so instead of `2013-04-17T13:35:01+05:00` you can use `2013-04-17`. However, if a time and not just a date is specified in a request then the calendar date in the Pacific timezone at the moment specified is the day that is accepted.  \nE-Commerce supports the subset of dates after the start of the <a href=http://en.wikipedia.org/wiki/Unix_time#Encoding_time_as_a_number target='_blank'>Unix epoch</a>: `1970-01-01T00:00:00+00:00` (00:00:00 UTC on January 1, 1970).  \n\n# CORS  \n\n<a href=http://en.wikipedia.org/wiki/Cross-origin_resource_sharing target='_blank'>CORS</a>, or cross-origin resource sharing, is a mechanism that allows a web page to make XMLHttpRequests to another domain (i.e. a domain different from the one it was loaded from). CORS is supported in a <a href=http://caniuse.com/cors target='_blank'>specific set of modern browsers</a>. E-Commerce APIs support CORS on an app-by-app basis. You can add a comma separated list of origins that can make CORS requests to the API.  \n  \n**CORS-Like Errors**  \n  \nSome browsers will return a CORS-like error even when CORS is enabled for your application. In these scenarios, an HTTP response code will often be included (e.g. 400 or 401) which will provide further troubleshooting direction. \n\n# Pagination \n\nAPIs that can return large numbers of objects return the results using a paging mechanism. Some APIs use offset based paging and some use marker-based paging.\n\n## Offset based paging \n\nAPIs that use offset-based paging use the `offset` and `limit` query parameters. The API returns an object that contains the set of results in the `entries` array, as well as returning the `offset`, `limit`, and `total_count` fields.  \nTo fetch the first set of entries, call the API with `offset = 0` and limit = `<your-limit`>.  \nTo fetch the next set of entries, call the API with `offset = <previous-offset> + <previous-limit>`. Note that you should increment the offset by the previous `limit`, not by the size of the `entries` array (which may be less than limit). Use the value of limit that is returned in the response object rather than the value you passed in the query parameter.  \nIf `<previous-offset> + <previous-limit> >= total_count`, then you have retrieved all of the entries and there are no more to fetch. The total number of entries in the entire collection may be less than `total_count`. Note that the `total_count` may change between API calls, so always use the most recent value.  \n  \n**Query Parameters:**  \n| Name | Type | Description |  \n| :------- | ----: | :--- |  \n| offset | integer | The 0-based offset of the first entry to return. The default is 0. |  \n| limit | integer | The maximum number of entries to return. Each API has a default and maximum value. If the value exceeds the maximum, then the maximum value will be used and returned in the `limit` field in the response. |  \n**Response Object:**  \n| Name | Type | Description |  \n| :------- | ----: | :--- |  \n| entries | array | The array of objects for the current set of results. It will be an empty array if there are no results. |  \n| offset | integer | The 0-based `offset` of the first entry in this set. This will be the same as the offset query parameter. |  \n| limit | integer | The `limit` that was used for these entries. This will be the same as the limit query parameter unless that value exceeded the maximum value allowed. The maximum value varies by API. |  \n| total_count | integer | One greater than the offset of the last entry in the entire collection. The total number of entries in the collection may be less than `total_count`. |  \n  \n# Errors \n\nE-Commerce APIs communicate errors through <a href=http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html target='_blank'>standard HTTP status codes</a> with details supplied in JSON objects. Generally the following pattern applies:  \n- 2xx - Received, understood, and accepted a request.  \n- 3xx - The user agent must take further action in order to complete the request.  \n- 4xx - An error occurred in handling the request. The most common cause of this error is an invalid parameter.  \n- 5xx- Received and accepted the request, but an error occurred in the E-Commerce service while handling it. \n\n## HTTP Status Codes  \n**Codes**  \n- 200 success  \n- 201 created  \n- 202 accepted  \n- 204 no_content  \n- 302 redirect  \n- 304 not_modified  \n- 400 bad_request  \n- 401 unauthorized  \n- 403 forbidden  \n- 404 not_found  \n- 405 method_not_allowed  \n- 409 conflict  \n- 412 precondition_failed  \n- 429 too_many_requests  \n- 500 internal_server_error  \n- 503 unavailable  \n  \n**Error Code Response**  \n| Name | Type | Description |  \n| :------- | :---- | :--- |  \n| errors | array | The array of error objects |  \n| error | object | Error object |  \n| code | string | A specific E-Commerce error code listed below |  \n| userMessage | string | A human-readable message describing the error. |  \n| systemMessage | string | Backend system error message. |  \n\n## Detailed Error Codes \n\nThe following table lists the most common error responses you are likely to see when developing E-Commerce applications. This list is not exhaustive; additional errors can occur.  \n  \n**Customer Domain**  \n| Code | Domain | Description |  \n| :------- | :---- | :--- |  \n| CUSTOMER-1001 | CUSTOMER | Customer Financial account not found |  \n| CUSTOMER-1002 | CUSTOMER | Customer MSISDN not found |  \n| CUSTOMER-1003 | CUSTOMER | Port-in for MSISDN ongoing |  \n| CUSTOMER-1003 | string | Customer line of service not found |  \n| CUSTOMER-1004 | string | Customer line of service not found |  \n\n**Payment Domain**  \n| Code | Domain | Description |  \n| :------- | :---- | :--- |  \n| REVENUE-000 | Payment | System not available. Please try again |  \n| REVENUE-001 | Payment | Parameter (name) is required |  \n| REVENUE-002 | Payment | Parameter (name) exceeds max length of (value) |  \n| REVENUE-003 | Payment | Parameter (name) is not a valid (value) |  \n| REVENUE-004 | Payment | Parameter (name) is invalid. Valid values are (valid values) |\""
+      } ],
+      "category" : [ {
+        "name" : "Unsorted",
+        "paths" : [ "/category/{categoryName}" ],
+        "definitions" : [ "errors" ]
+      }, {
+        "name" : "products",
+        "paths" : [ "/", "/search", "/add", "/{id}" ],
+        "definitions" : [ "getProductsResp", "getProductDetails", "searchProductsResp", "skipProductResp", "productResp", "updateProductsByIDResp", "deleteProductsByIDResp", "updateProductsByID", "addNewProduct" ]
+      }, {
+        "name" : "category",
+        "paths" : [ "/categories", "/category/smartphones" ],
+        "definitions" : [ "getProductsCategoryResp", "getProductsByCategoryResp" ]
+      } ]
+    }
+  },
+  "security" : [ ]
+}
