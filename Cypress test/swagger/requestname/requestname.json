@@ -17,13 +17,6 @@
         "description" : "dummy",
         "operationId" : "requestname",
         "parameters" : [ {
-          "name" : "Content-Type",
-          "in" : "header",
-          "schema" : {
-            "type" : "string"
-          },
-          "example" : "multipart/form-data"
-        }, {
           "name" : "Cookie",
           "in" : "header",
           "schema" : {
@@ -52,20 +45,6 @@
           },
           "example" : "test"
         } ],
-        "requestBody" : {
-          "content" : {
-            "multipart/form-data" : {
-              "schema" : {
-                "properties" : {
-                  "text" : {
-                    "type" : "string",
-                    "example" : "text"
-                  }
-                }
-              }
-            }
-          }
-        },
         "responses" : {
           "200" : {
             "description" : "Response for endpoint POST-post",
