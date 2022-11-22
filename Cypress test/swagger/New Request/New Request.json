@@ -31,19 +31,19 @@
           },
           "example" : "text to type"
         }, {
-          "name" : "keysskeysskeysskeyss",
+          "name" : "keysskeysskeysskeysskeyss",
           "in" : "query",
           "schema" : {
             "type" : "string"
           },
-          "example" : "valuevaluevaluevalue"
+          "example" : "valuevaluevaluevaluevalue"
         }, {
-          "name" : "testtesttesttest",
+          "name" : "testtesttesttesttest",
           "in" : "header",
           "schema" : {
             "type" : "string"
           },
-          "example" : "testtesttesttest"
+          "example" : "testtesttesttesttest"
         }, {
           "name" : "Content-Type",
           "in" : "header",
