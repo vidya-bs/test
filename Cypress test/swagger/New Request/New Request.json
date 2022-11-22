@@ -17,19 +17,19 @@
         "description" : "dummy",
         "operationId" : "New Request",
         "parameters" : [ {
-          "name" : "keysskeyss",
-          "in" : "query",
-          "schema" : {
-            "type" : "string"
-          },
-          "example" : "valuevalue"
-        }, {
           "name" : "Cookie",
           "in" : "header",
           "schema" : {
             "type" : "string"
           },
           "example" : "Cookie=value"
+        }, {
+          "name" : "keysskeysskeyss",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "valuevaluevalue"
         }, {
           "name" : "text to type",
           "in" : "query",
@@ -38,12 +38,12 @@
           },
           "example" : "text to type"
         }, {
-          "name" : "testtest",
+          "name" : "testtesttest",
           "in" : "header",
           "schema" : {
             "type" : "string"
           },
-          "example" : "testtest"
+          "example" : "testtesttest"
         }, {
           "name" : "Content-Type",
           "in" : "header",
