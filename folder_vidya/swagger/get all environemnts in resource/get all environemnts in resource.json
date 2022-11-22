@@ -1,0 +1,263 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "get all environemnts in resource",
+    "version" : "1.0"
+  },
+  "servers" : [ {
+    "url" : "https://gcp-api.apiwiz.io/v1/organizations/portfolios/637b227f1b60810cd78af954/services/f95bd15c2ebe4068ab3314ee9eb4168a/resources/fd62c2df0ff448a1bba02f30fca9bc1d",
+    "x-name" : "Server1"
+  } ],
+  "paths" : {
+    "/environments" : {
+      "get" : {
+        "tags" : [ "Environment" ],
+        "summary" : "get all environemnts in resource",
+        "operationId" : "get all environemnts in resource",
+        "parameters" : [ {
+          "name" : "jsessionid",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "637c6594ec367257c475ecc3"
+        }, {
+          "name" : "content-type",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "application/json"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Response for endpoint GET-environments",
+            "headers" : {
+              "date" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "server" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "expires" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-envoy-upstream-service-time" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "transfer-encoding" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "vary" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-frame-options" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "pragma" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "strict-transport-security" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-content-type-options" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-xss-protection" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "content-type" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "cache-control" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "type" : "array",
+                  "example" : "[{\"id\":\"334e83539b034a4299dcbb8fa78c5ebd\",\"cts\":1669097916623,\"createdBy\":\"62f345d9c9aabe7e86f1b603\",\"name\":\"env-1-dev-test-1\",\"host\":\"host-1\",\"deployed\":true}]",
+                  "items" : {
+                    "required" : [ "createdBy", "cts", "deployed", "host", "id", "name" ],
+                    "type" : "object",
+                    "properties" : {
+                      "id" : {
+                        "type" : "string"
+                      },
+                      "cts" : {
+                        "type" : "integer"
+                      },
+                      "createdBy" : {
+                        "type" : "string"
+                      },
+                      "name" : {
+                        "type" : "string"
+                      },
+                      "host" : {
+                        "type" : "string"
+                      },
+                      "deployed" : {
+                        "type" : "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Response for endpoint GET-environments",
+            "headers" : {
+              "date" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "server" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "expires" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-envoy-upstream-service-time" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "transfer-encoding" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "vary" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-frame-options" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "pragma" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "strict-transport-security" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-content-type-options" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-xss-protection" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "content-type" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "cache-control" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "required" : [ "error", "path", "status", "timestamp" ],
+                  "type" : "object",
+                  "properties" : {
+                    "timestamp" : {
+                      "type" : "string"
+                    },
+                    "status" : {
+                      "type" : "integer"
+                    },
+                    "error" : {
+                      "type" : "string"
+                    },
+                    "path" : {
+                      "type" : "string"
+                    }
+                  },
+                  "example" : "{\"timestamp\":\"2022-11-22T06:20:08.633+00:00\",\"status\":500,\"error\":\"Internal Server Error\",\"path\":\"/v1/organizations/portfolios/637b227f1b60810cd78af954/services/f95bd15c2ebe4068ab3314ee9eb4168a/resources/fd62c2df0ff448a1bba02f30fca9bc1d/environments\"}"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : { },
+  "x-original-swagger-version" : "2.0",
+  "tags" : [ ],
+  "security" : [ ],
+  "x-mock" : true
+}
