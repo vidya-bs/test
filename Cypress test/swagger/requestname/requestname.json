@@ -38,12 +38,12 @@
           },
           "example" : "text to type"
         }, {
-          "name" : "test",
+          "name" : "Content-Typetest",
           "in" : "header",
           "schema" : {
             "type" : "string"
           },
-          "example" : "test"
+          "example" : "multipart/form-datatest"
         } ],
         "responses" : {
           "200" : {
