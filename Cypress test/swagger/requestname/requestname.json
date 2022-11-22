@@ -17,6 +17,13 @@
         "description" : "dummy",
         "operationId" : "requestname",
         "parameters" : [ {
+          "name" : "Content-Type",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "multipart/form-data"
+        }, {
           "name" : "Cookie",
           "in" : "header",
           "schema" : {
@@ -38,13 +45,26 @@
           },
           "example" : "text to type"
         }, {
-          "name" : "Content-Typetest",
+          "name" : "test",
           "in" : "header",
           "schema" : {
             "type" : "string"
           },
-          "example" : "multipart/form-datatest"
+          "example" : "test"
         } ],
+        "requestBody" : {
+          "content" : {
+            "multipart/form-data" : {
+              "schema" : {
+                "properties" : {
+                  "text" : {
+                    "type" : "string"
+                  }
+                }
+              }
+            }
+          }
+        },
         "responses" : {
           "200" : {
             "description" : "Response for endpoint POST-post",
