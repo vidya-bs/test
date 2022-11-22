@@ -17,13 +17,6 @@
         "description" : "dummy",
         "operationId" : "requestname",
         "parameters" : [ {
-          "name" : "Content-Type",
-          "in" : "header",
-          "schema" : {
-            "type" : "string"
-          },
-          "example" : "multipart/form-data"
-        }, {
           "name" : "Cookie",
           "in" : "header",
           "schema" : {
