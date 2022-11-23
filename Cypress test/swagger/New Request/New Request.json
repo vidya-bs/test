@@ -24,6 +24,13 @@
           },
           "example" : "Cookie=value"
         }, {
+          "name" : "keyss",
+          "in" : "query",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "value"
+        }, {
           "name" : "text to type",
           "in" : "query",
           "schema" : {
@@ -31,26 +38,19 @@
           },
           "example" : "text to type"
         }, {
-          "name" : "keysskeysskeysskeysskeyss",
-          "in" : "query",
-          "schema" : {
-            "type" : "string"
-          },
-          "example" : "valuevaluevaluevaluevalue"
-        }, {
-          "name" : "testtesttesttesttest",
-          "in" : "header",
-          "schema" : {
-            "type" : "string"
-          },
-          "example" : "testtesttesttesttest"
-        }, {
           "name" : "Content-Type",
           "in" : "header",
           "schema" : {
             "type" : "string"
           },
           "example" : "application/octet-stream"
+        }, {
+          "name" : "testtesttesttesttesttest",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "testtesttesttesttesttest"
         } ],
         "responses" : {
           "200" : {
