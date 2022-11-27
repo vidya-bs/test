@@ -1,0 +1,588 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "_open-banking_v3.1_pisp_domestic-payment-consents",
+    "description" : "_open-banking_v3.1_pisp_domestic-payment-consents",
+    "version" : "1.0"
+  },
+  "servers" : [ {
+    "url" : "http://localhost:8090/open-banking/v3.1/pisp",
+    "x-name" : "Server1"
+  } ],
+  "paths" : {
+    "/domestic-payment-consents" : {
+      "post" : {
+        "summary" : "_open-banking_v3.1_pisp_domestic-payment-consents",
+        "description" : "_open-banking_v3.1_pisp_domestic-payment-consents",
+        "operationId" : "_open-banking_v3.1_pisp_domestic-payment-consents",
+        "parameters" : [ {
+          "name" : "x-fapi-customer-last-logged-time",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : " Sat, 91 Jul 0071 27:71:31 GMT"
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : " qui amet"
+        }, {
+          "name" : "x-customer-user-agent",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : " qui amet"
+        }, {
+          "name" : "x-jws-signature",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : " qui amet"
+        }, {
+          "name" : "x-fapi-customer-ip-address",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : " qui amet"
+        }, {
+          "name" : "x-fapi-financial-id",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "insert into table"
+        }, {
+          "name" : "x-idempotency-key",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : " AdvMfP*~~"
+        }, {
+          "name" : "x-fapi-interaction-id",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : " qui amet"
+        } ],
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "required" : [ "Data", "Risk" ],
+                "type" : "object",
+                "properties" : {
+                  "Data" : {
+                    "required" : [ "Authorisation", "Initiation" ],
+                    "type" : "object",
+                    "properties" : {
+                      "Initiation" : {
+                        "required" : [ "CreditorAccount", "CreditorPostalAddress", "DebtorAccount", "EndToEndIdentification", "InstructedAmount", "InstructionIdentification", "LocalInstrument", "RemittanceInformation", "SupplementaryData" ],
+                        "type" : "object",
+                        "properties" : {
+                          "InstructionIdentification" : {
+                            "type" : "string"
+                          },
+                          "EndToEndIdentification" : {
+                            "type" : "string"
+                          },
+                          "LocalInstrument" : {
+                            "type" : "string"
+                          },
+                          "InstructedAmount" : {
+                            "required" : [ "Amount", "Currency" ],
+                            "type" : "object",
+                            "properties" : {
+                              "Amount" : {
+                                "type" : "string"
+                              },
+                              "Currency" : {
+                                "type" : "string"
+                              }
+                            }
+                          },
+                          "DebtorAccount" : {
+                            "required" : [ "Identification", "Name", "SchemeName", "SecondaryIdentification" ],
+                            "type" : "object",
+                            "properties" : {
+                              "SchemeName" : {
+                                "type" : "string"
+                              },
+                              "Identification" : {
+                                "type" : "string"
+                              },
+                              "Name" : {
+                                "type" : "string"
+                              },
+                              "SecondaryIdentification" : {
+                                "type" : "string"
+                              }
+                            }
+                          },
+                          "CreditorAccount" : {
+                            "required" : [ "Identification", "Name", "SchemeName", "SecondaryIdentification" ],
+                            "type" : "object",
+                            "properties" : {
+                              "SchemeName" : {
+                                "type" : "string"
+                              },
+                              "Identification" : {
+                                "type" : "string"
+                              },
+                              "Name" : {
+                                "type" : "string"
+                              },
+                              "SecondaryIdentification" : {
+                                "type" : "string"
+                              }
+                            }
+                          },
+                          "CreditorPostalAddress" : {
+                            "required" : [ "AddressLine", "AddressType", "BuildingNumber", "Country", "CountrySubDivision", "Department", "PostCode", "StreetName", "SubDepartment", "TownName" ],
+                            "type" : "object",
+                            "properties" : {
+                              "AddressType" : {
+                                "type" : "string"
+                              },
+                              "Department" : {
+                                "type" : "string"
+                              },
+                              "SubDepartment" : {
+                                "type" : "string"
+                              },
+                              "StreetName" : {
+                                "type" : "string"
+                              },
+                              "BuildingNumber" : {
+                                "type" : "string"
+                              },
+                              "PostCode" : {
+                                "type" : "string"
+                              },
+                              "TownName" : {
+                                "type" : "string"
+                              },
+                              "CountrySubDivision" : {
+                                "type" : "string"
+                              },
+                              "Country" : {
+                                "type" : "string"
+                              },
+                              "AddressLine" : {
+                                "type" : "array",
+                                "items" : {
+                                  "type" : "string"
+                                }
+                              }
+                            }
+                          },
+                          "RemittanceInformation" : {
+                            "required" : [ "Reference", "Unstructured" ],
+                            "type" : "object",
+                            "properties" : {
+                              "Unstructured" : {
+                                "type" : "string"
+                              },
+                              "Reference" : {
+                                "type" : "string"
+                              }
+                            }
+                          },
+                          "SupplementaryData" : {
+                            "type" : "object"
+                          }
+                        }
+                      },
+                      "Authorisation" : {
+                        "required" : [ "AuthorisationType", "CompletionDateTime" ],
+                        "type" : "object",
+                        "properties" : {
+                          "AuthorisationType" : {
+                            "type" : "string"
+                          },
+                          "CompletionDateTime" : {
+                            "type" : "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Risk" : {
+                    "required" : [ "DeliveryAddress", "MerchantCategoryCode", "MerchantCustomerIdentification", "PaymentContextCode" ],
+                    "type" : "object",
+                    "properties" : {
+                      "PaymentContextCode" : {
+                        "type" : "string"
+                      },
+                      "MerchantCategoryCode" : {
+                        "type" : "string"
+                      },
+                      "MerchantCustomerIdentification" : {
+                        "type" : "string"
+                      },
+                      "DeliveryAddress" : {
+                        "required" : [ "AddressLine", "BuildingNumber", "Country", "CountrySubDivision", "PostCode", "StreetName", "TownName" ],
+                        "type" : "object",
+                        "properties" : {
+                          "AddressLine" : {
+                            "type" : "array",
+                            "items" : {
+                              "type" : "string"
+                            }
+                          },
+                          "StreetName" : {
+                            "type" : "string"
+                          },
+                          "BuildingNumber" : {
+                            "type" : "string"
+                          },
+                          "PostCode" : {
+                            "type" : "string"
+                          },
+                          "TownName" : {
+                            "type" : "string"
+                          },
+                          "CountrySubDivision" : {
+                            "type" : "array",
+                            "items" : {
+                              "type" : "string"
+                            }
+                          },
+                          "Country" : {
+                            "type" : "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "additionalProperties" : {
+                  "type" : "object"
+                },
+                "description" : "Request Body",
+                "example" : "{\"Data\":{\"Initiation\":{\"InstructionIdentification\":\"string\",\"EndToEndIdentification\":\"string\",\"LocalInstrument\":\"UK.OBIE.Target2\",\"InstructedAmount\":{\"Amount\":\"4094971276032.526\",\"Currency\":\"GLP\"},\"DebtorAccount\":{\"SchemeName\":\"UK.OBIE.SortCodeAccountNumber\",\"Identification\":\"string\",\"Name\":\"string\",\"SecondaryIdentification\":\"string\"},\"CreditorAccount\":{\"SchemeName\":\"UK.OBIE.SortCodeAccountNumber\",\"Identification\":\"string\",\"Name\":\"string\",\"SecondaryIdentification\":\"string\"},\"CreditorPostalAddress\":{\"AddressType\":\"Business\",\"Department\":\"string\",\"SubDepartment\":\"string\",\"StreetName\":\"string\",\"BuildingNumber\":\"string\",\"PostCode\":\"string\",\"TownName\":\"string\",\"CountrySubDivision\":\"string\",\"Country\":\"AZ\",\"AddressLine\":[\"string\"]},\"RemittanceInformation\":{\"Unstructured\":\"string\",\"Reference\":\"string\"},\"SupplementaryData\":{}},\"Authorisation\":{\"AuthorisationType\":\"Any\",\"CompletionDateTime\":\"2022-08-05T11:11:30.663Z\"}},\"Risk\":{\"PaymentContextCode\":\"BillPayment\",\"MerchantCategoryCode\":\"stri\",\"MerchantCustomerIdentification\":\"string\",\"DeliveryAddress\":{\"AddressLine\":[\"string\"],\"StreetName\":\"string\",\"BuildingNumber\":\"string\",\"PostCode\":\"string\",\"TownName\":\"string\",\"CountrySubDivision\":[\"string\"],\"Country\":\"AK\"}}}"
+              }
+            }
+          },
+          "required" : false
+        },
+        "responses" : {
+          "201" : {
+            "description" : "Response for endpoint POST-domestic-payment-consents",
+            "headers" : {
+              "x-jws-signature" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-fapi-financial-id" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Content-Type" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "required" : [ "Data", "Links", "Meta", "Risk" ],
+                  "type" : "object",
+                  "properties" : {
+                    "Data" : {
+                      "required" : [ "Authorisation", "Charges", "ConsentId", "CreationDateTime", "CutOffDateTime", "ExpectedExecutionDateTime", "ExpectedSettlementDateTime", "Initiation", "Status", "StatusUpdateDateTime" ],
+                      "type" : "object",
+                      "properties" : {
+                        "ConsentId" : {
+                          "type" : "string"
+                        },
+                        "CreationDateTime" : {
+                          "type" : "string"
+                        },
+                        "Status" : {
+                          "type" : "string"
+                        },
+                        "StatusUpdateDateTime" : {
+                          "type" : "string"
+                        },
+                        "CutOffDateTime" : {
+                          "type" : "string"
+                        },
+                        "ExpectedExecutionDateTime" : {
+                          "type" : "string"
+                        },
+                        "ExpectedSettlementDateTime" : {
+                          "type" : "string"
+                        },
+                        "Charges" : {
+                          "type" : "array",
+                          "items" : {
+                            "required" : [ "Amount", "ChargeBearer", "Type" ],
+                            "type" : "object",
+                            "properties" : {
+                              "ChargeBearer" : {
+                                "type" : "string"
+                              },
+                              "Type" : {
+                                "type" : "string"
+                              },
+                              "Amount" : {
+                                "required" : [ "Amount", "Currency" ],
+                                "type" : "object",
+                                "properties" : {
+                                  "Amount" : {
+                                    "type" : "string"
+                                  },
+                                  "Currency" : {
+                                    "type" : "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "Initiation" : {
+                          "required" : [ "CreditorAccount", "CreditorPostalAddress", "DebtorAccount", "EndToEndIdentification", "InstructedAmount", "InstructionIdentification", "LocalInstrument", "RemittanceInformation", "SupplementaryData" ],
+                          "type" : "object",
+                          "properties" : {
+                            "InstructionIdentification" : {
+                              "type" : "string"
+                            },
+                            "EndToEndIdentification" : {
+                              "type" : "string"
+                            },
+                            "LocalInstrument" : {
+                              "type" : "string"
+                            },
+                            "InstructedAmount" : {
+                              "required" : [ "Amount", "Currency" ],
+                              "type" : "object",
+                              "properties" : {
+                                "Amount" : {
+                                  "type" : "string"
+                                },
+                                "Currency" : {
+                                  "type" : "string"
+                                }
+                              }
+                            },
+                            "DebtorAccount" : {
+                              "required" : [ "Identification", "Name", "SchemeName", "SecondaryIdentification" ],
+                              "type" : "object",
+                              "properties" : {
+                                "SchemeName" : {
+                                  "type" : "string"
+                                },
+                                "Identification" : {
+                                  "type" : "string"
+                                },
+                                "Name" : {
+                                  "type" : "string"
+                                },
+                                "SecondaryIdentification" : {
+                                  "type" : "string"
+                                }
+                              }
+                            },
+                            "CreditorAccount" : {
+                              "required" : [ "Identification", "Name", "SchemeName", "SecondaryIdentification" ],
+                              "type" : "object",
+                              "properties" : {
+                                "SchemeName" : {
+                                  "type" : "string"
+                                },
+                                "Identification" : {
+                                  "type" : "string"
+                                },
+                                "Name" : {
+                                  "type" : "string"
+                                },
+                                "SecondaryIdentification" : {
+                                  "type" : "string"
+                                }
+                              }
+                            },
+                            "CreditorPostalAddress" : {
+                              "required" : [ "AddressLine", "AddressType", "BuildingNumber", "Country", "CountrySubDivision", "Department", "PostCode", "StreetName", "SubDepartment", "TownName" ],
+                              "type" : "object",
+                              "properties" : {
+                                "AddressType" : {
+                                  "type" : "string"
+                                },
+                                "Department" : {
+                                  "type" : "string"
+                                },
+                                "SubDepartment" : {
+                                  "type" : "string"
+                                },
+                                "StreetName" : {
+                                  "type" : "string"
+                                },
+                                "BuildingNumber" : {
+                                  "type" : "string"
+                                },
+                                "PostCode" : {
+                                  "type" : "string"
+                                },
+                                "TownName" : {
+                                  "type" : "string"
+                                },
+                                "CountrySubDivision" : {
+                                  "type" : "string"
+                                },
+                                "Country" : {
+                                  "type" : "string"
+                                },
+                                "AddressLine" : {
+                                  "type" : "array",
+                                  "items" : {
+                                    "type" : "string"
+                                  }
+                                }
+                              }
+                            },
+                            "RemittanceInformation" : {
+                              "required" : [ "Reference", "Unstructured" ],
+                              "type" : "object",
+                              "properties" : {
+                                "Unstructured" : {
+                                  "type" : "string"
+                                },
+                                "Reference" : {
+                                  "type" : "string"
+                                }
+                              }
+                            },
+                            "SupplementaryData" : {
+                              "type" : "object"
+                            }
+                          }
+                        },
+                        "Authorisation" : {
+                          "required" : [ "AuthorisationType", "CompletionDateTime" ],
+                          "type" : "object",
+                          "properties" : {
+                            "AuthorisationType" : {
+                              "type" : "string"
+                            },
+                            "CompletionDateTime" : {
+                              "type" : "string"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "Risk" : {
+                      "required" : [ "DeliveryAddress", "MerchantCategoryCode", "MerchantCustomerIdentification", "PaymentContextCode" ],
+                      "type" : "object",
+                      "properties" : {
+                        "PaymentContextCode" : {
+                          "type" : "string"
+                        },
+                        "MerchantCategoryCode" : {
+                          "type" : "string"
+                        },
+                        "MerchantCustomerIdentification" : {
+                          "type" : "string"
+                        },
+                        "DeliveryAddress" : {
+                          "required" : [ "AddressLine", "BuildingNumber", "Country", "CountrySubDivision", "PostCode", "StreetName", "TownName" ],
+                          "type" : "object",
+                          "properties" : {
+                            "AddressLine" : {
+                              "type" : "array",
+                              "items" : {
+                                "type" : "string"
+                              }
+                            },
+                            "StreetName" : {
+                              "type" : "string"
+                            },
+                            "BuildingNumber" : {
+                              "type" : "string"
+                            },
+                            "PostCode" : {
+                              "type" : "string"
+                            },
+                            "TownName" : {
+                              "type" : "string"
+                            },
+                            "CountrySubDivision" : {
+                              "type" : "array",
+                              "items" : {
+                                "type" : "string"
+                              }
+                            },
+                            "Country" : {
+                              "type" : "string"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "Links" : {
+                      "required" : [ "First", "Last", "Next", "Prev", "Self" ],
+                      "type" : "object",
+                      "properties" : {
+                        "Self" : {
+                          "type" : "string"
+                        },
+                        "First" : {
+                          "type" : "string"
+                        },
+                        "Prev" : {
+                          "type" : "string"
+                        },
+                        "Next" : {
+                          "type" : "string"
+                        },
+                        "Last" : {
+                          "type" : "string"
+                        }
+                      }
+                    },
+                    "Meta" : {
+                      "required" : [ "FirstAvailableDateTime", "LastAvailableDateTime", "TotalPages" ],
+                      "type" : "object",
+                      "properties" : {
+                        "TotalPages" : {
+                          "type" : "integer"
+                        },
+                        "FirstAvailableDateTime" : {
+                          "type" : "string"
+                        },
+                        "LastAvailableDateTime" : {
+                          "type" : "string"
+                        }
+                      }
+                    }
+                  },
+                  "example" : "{\"Data\":{\"ConsentId\":\"string\",\"CreationDateTime\":\"2022-08-05T11:12:15.554Z\",\"Status\":\"Authorised\",\"StatusUpdateDateTime\":\"2022-08-05T11:12:15.554Z\",\"CutOffDateTime\":\"2022-08-05T11:12:15.554Z\",\"ExpectedExecutionDateTime\":\"2022-08-05T11:12:15.554Z\",\"ExpectedSettlementDateTime\":\"2022-08-05T11:12:15.554Z\",\"Charges\":[{\"ChargeBearer\":\"BorneByCreditor\",\"Type\":\"UK.OBIE.CHAPSOut\",\"Amount\":{\"Amount\":\"9689046.44706\",\"Currency\":\"MTX\"}}],\"Initiation\":{\"InstructionIdentification\":\"string\",\"EndToEndIdentification\":\"string\",\"LocalInstrument\":\"UK.OBIE.Target2\",\"InstructedAmount\":{\"Amount\":\"695832.88246\",\"Currency\":\"DWK\"},\"DebtorAccount\":{\"SchemeName\":\"UK.OBIE.SortCodeAccountNumber\",\"Identification\":\"string\",\"Name\":\"string\",\"SecondaryIdentification\":\"string\"},\"CreditorAccount\":{\"SchemeName\":\"UK.OBIE.BBAN\",\"Identification\":\"string\",\"Name\":\"string\",\"SecondaryIdentification\":\"string\"},\"CreditorPostalAddress\":{\"AddressType\":\"Business\",\"Department\":\"string\",\"SubDepartment\":\"string\",\"StreetName\":\"string\",\"BuildingNumber\":\"string\",\"PostCode\":\"string\",\"TownName\":\"string\",\"CountrySubDivision\":\"string\",\"Country\":\"OV\",\"AddressLine\":[\"string\"]},\"RemittanceInformation\":{\"Unstructured\":\"string\",\"Reference\":\"string\"},\"SupplementaryData\":{}},\"Authorisation\":{\"AuthorisationType\":\"Any\",\"CompletionDateTime\":\"2022-08-05T11:12:15.554Z\"}},\"Risk\":{\"PaymentContextCode\":\"BillPayment\",\"MerchantCategoryCode\":\"stri\",\"MerchantCustomerIdentification\":\"string\",\"DeliveryAddress\":{\"AddressLine\":[\"string\"],\"StreetName\":\"string\",\"BuildingNumber\":\"string\",\"PostCode\":\"string\",\"TownName\":\"string\",\"CountrySubDivision\":[\"string\"],\"Country\":\"WM\"}},\"Links\":{\"Self\":\"string\",\"First\":\"string\",\"Prev\":\"string\",\"Next\":\"string\",\"Last\":\"string\"},\"Meta\":{\"TotalPages\":0,\"FirstAvailableDateTime\":\"2022-08-05T11:12:15.554Z\",\"LastAvailableDateTime\":\"2022-08-05T11:12:15.554Z\"}}"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name" : "Request Body"
+      }
+    }
+  },
+  "components" : { },
+  "x-original-swagger-version" : "2.0",
+  "tags" : [ ],
+  "security" : [ ],
+  "x-mock" : true
+}
