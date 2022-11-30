@@ -38,12 +38,12 @@
           },
           "example" : "text to type"
         }, {
-          "name" : "testtest",
+          "name" : "test",
           "in" : "header",
           "schema" : {
             "type" : "string"
           },
-          "example" : "testtest"
+          "example" : "test"
         } ],
         "requestBody" : {
           "content" : {
@@ -140,7 +140,7 @@
                       }
                     },
                     "headers" : {
-                      "required" : [ "accept", "accept-encoding", "content-length", "content-type", "cookie", "host", "testtest", "user-agent", "x-amzn-trace-id", "x-b3-parentspanid", "x-b3-sampled", "x-b3-spanid", "x-b3-traceid", "x-forwarded-port", "x-forwarded-proto" ],
+                      "required" : [ "accept", "accept-encoding", "content-length", "content-type", "cookie", "host", "test", "user-agent", "x-amzn-trace-id", "x-b3-parentspanid", "x-b3-sampled", "x-b3-spanid", "x-b3-traceid", "x-forwarded-port", "x-forwarded-proto" ],
                       "type" : "object",
                       "properties" : {
                         "x-forwarded-proto" : {
@@ -164,7 +164,7 @@
                         "cookie" : {
                           "type" : "string"
                         },
-                        "testtest" : {
+                        "test" : {
                           "type" : "string"
                         },
                         "content-type" : {
@@ -203,7 +203,7 @@
                       "type" : "string"
                     }
                   },
-                  "example" : "{\"args\":{\"text to type\":\"text to type\",\"keyss\":\"value\"},\"data\":\"\",\"files\":{},\"form\":{\"keyss\":\"valuess\"},\"headers\":{\"x-forwarded-proto\":\"https\",\"x-forwarded-port\":\"443\",\"host\":\"postman-echo.com\",\"x-amzn-trace-id\":\"Root=1-63872309-42a53bd6394d1cce621899e5\",\"content-length\":\"13\",\"accept\":\"*/*\",\"cookie\":\"Cookie=value; sails.sid=s%3ABMMtdUlQXIsPzlqu0CknemXnYHTcnE3D.WFx3oTUzuT94P59yqq0LlaQ%2BcqtZa4nCDXLFtT5h12k\",\"testtest\":\"testtest\",\"content-type\":\"application/x-www-form-urlencoded;charset=UTF-8\",\"x-b3-traceid\":\"1aff0605131d0123029a2e2c8639a5f6\",\"x-b3-spanid\":\"d1cd8f0661df6ecd\",\"x-b3-parentspanid\":\"520e82d3b0b938de\",\"x-b3-sampled\":\"1\",\"user-agent\":\"Apache-HttpClient/4.5.13 (Java/11.0.16)\",\"accept-encoding\":\"gzip,deflate\"},\"json\":{\"keyss\":\"valuess\"},\"url\":\"https://postman-echo.com/post?text%20to%20type=text%20to%20type&keyss=value\"}"
+                  "example" : "{\"args\":{\"text to type\":\"text to type\",\"keyss\":\"value\"},\"data\":\"\",\"files\":{},\"form\":{\"keyss\":\"valuess\"},\"headers\":{\"x-forwarded-proto\":\"https\",\"x-forwarded-port\":\"443\",\"host\":\"postman-echo.com\",\"x-amzn-trace-id\":\"Root=1-638723ea-224710c95862ed2e462a19fa\",\"content-length\":\"13\",\"accept\":\"*/*\",\"cookie\":\"Cookie=value; sails.sid=s%3Aqzb7Mgk7jeqNdAlqxKFU7egT2syPoJVr.gET2RTPK3Bf%2FPX0SkwF0m2ERSO9kyQIcfdC%2FYH8em7Y\",\"test\":\"test\",\"content-type\":\"application/x-www-form-urlencoded;charset=UTF-8\",\"x-b3-traceid\":\"21fc1b5e62364410b08e2baceda85f74\",\"x-b3-spanid\":\"8e30cd99c45656c9\",\"x-b3-parentspanid\":\"ecde2c78f009ab67\",\"x-b3-sampled\":\"1\",\"user-agent\":\"Apache-HttpClient/4.5.13 (Java/11.0.16)\",\"accept-encoding\":\"gzip,deflate\"},\"json\":{\"keyss\":\"valuess\"},\"url\":\"https://postman-echo.com/post?text%20to%20type=text%20to%20type&keyss=value\"}"
                 }
               }
             }
