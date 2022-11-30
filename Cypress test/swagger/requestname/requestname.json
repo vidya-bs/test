@@ -63,6 +63,12 @@
           "200" : {
             "description" : "Response for endpoint POST-post",
             "headers" : {
+              "set-cookie" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
               "ETag" : {
                 "description" : "response header",
                 "schema" : {
@@ -197,7 +203,7 @@
                       "type" : "string"
                     }
                   },
-                  "example" : "{\"args\":{\"text to type\":\"text to type\",\"keyss\":\"value\"},\"data\":\"\",\"files\":{},\"form\":{\"keyss\":\"valuess\"},\"headers\":{\"x-forwarded-proto\":\"https\",\"x-forwarded-port\":\"443\",\"host\":\"postman-echo.com\",\"x-amzn-trace-id\":\"Root=1-63871d96-2d358dd95c2fda831b2dbcf1\",\"content-length\":\"13\",\"accept\":\"*/*\",\"cookie\":\"Cookie=value; sails.sid=s%3Aqzb7Mgk7jeqNdAlqxKFU7egT2syPoJVr.gET2RTPK3Bf%2FPX0SkwF0m2ERSO9kyQIcfdC%2FYH8em7Y\",\"test\":\"test\",\"content-type\":\"application/x-www-form-urlencoded;charset=UTF-8\",\"x-b3-traceid\":\"ae890555319c5ccd7b25ada91d1e6a29\",\"x-b3-spanid\":\"63490062c64f6f2d\",\"x-b3-parentspanid\":\"900f5fafa35de837\",\"x-b3-sampled\":\"1\",\"user-agent\":\"Apache-HttpClient/4.5.13 (Java/11.0.16)\",\"accept-encoding\":\"gzip,deflate\"},\"json\":{\"keyss\":\"valuess\"},\"url\":\"https://postman-echo.com/post?text%20to%20type=text%20to%20type&keyss=value\"}"
+                  "example" : "{\"args\":{\"text to type\":\"text to type\",\"keyss\":\"value\"},\"data\":\"\",\"files\":{},\"form\":{\"keyss\":\"valuess\"},\"headers\":{\"x-forwarded-proto\":\"https\",\"x-forwarded-port\":\"443\",\"host\":\"postman-echo.com\",\"x-amzn-trace-id\":\"Root=1-63872066-0d8bd36c0f522f6c0b6c5c8f\",\"content-length\":\"13\",\"accept\":\"*/*\",\"cookie\":\"Cookie=value; sails.sid=s%3APn2ysRCkKLYmA4C6hHX20QTKZoJQMRNS.OFjSw9b1ykpSyEzDeFWFKr91dBZoLa42b%2B5MNCIHjGk\",\"test\":\"test\",\"content-type\":\"application/x-www-form-urlencoded;charset=UTF-8\",\"x-b3-traceid\":\"58e0a7b928f800d2992ad3e4d90962d2\",\"x-b3-spanid\":\"b0dc5a69e116603f\",\"x-b3-parentspanid\":\"24d6e2d6a82386b0\",\"x-b3-sampled\":\"1\",\"user-agent\":\"Apache-HttpClient/4.5.13 (Java/11.0.16)\",\"accept-encoding\":\"gzip,deflate\"},\"json\":{\"keyss\":\"valuess\"},\"url\":\"https://postman-echo.com/post?text%20to%20type=text%20to%20type&keyss=value\"}"
                 }
               }
             }
