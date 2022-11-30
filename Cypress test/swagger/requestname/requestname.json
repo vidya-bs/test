@@ -17,13 +17,6 @@
         "description" : "dummy",
         "operationId" : "requestname",
         "parameters" : [ {
-          "name" : "Content-Type",
-          "in" : "header",
-          "schema" : {
-            "type" : "string"
-          },
-          "example" : "multipart/form-data"
-        }, {
           "name" : "Cookie",
           "in" : "header",
           "schema" : {
@@ -57,9 +50,9 @@
             "multipart/form-data" : {
               "schema" : {
                 "properties" : {
-                  "text" : {
+                  "keyss" : {
                     "type" : "string",
-                    "example" : "image.png"
+                    "example" : "valuess"
                   }
                 }
               }
@@ -116,29 +109,38 @@
             "content" : {
               "*/*" : {
                 "schema" : {
-                  "required" : [ "args", "data", "files", "form", "headers", "url" ],
+                  "required" : [ "args", "data", "files", "form", "headers", "json", "url" ],
                   "type" : "object",
                   "properties" : {
                     "args" : {
-                      "type" : "object"
+                      "required" : [ "keyss", "text to type" ],
+                      "type" : "object",
+                      "properties" : {
+                        "text to type" : {
+                          "type" : "string"
+                        },
+                        "keyss" : {
+                          "type" : "string"
+                        }
+                      }
                     },
                     "data" : {
-                      "type" : "object"
+                      "type" : "string"
                     },
                     "files" : {
                       "type" : "object"
                     },
                     "form" : {
-                      "required" : [ "text" ],
+                      "required" : [ "keyss" ],
                       "type" : "object",
                       "properties" : {
-                        "text" : {
+                        "keyss" : {
                           "type" : "string"
                         }
                       }
                     },
                     "headers" : {
-                      "required" : [ "accept", "accept-encoding", "authorization", "content-length", "content-type", "cookie", "host", "texhv", "user-agent", "x-amzn-trace-id", "x-b3-parentspanid", "x-b3-sampled", "x-b3-spanid", "x-b3-traceid", "x-forwarded-port", "x-forwarded-proto" ],
+                      "required" : [ "accept", "accept-encoding", "content-length", "content-type", "cookie", "host", "test", "user-agent", "x-amzn-trace-id", "x-b3-parentspanid", "x-b3-sampled", "x-b3-spanid", "x-b3-traceid", "x-forwarded-port", "x-forwarded-proto" ],
                       "type" : "object",
                       "properties" : {
                         "x-forwarded-proto" : {
@@ -159,13 +161,10 @@
                         "accept" : {
                           "type" : "string"
                         },
-                        "authorization" : {
-                          "type" : "string"
-                        },
                         "cookie" : {
                           "type" : "string"
                         },
-                        "texhv" : {
+                        "test" : {
                           "type" : "string"
                         },
                         "content-type" : {
@@ -191,11 +190,20 @@
                         }
                       }
                     },
+                    "json" : {
+                      "required" : [ "keyss" ],
+                      "type" : "object",
+                      "properties" : {
+                        "keyss" : {
+                          "type" : "string"
+                        }
+                      }
+                    },
                     "url" : {
                       "type" : "string"
                     }
                   },
-                  "example" : "{\"args\":{},\"data\":{},\"files\":{},\"form\":{\"text\":\"text\"},\"headers\":{\"x-forwarded-proto\":\"https\",\"x-forwarded-port\":\"443\",\"host\":\"postman-echo.com\",\"x-amzn-trace-id\":\"Root=1-6377400a-46b3024f19770dab2e837040\",\"content-length\":\"196\",\"accept\":\"*/*\",\"authorization\":\"Bearer token\",\"cookie\":\"Cookie=value; sails.sid=s%3AqfMmfVTcVkQzw1vgjDl7SlFovnE7j37v.WdEk9HbWbEul1kDO6qM6i2YMtCEmfin%2Ftw5yYasBXWc\",\"texhv\":\"textv\",\"content-type\":\"multipart/form-data;boundary=RrNItaq3lCc8BjP6b3Kj72bFSa9hvnqPzKA4Z\",\"x-b3-traceid\":\"d3e95c3d59dfb71831ad567328aab2a5\",\"x-b3-spanid\":\"45115d82e9323c80\",\"x-b3-parentspanid\":\"23d50ef93688f5c6\",\"x-b3-sampled\":\"1\",\"user-agent\":\"Apache-HttpClient/4.5.13 (Java/11.0.16)\",\"accept-encoding\":\"gzip,deflate\"},\"json\":null,\"url\":\"https://postman-echo.com/post\"}"
+                  "example" : "{\"args\":{\"text to type\":\"text to type\",\"keyss\":\"value\"},\"data\":\"\",\"files\":{},\"form\":{\"keyss\":\"valuess\"},\"headers\":{\"x-forwarded-proto\":\"https\",\"x-forwarded-port\":\"443\",\"host\":\"postman-echo.com\",\"x-amzn-trace-id\":\"Root=1-6386f293-08ecc612102d2bfd1d6b65f2\",\"content-length\":\"13\",\"accept\":\"*/*\",\"cookie\":\"Cookie=value; sails.sid=s%3AND_fTcu-MyjUmrAlgSS9bKFhY0UBUoFW.P8EMnXn6VG%2BEJD792u%2Fb26g6n0F3SvmBKmq47vDX3bU\",\"test\":\"test\",\"content-type\":\"application/x-www-form-urlencoded;charset=UTF-8\",\"x-b3-traceid\":\"4ce3995427944ca5b962fc4b08d9a27a\",\"x-b3-spanid\":\"b86b46ad6a8fd544\",\"x-b3-parentspanid\":\"aeb4c6a46cc2b9ad\",\"x-b3-sampled\":\"1\",\"user-agent\":\"Apache-HttpClient/4.5.13 (Java/11.0.16)\",\"accept-encoding\":\"gzip,deflate\"},\"json\":{\"keyss\":\"valuess\"},\"url\":\"https://postman-echo.com/post?text%20to%20type=text%20to%20type&keyss=value\"}"
                 }
               }
             }
