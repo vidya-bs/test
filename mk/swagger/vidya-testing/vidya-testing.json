@@ -1,0 +1,145 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "vidya-testing",
+    "description" : "dummy",
+    "version" : "1.0"
+  },
+  "server" : [ {
+    "url" : "https://postman-echo.com/",
+    "x-name" : "Server1"
+  } ],
+  "paths" : {
+    "/post" : {
+      "post" : {
+        "tags" : [ "acme-team-gcp-dev" ],
+        "summary" : "Untitled Request",
+        "description" : "dummy",
+        "operationId" : "Untitled Request",
+        "responses" : {
+          "200" : {
+            "description" : "Response for endpoint POST-post",
+            "headers" : {
+              "set-cookie" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "ETag" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Connection" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Vary" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Content-Length" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Date" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Content-Type" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "required" : [ "args", "data", "files", "form", "headers", "url" ],
+                  "type" : "object",
+                  "properties" : {
+                    "args" : {
+                      "type" : "object"
+                    },
+                    "data" : {
+                      "type" : "object"
+                    },
+                    "files" : {
+                      "type" : "object"
+                    },
+                    "form" : {
+                      "type" : "object"
+                    },
+                    "headers" : {
+                      "required" : [ "accept", "accept-encoding", "content-length", "host", "user-agent", "x-amzn-trace-id", "x-b3-parentspanid", "x-b3-sampled", "x-b3-spanid", "x-b3-traceid", "x-forwarded-port", "x-forwarded-proto" ],
+                      "type" : "object",
+                      "properties" : {
+                        "x-forwarded-proto" : {
+                          "type" : "string"
+                        },
+                        "x-forwarded-port" : {
+                          "type" : "string"
+                        },
+                        "host" : {
+                          "type" : "string"
+                        },
+                        "x-amzn-trace-id" : {
+                          "type" : "string"
+                        },
+                        "content-length" : {
+                          "type" : "string"
+                        },
+                        "accept" : {
+                          "type" : "string"
+                        },
+                        "x-b3-traceid" : {
+                          "type" : "string"
+                        },
+                        "x-b3-spanid" : {
+                          "type" : "string"
+                        },
+                        "x-b3-parentspanid" : {
+                          "type" : "string"
+                        },
+                        "x-b3-sampled" : {
+                          "type" : "string"
+                        },
+                        "user-agent" : {
+                          "type" : "string"
+                        },
+                        "accept-encoding" : {
+                          "type" : "string"
+                        }
+                      }
+                    },
+                    "url" : {
+                      "type" : "string"
+                    }
+                  },
+                  "example" : "{\"args\":{},\"data\":{},\"files\":{},\"form\":{},\"headers\":{\"x-forwarded-proto\":\"https\",\"x-forwarded-port\":\"443\",\"host\":\"postman-echo.com\",\"x-amzn-trace-id\":\"Root=1-638850fb-7668ffb52836a6d855bc58cc\",\"content-length\":\"0\",\"accept\":\"*/*\",\"x-b3-traceid\":\"a8247d07d58bb8ca7bb865f91f91d5e8\",\"x-b3-spanid\":\"f89e0fac10ff75e5\",\"x-b3-parentspanid\":\"8dc8b3cc9323a07b\",\"x-b3-sampled\":\"1\",\"user-agent\":\"Apache-HttpClient/4.5.13 (Java/11.0.16)\",\"accept-encoding\":\"gzip,deflate\"},\"json\":null,\"url\":\"https://postman-echo.com/post\"}"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : { },
+  "x-original-swagger-version" : "2.0",
+  "tags" : [ ],
+  "security" : [ ],
+  "x-mock" : true,
+  "servers" : [ ]
+}
