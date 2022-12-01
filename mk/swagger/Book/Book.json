@@ -5,11 +5,11 @@
     "description" : "The API allows requesting information on one or more books using ISBNs, OCLC Numbers, LCCNs and OLIDs (Open Library IDs).",
     "version" : "1.0"
   },
-  "server" : [ {
+  "servers" : [ {
     "url" : "https://openlibrary.org/api",
     "x-name" : "Server1"
   } ],
-  "paths" : {
+  "path" : {
     "/books" : {
       "get" : {
         "tags" : [ "Open Library" ],
@@ -159,5 +159,5 @@
   "tags" : [ ],
   "security" : [ ],
   "x-mock" : true,
-  "servers" : [ ]
+  "paths" : { }
 }
