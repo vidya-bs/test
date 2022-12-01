@@ -9,7 +9,7 @@
     "url" : "https://dog.ceo/api/breeds/list",
     "x-name" : "Server1"
   } ],
-  "paths" : {
+  "path" : {
     "/all" : {
       "get" : {
         "tags" : [ "acme-team-gcp-dev" ],
@@ -752,5 +752,6 @@
   "x-original-swagger-version" : "2.0",
   "tags" : [ ],
   "security" : [ ],
-  "x-mock" : true
+  "x-mock" : true,
+  "paths" : { }
 }
