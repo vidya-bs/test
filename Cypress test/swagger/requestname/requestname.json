@@ -17,6 +17,13 @@
         "description" : "dummy",
         "operationId" : "requestname",
         "parameters" : [ {
+          "name" : "Content-Type",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "application/json"
+        }, {
           "name" : "Cookie",
           "in" : "header",
           "schema" : {
@@ -117,7 +124,7 @@
                       "type" : "object"
                     },
                     "headers" : {
-                      "required" : [ "accept", "accept-encoding", "authorization", "content-length", "cookie", "host", "test", "user-agent", "x-amzn-trace-id", "x-b3-parentspanid", "x-b3-sampled", "x-b3-spanid", "x-b3-traceid", "x-forwarded-port", "x-forwarded-proto" ],
+                      "required" : [ "accept", "accept-encoding", "authorization", "content-length", "content-type", "cookie", "host", "test", "user-agent", "x-amzn-trace-id", "x-b3-parentspanid", "x-b3-sampled", "x-b3-spanid", "x-b3-traceid", "x-forwarded-port", "x-forwarded-proto" ],
                       "type" : "object",
                       "properties" : {
                         "x-forwarded-proto" : {
@@ -147,6 +154,9 @@
                         "test" : {
                           "type" : "string"
                         },
+                        "content-type" : {
+                          "type" : "string"
+                        },
                         "x-b3-traceid" : {
                           "type" : "string"
                         },
@@ -171,7 +181,7 @@
                       "type" : "string"
                     }
                   },
-                  "example" : "{\"args\":{\"text to type\":\"text to type\"},\"data\":{},\"files\":{},\"form\":{},\"headers\":{\"x-forwarded-proto\":\"https\",\"x-forwarded-port\":\"443\",\"host\":\"postman-echo.com\",\"x-amzn-trace-id\":\"Root=1-63885549-4f045d354ae856417f654a85\",\"content-length\":\"0\",\"accept\":\"*/*\",\"authorization\":\"Basic dXNlcm5hbWU6cGFzc3dvcmQ=\",\"cookie\":\"Cookie=value\",\"test\":\"test\",\"x-b3-traceid\":\"e035fa284d208b6fe5a11b036e3aad5a\",\"x-b3-spanid\":\"001124ec9b8a102d\",\"x-b3-parentspanid\":\"cd61b87eef316965\",\"x-b3-sampled\":\"1\",\"user-agent\":\"Apache-HttpClient/4.5.13 (Java/11.0.16)\",\"accept-encoding\":\"gzip,deflate\"},\"json\":null,\"url\":\"https://postman-echo.com/post?text%20to%20type=text%20to%20type\"}"
+                  "example" : "{\"args\":{\"text to type\":\"text to type\"},\"data\":{},\"files\":{},\"form\":{},\"headers\":{\"x-forwarded-proto\":\"https\",\"x-forwarded-port\":\"443\",\"host\":\"postman-echo.com\",\"x-amzn-trace-id\":\"Root=1-638856ce-35ffc1f20a8d8aa13dc6750f\",\"content-length\":\"0\",\"accept\":\"*/*\",\"authorization\":\"Basic dXNlcm5hbWU6cGFzc3dvcmQ=\",\"cookie\":\"Cookie=value; sails.sid=s%3Aosxxq-mMl-Chyy0eHQDeQ2Tv6XAxbR-o.2jkCeTdo%2BnJa49%2FmnFVg6p1D4ns6Hm%2BWBW4sUrUnSVA\",\"test\":\"test\",\"content-type\":\"application/json\",\"x-b3-traceid\":\"527bea67430b7af621519e156b1c696f\",\"x-b3-spanid\":\"47455ca5805f8397\",\"x-b3-parentspanid\":\"93c3c0aa0bf40502\",\"x-b3-sampled\":\"1\",\"user-agent\":\"Apache-HttpClient/4.5.13 (Java/11.0.16)\",\"accept-encoding\":\"gzip,deflate\"},\"json\":null,\"url\":\"https://postman-echo.com/post?text%20to%20type=text%20to%20type\"}"
                 }
               }
             }
