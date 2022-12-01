@@ -31,12 +31,12 @@
           },
           "example" : "text to type"
         }, {
-          "name" : "test",
+          "name" : "testtest",
           "in" : "header",
           "schema" : {
             "type" : "string"
           },
-          "example" : "test"
+          "example" : "testtest"
         }, {
           "name" : "Content-Type",
           "in" : "header",
