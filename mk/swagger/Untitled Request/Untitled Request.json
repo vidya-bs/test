@@ -5,7 +5,7 @@
     "description" : "dummy",
     "version" : "1.0"
   },
-  "servers" : [ {
+  "server" : [ {
     "url" : "https://postman-echo.com/",
     "x-name" : "Server1"
   } ],
@@ -143,5 +143,6 @@
   "x-original-swagger-version" : "2.0",
   "tags" : [ ],
   "security" : [ ],
-  "x-mock" : true
+  "x-mock" : true,
+  "servers" : [ ]
 }
