@@ -6,48 +6,39 @@
     "version" : "1.0"
   },
   "servers" : [ {
-    "url" : "https://cat-fact.herokuapp.com/",
+    "url" : "https://postman-echo.com/",
     "x-name" : "Server1"
   } ],
   "paths" : {
-    "/facts" : {
-      "get" : {
+    "/post" : {
+      "post" : {
         "tags" : [ "New Collection" ],
         "summary" : "New Request",
         "description" : "dummy",
         "operationId" : "New Request",
-        "parameters" : [ {
-          "name" : "format",
-          "in" : "query",
-          "schema" : {
-            "type" : "string"
-          },
-          "example" : "json"
-        }, {
-          "name" : "bibkeys",
-          "in" : "query",
-          "schema" : {
-            "type" : "string"
-          },
-          "example" : "ISBN:0201558025,LCCN:93005405"
-        } ],
         "responses" : {
-          "503" : {
-            "description" : "Response for endpoint GET-facts",
+          "200" : {
+            "description" : "Response for endpoint POST-post",
             "headers" : {
-              "Server" : {
+              "set-cookie" : {
                 "description" : "response header",
                 "schema" : {
                   "type" : "string"
                 }
               },
-              "Cache-Control" : {
+              "ETag" : {
                 "description" : "response header",
                 "schema" : {
                   "type" : "string"
                 }
               },
               "Connection" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "Vary" : {
                 "description" : "response header",
                 "schema" : {
                   "type" : "string"
@@ -69,6 +60,77 @@
                 "description" : "response header",
                 "schema" : {
                   "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "required" : [ "args", "data", "files", "form", "headers", "url" ],
+                  "type" : "object",
+                  "properties" : {
+                    "args" : {
+                      "type" : "object"
+                    },
+                    "data" : {
+                      "type" : "object"
+                    },
+                    "files" : {
+                      "type" : "object"
+                    },
+                    "form" : {
+                      "type" : "object"
+                    },
+                    "headers" : {
+                      "required" : [ "accept", "accept-encoding", "content-length", "cookie", "host", "user-agent", "x-amzn-trace-id", "x-b3-parentspanid", "x-b3-sampled", "x-b3-spanid", "x-b3-traceid", "x-forwarded-port", "x-forwarded-proto" ],
+                      "type" : "object",
+                      "properties" : {
+                        "x-forwarded-proto" : {
+                          "type" : "string"
+                        },
+                        "x-forwarded-port" : {
+                          "type" : "string"
+                        },
+                        "host" : {
+                          "type" : "string"
+                        },
+                        "x-amzn-trace-id" : {
+                          "type" : "string"
+                        },
+                        "content-length" : {
+                          "type" : "string"
+                        },
+                        "accept" : {
+                          "type" : "string"
+                        },
+                        "x-b3-traceid" : {
+                          "type" : "string"
+                        },
+                        "x-b3-spanid" : {
+                          "type" : "string"
+                        },
+                        "x-b3-parentspanid" : {
+                          "type" : "string"
+                        },
+                        "x-b3-sampled" : {
+                          "type" : "string"
+                        },
+                        "user-agent" : {
+                          "type" : "string"
+                        },
+                        "cookie" : {
+                          "type" : "string"
+                        },
+                        "accept-encoding" : {
+                          "type" : "string"
+                        }
+                      }
+                    },
+                    "url" : {
+                      "type" : "string"
+                    }
+                  },
+                  "example" : "{\"args\":{},\"data\":{},\"files\":{},\"form\":{},\"headers\":{\"x-forwarded-proto\":\"https\",\"x-forwarded-port\":\"443\",\"host\":\"postman-echo.com\",\"x-amzn-trace-id\":\"Root=1-6389990e-0e60a7d74945f7250d37fca7\",\"content-length\":\"0\",\"accept\":\"*/*\",\"x-b3-traceid\":\"6b27e5e67626501f44f86181b77132d7\",\"x-b3-spanid\":\"926ac86a336c07a3\",\"x-b3-parentspanid\":\"a52bb9fb76860dfd\",\"x-b3-sampled\":\"1\",\"user-agent\":\"Apache-HttpClient/4.5.13 (Java/11.0.16)\",\"cookie\":\"sails.sid=s%3APQpjwuOuZquqwjxiolMsK5pp1EuIKxD3.a31VtLi%2F%2B4e87jnlqanDUVJNEjZyn%2BoR879Kcuy7Ovg\",\"accept-encoding\":\"gzip,deflate\"},\"json\":null,\"url\":\"https://postman-echo.com/post\"}"
                 }
               }
             }
