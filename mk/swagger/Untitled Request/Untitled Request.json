@@ -5,8 +5,9 @@
     "description" : "dummy",
     "version" : "1.0"
   },
-  "server" : [ {
+  "servers" : [ {
     "url" : "https://postman-echo.com/",
+    "x-names" : "Server1",
     "x-name" : "Server1"
   } ],
   "paths" : {
@@ -130,7 +131,7 @@
                       "type" : "string"
                     }
                   },
-                  "example" : "{\"args\":{},\"data\":{},\"files\":{},\"form\":{},\"headers\":{\"x-forwarded-proto\":\"https\",\"x-forwarded-port\":\"443\",\"host\":\"postman-echo.com\",\"x-amzn-trace-id\":\"Root=1-63899725-4af5d3ab37c0196258b7a474\",\"content-length\":\"0\",\"accept\":\"*/*\",\"x-b3-traceid\":\"0bd19b6e5e08871975c98ac286b99365\",\"x-b3-spanid\":\"0ddc8fde49750f08\",\"x-b3-parentspanid\":\"f20409b1c0981785\",\"x-b3-sampled\":\"1\",\"user-agent\":\"Apache-HttpClient/4.5.13 (Java/11.0.16)\",\"cookie\":\"sails.sid=s%3A6R5lIZrSWISotOGDl5rOMsz1rfLm6yBm.fujqR%2FHAFF00fP%2B4SWAyXs%2Fg%2BnO%2B3ZaVgKNt4wdurHY\",\"accept-encoding\":\"gzip,deflate\"},\"json\":null,\"url\":\"https://postman-echo.com/post\"}"
+                  "example" : "{\"args\":{},\"data\":{},\"files\":{},\"form\":{},\"headers\":{\"x-forwarded-proto\":\"https\",\"x-forwarded-port\":\"443\",\"host\":\"postman-echo.com\",\"x-amzn-trace-id\":\"Root=1-638999f2-7f12feea49bb0a4b75799d57\",\"content-length\":\"0\",\"accept\":\"*/*\",\"x-b3-traceid\":\"d9b0bac22bc3bb833ef21090c526373c\",\"x-b3-spanid\":\"84cbea812b0daa8a\",\"x-b3-parentspanid\":\"dc68665186dead8c\",\"x-b3-sampled\":\"1\",\"user-agent\":\"Apache-HttpClient/4.5.13 (Java/11.0.16)\",\"cookie\":\"sails.sid=s%3AFwXiHa8gqQx3DAdIaR9BQy_fZ0ruBOso.MiogzU7L7lp1Nt0YdyeoYZV9KXdt2AX%2Fo0%2BhV2B3yYc\",\"accept-encoding\":\"gzip,deflate\"},\"json\":null,\"url\":\"https://postman-echo.com/post\"}"
                 }
               }
             }
@@ -143,6 +144,5 @@
   "x-original-swagger-version" : "2.0",
   "tags" : [ ],
   "security" : [ ],
-  "x-mock" : true,
-  "servers" : [ ]
+  "x-mock" : true
 }
