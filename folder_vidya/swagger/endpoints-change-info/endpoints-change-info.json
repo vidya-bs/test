@@ -1,0 +1,251 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "endpoints-change-info",
+    "version" : "1.0"
+  },
+  "servers" : [ {
+    "url" : "https://mock.apiwiz.io/V1/endpoints",
+    "x-name" : "Server1"
+  } ],
+  "paths" : {
+    "/111" : {
+      "get" : {
+        "tags" : [ "SANITY TESTING" ],
+        "summary" : "endpoints-change-info",
+        "operationId" : "endpoints-change-info",
+        "parameters" : [ {
+          "name" : "Content-Type",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "application/json"
+        }, {
+          "name" : "x-tenant",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "0c39a75a-3896-4624-9a4a-e9e7273779fc"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Response for endpoint GET-111",
+            "headers" : {
+              "date" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "content-length" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "server" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-envoy-upstream-service-time" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "vary" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "content-type" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "required" : [ "0", "1" ],
+                  "type" : "object",
+                  "properties" : {
+                    "0" : {
+                      "required" : [ "dimensions", "id", "name", "price", "tags", "warehouseLocation" ],
+                      "type" : "object",
+                      "properties" : {
+                        "id" : {
+                          "type" : "integer"
+                        },
+                        "name" : {
+                          "type" : "string"
+                        },
+                        "price" : {
+                          "type" : "number"
+                        },
+                        "tags" : {
+                          "type" : "array",
+                          "items" : {
+                            "type" : "string"
+                          }
+                        },
+                        "dimensions" : {
+                          "required" : [ "height", "length", "width" ],
+                          "type" : "object",
+                          "properties" : {
+                            "length" : {
+                              "type" : "integer"
+                            },
+                            "width" : {
+                              "type" : "integer"
+                            },
+                            "height" : {
+                              "type" : "number"
+                            }
+                          }
+                        },
+                        "warehouseLocation" : {
+                          "required" : [ "latitude", "longitude" ],
+                          "type" : "object",
+                          "properties" : {
+                            "latitude" : {
+                              "type" : "number"
+                            },
+                            "longitude" : {
+                              "type" : "number"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "1" : {
+                      "required" : [ "dimensions", "id", "name", "price", "warehouseLocation" ],
+                      "type" : "object",
+                      "properties" : {
+                        "id" : {
+                          "type" : "integer"
+                        },
+                        "name" : {
+                          "type" : "string"
+                        },
+                        "price" : {
+                          "type" : "number"
+                        },
+                        "dimensions" : {
+                          "required" : [ "height", "length", "width" ],
+                          "type" : "object",
+                          "properties" : {
+                            "length" : {
+                              "type" : "number"
+                            },
+                            "width" : {
+                              "type" : "integer"
+                            },
+                            "height" : {
+                              "type" : "integer"
+                            }
+                          }
+                        },
+                        "warehouseLocation" : {
+                          "required" : [ "latitude", "longitude" ],
+                          "type" : "object",
+                          "properties" : {
+                            "latitude" : {
+                              "type" : "number"
+                            },
+                            "longitude" : {
+                              "type" : "number"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "example" : "{\n    \"0\": {\n        \"id\": 2,\n        \"name\": \"An ice sculpture\",\n        \"price\": 12.5,\n        \"tags\": [\n            \"cold\",\n            \"ice\"\n        ],\n        \"dimensions\": {\n            \"length\": 7,\n            \"width\": 12,\n            \"height\": 9.5\n        },\n        \"warehouseLocation\": {\n            \"latitude\": -78.75,\n            \"longitude\": 20.4\n        }\n    },\n    \"1\": {\n        \"id\": 3,\n        \"name\": \"A blue mouse\",\n        \"price\": 25.5,\n        \"dimensions\": {\n            \"length\": 3.1,\n            \"width\": 1,\n            \"height\": 1\n        },\n        \"warehouseLocation\": {\n            \"latitude\": 54.4,\n            \"longitude\": -32.7\n        }\n    }\n}"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Response for endpoint GET-111",
+            "headers" : {
+              "date" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "server" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-envoy-upstream-service-time" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "transfer-encoding" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "vary" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "content-type" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "type" : "array",
+                  "example" : "[{\"expectationId\":\"63158a69ab40ee59ea4bf946\",\"expectationName\":\"endpoints-change-info-200\",\"groupName\":\"Endpoints API\",\"reason\":\"method didn't match,query matched,header didn't match,cookie matched,body matched\"},{\"expectationId\":\"63158a6d30e6c169e9e1889e\",\"expectationName\":\"endpoints-delete-endpoint-200\",\"groupName\":\"Endpoints API\",\"reason\":\"method didn't match,query matched,header didn't match,cookie matched,body matched\"},{\"expectationId\":\"637eab8fe8ce07184d2844e8\",\"expectationName\":\"endpoints-change-info-2007\",\"groupName\":\"testingg\",\"reason\":\"method matched,query matched,header matched,cookie matched,body didn't match\"},{\"expectationId\":\"639d53cc59d3d47d20db9d63\",\"expectationName\":\"endpoints-Get-info-200\",\"groupName\":\"SANITY TESTING\",\"reason\":\"method didn't match,query matched,header matched,cookie matched,body matched\"},{\"expectationId\":\"639d53e346e686607a8b072d\",\"expectationName\":\"endpoints-change-info\",\"groupName\":\"SANITY TESTING\",\"reason\":\"method matched,query matched,header matched,cookie matched,body didn't match\"}]",
+                  "items" : {
+                    "required" : [ "expectationId", "expectationName", "groupName", "reason" ],
+                    "type" : "object",
+                    "properties" : {
+                      "expectationId" : {
+                        "type" : "string"
+                      },
+                      "expectationName" : {
+                        "type" : "string"
+                      },
+                      "groupName" : {
+                        "type" : "string"
+                      },
+                      "reason" : {
+                        "type" : "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : { },
+  "x-original-swagger-version" : "2.0",
+  "tags" : [ ],
+  "security" : [ ],
+  "x-mock" : true
+}
