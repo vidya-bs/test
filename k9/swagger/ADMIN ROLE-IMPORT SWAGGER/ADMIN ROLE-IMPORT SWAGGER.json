@@ -1,6 +1,6 @@
 {
   "openapi" : "3.0.1",
-  "info" : {
+  "infos" : {
     "title" : "ADMIN ROLE-IMPORT SWAGGER",
     "version" : "1.0"
   },
