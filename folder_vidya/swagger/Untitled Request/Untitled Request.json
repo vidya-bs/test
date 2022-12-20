@@ -1,6 +1,6 @@
 {
   "openapi" : "3.0.1",
-  "info" : {
+  "infos" : {
     "title" : "Untitled Request",
     "description" : "dummy",
     "version" : "1.0"
