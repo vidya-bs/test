@@ -1,0 +1,207 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "ADMIN ROLE-IMPORT SWAGGER",
+    "version" : "1.0"
+  },
+  "servers" : [ {
+    "url" : "https://mock-preprod.apiwiz.io/openapi/v1/loans",
+    "x-name" : "Server1"
+  } ],
+  "paths" : {
+    "/transactions" : {
+      "get" : {
+        "tags" : [ "ADMIN ROLE" ],
+        "summary" : "ADMIN ROLE-IMPORT SWAGGER",
+        "operationId" : "ADMIN ROLE-IMPORT SWAGGER",
+        "parameters" : [ {
+          "name" : "x-tenant",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "ff1c1ec1-e934-4cef-b014-b435b847e042"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Response for endpoint GET-transactions",
+            "headers" : {
+              "date" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "content-length" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "server" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "expires" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-envoy-upstream-service-time" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "vary" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-frame-options" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-rate-limit-remaining" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "pragma" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "strict-transport-security" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-content-type-options" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-xss-protection" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "content-type" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "cache-control" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "required" : [ "data", "meta", "status" ],
+                  "type" : "object",
+                  "properties" : {
+                    "data" : {
+                      "required" : [ "transactionList" ],
+                      "type" : "object",
+                      "properties" : {
+                        "transactionList" : {
+                          "type" : "array",
+                          "items" : {
+                            "required" : [ "data", "transactionDate" ],
+                            "type" : "object",
+                            "properties" : {
+                              "transactionDate" : {
+                                "type" : "string"
+                              },
+                              "data" : {
+                                "type" : "array",
+                                "items" : {
+                                  "required" : [ "txnAmount", "txnDate", "txnDecs", "txnMsg", "txnReferenceNo", "txnSubmsg", "txnTitle", "txnType" ],
+                                  "type" : "object",
+                                  "properties" : {
+                                    "txnReferenceNo" : {
+                                      "type" : "string"
+                                    },
+                                    "txnAmount" : {
+                                      "type" : "string"
+                                    },
+                                    "txnDate" : {
+                                      "type" : "string"
+                                    },
+                                    "txnType" : {
+                                      "type" : "string"
+                                    },
+                                    "txnDecs" : {
+                                      "type" : "string"
+                                    },
+                                    "txnTitle" : {
+                                      "type" : "string"
+                                    },
+                                    "txnMsg" : {
+                                      "type" : "string"
+                                    },
+                                    "txnSubmsg" : {
+                                      "type" : "string"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "meta" : {
+                      "required" : [ "totalPages" ],
+                      "type" : "object",
+                      "properties" : {
+                        "totalPages" : {
+                          "type" : "integer"
+                        }
+                      }
+                    },
+                    "status" : {
+                      "required" : [ "code", "message" ],
+                      "type" : "object",
+                      "properties" : {
+                        "code" : {
+                          "type" : "string"
+                        },
+                        "message" : {
+                          "type" : "string"
+                        }
+                      }
+                    }
+                  },
+                  "example" : "{\n    \"data\": {\n        \"transactionList\": [\n            {\n                \"transactionDate\": \"21 Mar 2022\",\n                \"data\": [\n                    {\n                        \"txnReferenceNo\": \"0217facc91fb2X7j\",\n                        \"txnAmount\": \"5,244.89\",\n                        \"txnDate\": \"21 Mar 2022, 10.02 PM\",\n                        \"txnType\": \"C\",\n                        \"txnDecs\": \"Automatic Repayment Collection\",\n                        \"txnTitle\": \"21 Mar 2022\",\n                        \"txnMsg\": \"Loan Payment\",\n                        \"txnSubmsg\": \"Regular Payment\"\n                    }\n                ]\n            }\n        ]\n    },\n    \"meta\": {\n        \"totalPages\": 1\n    },\n    \"status\": {\n        \"code\": \"00\",\n        \"message\": \"Success\"\n    }\n}"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : { },
+  "x-original-swagger-version" : "2.0",
+  "tags" : [ ],
+  "security" : [ ],
+  "x-mock" : true
+}
