@@ -1,0 +1,300 @@
+{
+  "swagger" : "2.0",
+  "infoo" : {
+    "title" : "Hello_Service",
+    "description" : "WSDL File for HelloService",
+    "x-ibm-name" : "helloservice",
+    "version" : "1.0.0"
+  },
+  "schemes" : [ "https" ],
+  "basePath" : "/Hello_Service",
+  "produces" : [ "application/xml" ],
+  "consumes" : [ "text/xml" ],
+  "securityDefinitions" : {
+    "clientID" : {
+      "type" : "apiKey",
+      "name" : "X-IBM-Client-Id",
+      "in" : "header",
+      "description" : ""
+    }
+  },
+  "security" : [ {
+    "clientID" : [ ]
+  } ],
+  "x-ibm-configuration" : {
+    "type" : "wsdl",
+    "phase" : "realized",
+    "enforced" : true,
+    "testable" : true,
+    "gateway" : "datapower-gateway",
+    "cors" : {
+      "enabled" : true
+    },
+    "wsdl-definition" : {
+      "wsdl" : "wsdl-1673598851552.wsdl",
+      "service" : "Hello_Service",
+      "port" : "Hello_Port",
+      "soap-version" : "1.1"
+    },
+    "assembly" : {
+      "execute" : [ {
+        "proxy" : {
+          "title" : "proxy",
+          "target-url" : "http://www.examples.com/SayHello/"
+        }
+      } ]
+    },
+    "x-ibm-apiconnect-wsdl" : {
+      "package-version" : "1.8.31",
+      "options" : { },
+      "messages" : {
+        "info" : [ ],
+        "warning" : [ ],
+        "error" : [ {
+          "message" : "The 'use=encoded' attribute setting is ignored on wsdl 'operation' sayHello. This is a violation of a WS-I Rule (R2706 A wsdl:binding in a DESCRIPTION MUST use the value of \"literal\" for the use attribute in all wsoap11:body, wsoap11:fault, wsoap11:header and wsoap11:headerfault elements)."
+        } ]
+      }
+    }
+  },
+  "paths" : {
+    "/sayHello" : {
+      "post" : {
+        "summary" : "Operation sayHello",
+        "description" : "",
+        "operationId" : "sayHello",
+        "x-ibm-soap" : {
+          "soap-action" : "sayHello",
+          "soap-operation" : "{urn:examples:helloservice}sayHello"
+        },
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/sayHelloInput"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/sayHelloOutput"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Security" : {
+      "xml" : {
+        "namespace" : "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd",
+        "prefix" : "wsse"
+      },
+      "description" : "Header for WS-Security",
+      "type" : "object",
+      "properties" : {
+        "UsernameToken" : {
+          "xml" : {
+            "namespace" : "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd",
+            "prefix" : "wsse"
+          },
+          "type" : "object",
+          "properties" : {
+            "Username" : {
+              "xml" : {
+                "namespace" : "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd",
+                "prefix" : "wsse"
+              },
+              "type" : "string"
+            },
+            "Password" : {
+              "xml" : {
+                "namespace" : "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd",
+                "prefix" : "wsse"
+              },
+              "type" : "string"
+            },
+            "Nonce" : {
+              "xml" : {
+                "namespace" : "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd",
+                "prefix" : "wsse"
+              },
+              "type" : "string",
+              "properties" : {
+                "EncodingType" : {
+                  "xml" : {
+                    "namespace" : "",
+                    "attribute" : true
+                  },
+                  "type" : "string"
+                }
+              }
+            },
+            "Created" : {
+              "xml" : {
+                "namespace" : "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd",
+                "prefix" : "wsu"
+              },
+              "type" : "string"
+            }
+          }
+        },
+        "Timestamp" : {
+          "xml" : {
+            "namespace" : "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd",
+            "prefix" : "wsu"
+          },
+          "type" : "object",
+          "properties" : {
+            "Created" : {
+              "xml" : {
+                "namespace" : "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd",
+                "prefix" : "wsu"
+              },
+              "type" : "string"
+            },
+            "Expires" : {
+              "xml" : {
+                "namespace" : "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd",
+                "prefix" : "wsu"
+              },
+              "type" : "string"
+            },
+            "Id" : {
+              "xml" : {
+                "namespace" : "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd",
+                "prefix" : "wsu",
+                "attribute" : true
+              },
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "sayHelloInput" : {
+      "description" : "Input message for wsdl operation sayHello",
+      "type" : "object",
+      "properties" : {
+        "Envelope" : {
+          "xml" : {
+            "namespace" : "http://schemas.xmlsoap.org/soap/envelope/",
+            "prefix" : "soapenv"
+          },
+          "type" : "object",
+          "properties" : {
+            "Header" : {
+              "$ref" : "#/definitions/sayHelloHeader"
+            },
+            "Body" : {
+              "xml" : {
+                "namespace" : "http://schemas.xmlsoap.org/soap/envelope/",
+                "prefix" : "soapenv"
+              },
+              "type" : "object",
+              "properties" : {
+                "sayHello" : {
+                  "$ref" : "#/definitions/SayHelloRequest_tns"
+                }
+              },
+              "required" : [ "sayHello" ]
+            }
+          },
+          "required" : [ "Body" ]
+        }
+      },
+      "required" : [ "Envelope" ],
+      "x-ibm-schema" : {
+        "wsdl-port" : "{http://www.examples.com/wsdl/HelloService.wsdl}Hello_Port",
+        "wsdl-operation" : "sayHello",
+        "wsdl-message-direction-or-name" : "sayHelloRequest"
+      },
+      "example" : "\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n <soapenv:Header>\n  <!-- The Security element should be removed if WS-Security is not enabled on the SOAP target-url -->\n  <wsse:Security xmlns:wsse=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\" xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\">\n   <wsse:UsernameToken>\n    <wsse:Username>string</wsse:Username>\n    <wsse:Password>string</wsse:Password>\n    <wsse:Nonce EncodingType=\"string\">string</wsse:Nonce>\n    <wsu:Created>string</wsu:Created>\n   </wsse:UsernameToken>\n   <wsu:Timestamp wsu:Id=\"string\">\n    <wsu:Created>string</wsu:Created>\n    <wsu:Expires>string</wsu:Expires>\n   </wsu:Timestamp>\n  </wsse:Security>\n </soapenv:Header>\n <soapenv:Body>\n  <tns:sayHello xmlns:tns=\"http://www.examples.com/wsdl/HelloService.wsdl\"><!-- mandatory -->\n   <tns:firstName>string</tns:firstName>\n  </tns:sayHello>\n </soapenv:Body>\n</soapenv:Envelope>"
+    },
+    "sayHelloHeader" : {
+      "description" : "Input headers for wsdl operation sayHello",
+      "type" : "object",
+      "properties" : {
+        "Security" : {
+          "$ref" : "#/definitions/Security"
+        }
+      }
+    },
+    "sayHelloOutput" : {
+      "description" : "Output message for wsdl operation sayHello",
+      "type" : "object",
+      "properties" : {
+        "Envelope" : {
+          "xml" : {
+            "namespace" : "http://schemas.xmlsoap.org/soap/envelope/",
+            "prefix" : "soapenv"
+          },
+          "type" : "object",
+          "properties" : {
+            "Body" : {
+              "xml" : {
+                "namespace" : "http://schemas.xmlsoap.org/soap/envelope/",
+                "prefix" : "soapenv"
+              },
+              "type" : "object",
+              "properties" : {
+                "SayHelloResponse" : {
+                  "$ref" : "#/definitions/SayHelloResponse_tns"
+                }
+              }
+            }
+          },
+          "required" : [ "Body" ]
+        }
+      },
+      "required" : [ "Envelope" ],
+      "x-ibm-schema" : {
+        "wsdl-port" : "{http://www.examples.com/wsdl/HelloService.wsdl}Hello_Port",
+        "wsdl-operation" : "sayHello",
+        "wsdl-message-direction-or-name" : "sayHelloResponse"
+      },
+      "example" : "\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n <soapenv:Body>\n  <tns:SayHelloResponse xmlns:tns=\"http://www.examples.com/wsdl/HelloService.wsdl\">\n   <tns:greeting>string</tns:greeting>\n  </tns:SayHelloResponse>\n </soapenv:Body>\n</soapenv:Envelope>"
+    },
+    "SayHelloRequest_tns" : {
+      "xml" : {
+        "namespace" : "http://www.examples.com/wsdl/HelloService.wsdl",
+        "prefix" : "tns",
+        "name" : "sayHello"
+      },
+      "type" : "object",
+      "properties" : {
+        "firstName" : {
+          "xml" : {
+            "namespace" : "http://www.examples.com/wsdl/HelloService.wsdl",
+            "prefix" : "tns"
+          },
+          "type" : "string"
+        }
+      },
+      "example" : "\n<tns:sayHello xmlns:tns=\"http://www.examples.com/wsdl/HelloService.wsdl\">\n <tns:firstName>string</tns:firstName>\n</tns:sayHello>"
+    },
+    "SayHelloResponse_tns" : {
+      "xml" : {
+        "namespace" : "http://www.examples.com/wsdl/HelloService.wsdl",
+        "prefix" : "tns",
+        "name" : "SayHelloResponse"
+      },
+      "type" : "object",
+      "properties" : {
+        "greeting" : {
+          "xml" : {
+            "namespace" : "http://www.examples.com/wsdl/HelloService.wsdl",
+            "prefix" : "tns"
+          },
+          "type" : "string"
+        }
+      },
+      "example" : "\n<tns:SayHelloResponse xmlns:tns=\"http://www.examples.com/wsdl/HelloService.wsdl\">\n <tns:greeting>string</tns:greeting>\n</tns:SayHelloResponse>"
+    }
+  },
+  "servers" : [ ],
+  "tags" : [ ],
+  "components" : { },
+  "x-mock" : true
+}
