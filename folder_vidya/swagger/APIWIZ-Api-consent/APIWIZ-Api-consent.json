@@ -1,0 +1,376 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "APIWIZ-Api-consent",
+    "description" : "Swagger Documentation for APIWIZ-Api-consent",
+    "version" : "v1.0.0",
+    "contact" : {
+      "name" : "gautami",
+      "url" : "gautami@gmail.com"
+    }
+  },
+  "paths" : {
+    "/v1/consents/scopes/category" : {
+      "post" : {
+        "summary" : "createScopeCategory",
+        "description" : "createScopeCategory",
+        "parameters" : [ {
+          "x-key" : 1,
+          "name" : "jsessionid",
+          "in" : "header",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/ScopeCategory"
+        },
+        "operationId" : "createScopeCategory",
+        "responses" : {
+          "202" : {
+            "description" : "",
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        },
+        "tags" : [ ]
+      },
+      "put" : {
+        "summary" : "updateScopeCategory",
+        "description" : "updateScopeCategory",
+        "parameters" : [ {
+          "x-key" : "parameter1",
+          "name" : "jsessionid",
+          "in" : "header",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/ScopeCategory"
+        },
+        "operationId" : "updateScopeCategory",
+        "responses" : {
+          "202" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ ]
+      },
+      "description" : "createScopeCategory"
+    },
+    "/v1/consents/scopes/category/{name}" : {
+      "parameters" : [ {
+        "name" : "name",
+        "in" : "path",
+        "required" : true,
+        "description" : "",
+        "schema" : {
+          "type" : "string"
+        }
+      } ],
+      "delete" : {
+        "summary" : "deleteScopeCategory",
+        "description" : "deleteScopeCategory",
+        "parameters" : [ {
+          "x-key" : "parameter1",
+          "name" : "jsessionid",
+          "in" : "header",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "operationId" : "deleteScopeCategory",
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ ]
+      },
+      "description" : "deleteScopeCategory"
+    },
+    "/v1/consents/scopes" : {
+      "get" : {
+        "summary" : "getScopeCategoryByName",
+        "description" : "getScopeCategoryByName",
+        "parameters" : [ {
+          "x-key" : "parameter1",
+          "name" : "category",
+          "in" : "header",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "operationId" : "getScopeCategoryByName",
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        },
+        "tags" : [ ]
+      },
+      "description" : "getScopeCategoryByName"
+    },
+    "/v1/consents/data" : {
+      "put" : {
+        "summary" : "createOrUpdateScopeCategoryColumns",
+        "description" : "createOrUpdateScopeCategoryColumns",
+        "parameters" : [ {
+          "x-key" : "parameter1",
+          "name" : "jsessionid",
+          "in" : "header",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/ScopeCategory"
+        },
+        "operationId" : "createOrUpdateScopeCategoryColumns",
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ ]
+      },
+      "description" : "createOrUpdateScopeCategoryColumns"
+    },
+    "/v1/consents/generate-token" : {
+      "post" : {
+        "summary" : "generateKeyPairs",
+        "description" : "generateKeyPairs",
+        "parameters" : [ {
+          "x-key" : 1,
+          "name" : "jsessionid",
+          "in" : "header",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "operationId" : "generateKeyPairs",
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            }
+          },
+          "201" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ ]
+      },
+      "description" : "generateKeyPairs"
+    },
+    "/v1/consents/update-consent-trigger" : {
+      "patch" : {
+        "summary" : "updateTrigger",
+        "description" : "updateTrigger",
+        "parameters" : [ {
+          "x-key" : "parameter1",
+          "name" : "jsessionid",
+          "in" : "header",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "operationId" : "updateTrigger",
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ ]
+      },
+      "description" : "updateTrigger"
+    },
+    "/v1/consents/token" : {
+      "get" : {
+        "summary" : "getToken",
+        "description" : "getToken",
+        "parameters" : [ {
+          "x-key" : "parameter1",
+          "name" : "jsessionid",
+          "in" : "header",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "operationId" : "getToken",
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ ]
+      },
+      "description" : "getToken"
+    },
+    "/v1/consents/scopes/category/names" : {
+      "get" : {
+        "summary" : "getScopeCategoryNames",
+        "description" : "getScopeCategoryNames",
+        "operationId" : "getScopeCategoryNames",
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ ]
+      },
+      "description" : "getScopeCategoryNames"
+    },
+    "/v1/consents/export" : {
+      "get" : {
+        "summary" : "generateExcelReport",
+        "description" : "generateExcelReport",
+        "parameters" : [ {
+          "x-key" : 1,
+          "name" : "interactionid",
+          "in" : "header",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "x-key" : 2,
+          "name" : "jsessionid",
+          "in" : "header",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "x-key" : 3,
+          "name" : "timeRange",
+          "in" : "query",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "operationId" : "generateExcelReport",
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ ]
+      },
+      "description" : "generateExcelReport"
+    }
+  },
+  "tags" : [ ],
+  "x-mock" : true,
+  "x-metadata" : {
+    "metadata" : {
+      "swaggerName" : "20b281f4335c48f482944f471ce3e4fb",
+      "revision" : 1,
+      "documentation" : [ ],
+      "category" : [ {
+        "name" : "Unsorted",
+        "paths" : [ "/v1/consents/scopes/category", "/v1/consents/scopes/category/{name}", "/v1/consents/scopes", "/v1/consents/data", "/v1/consents/generate-token", "/v1/consents/update-consent-trigger", "/v1/consents/token", "/v1/consents/scopes/category/names", "/v1/consents/export" ],
+        "definitions" : [ "ScopeCategory", "Scope" ]
+      } ]
+    }
+  },
+  "servers" : [ ],
+  "components" : {
+    "requestBodies" : {
+      "ScopeCategory" : {
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/ScopeCategory"
+            }
+          }
+        },
+        "required" : true
+      }
+    },
+    "schemas" : {
+      "ScopeCategory" : {
+        "description" : "",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "displayName" : {
+            "type" : "string"
+          },
+          "summary" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "expiry" : {
+            "type" : "string"
+          },
+          "scopes" : {
+            "$ref" : "#/components/schemas/Scope"
+          },
+          "cts" : {
+            "type" : "integer"
+          },
+          "mts" : {
+            "type" : "integer"
+          },
+          "createdUserName" : {
+            "type" : "string"
+          },
+          "modifiedUserName" : {
+            "type" : "string"
+          },
+          "createdBy" : {
+            "type" : "string"
+          },
+          "modifiedBy" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "Scope" : {
+        "description" : "",
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "summary" : {
+            "type" : "string"
+          }
+        }
+      }
+    }
+  },
+  "security" : [ ]
+}
