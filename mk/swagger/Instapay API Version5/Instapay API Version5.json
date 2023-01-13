@@ -1,0 +1,1061 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "title" : "Instapay API Version5",
+    "description" : "Swagger Documentation for Instapay API Version 1",
+    "version" : "v1.0.0",
+    "termsOfService" : "",
+    "license" : {
+      "name" : "Terms and Conditions",
+      "url" : "https://tonikbank.com/terms-condition"
+    },
+    "contact" : {
+      "name" : "Customer Care",
+      "url" : "https://tonikbank.com/",
+      "email" : "customercare@tonikbank.com"
+    }
+  },
+  "paths" : {
+    "/beneficiary" : {
+      "x-description" : "Get beneficiary and menu list",
+      "get" : {
+        "summary" : "Get beneficiary and menu list",
+        "description" : "Get beneficiary and menu list",
+        "parameters" : [ {
+          "$ref" : "#/parameters/clientinfo"
+        }, {
+          "$ref" : "#/parameters/tonikusertoken"
+        }, {
+          "$ref" : "#/parameters/Authorization"
+        }, {
+          "$ref" : "#/parameters/Accept"
+        } ],
+        "operationId" : "beneficiary",
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/beneficiarymenulistResp"
+            }
+          },
+          "400" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "401" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "403" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "404" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "405" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "429" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "500" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "501" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "502" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "504" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          }
+        },
+        "x-gw-metadata" : [ {
+          "x-gw-cache-resource" : [ "" ]
+        }, {
+          "x-gw-cache-timeout-unit" : [ "seconds" ]
+        }, {
+          "x-gw-cache-timeout" : [ "" ]
+        }, {
+          "x-gw-cache-key" : [ ]
+        } ],
+        "tags" : [ "Instapay Beneficiary" ],
+        "x-targetBasepath" : "/instapay/v1/instapay-beneficiary",
+        "security" : [ {
+          "oAuth2" : [ "tonik:read:write" ]
+        } ]
+      }
+    },
+    "/beneficiarybanklist" : {
+      "x-description" : "Get beneficiary bank list",
+      "get" : {
+        "summary" : "Beneficiary bank list",
+        "description" : "Get beneficiary bank list",
+        "parameters" : [ {
+          "$ref" : "#/parameters/clientinfo"
+        }, {
+          "$ref" : "#/parameters/tonikusertoken"
+        }, {
+          "$ref" : "#/parameters/Authorization"
+        }, {
+          "$ref" : "#/parameters/Accept"
+        } ],
+        "operationId" : "beneficiarybanklist",
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/beneficiarybanklistResp"
+            }
+          },
+          "400" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "401" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "403" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "404" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "405" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "429" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "500" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "501" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "502" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "504" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          }
+        },
+        "x-gw-metadata" : [ {
+          "x-gw-cache-resource" : [ "" ]
+        }, {
+          "x-gw-cache-timeout-unit" : [ "seconds" ]
+        }, {
+          "x-gw-cache-timeout" : [ "" ]
+        }, {
+          "x-gw-cache-key" : [ ]
+        } ],
+        "tags" : [ "Instapay Beneficiary" ],
+        "x-targetBasepath" : "/instapay/v1/instapay-beneficarybanklist",
+        "security" : [ {
+          "oAuth2" : [ "tonik:read:write" ]
+        } ]
+      }
+    },
+    "/transaction" : {
+      "x-description" : "Initiate the instaPay transaction, this will trigger OTP to be sent to customer’s registered mobile number",
+      "post" : {
+        "summary" : "Initiate the instaPay transaction, this will trigger OTP to be sent to customer’s registered mobile number",
+        "description" : "Initiate the instaPay transaction, this will trigger OTP to be sent to customer’s registered mobile number",
+        "parameters" : [ {
+          "name" : "instapaytransactionReq",
+          "in" : "body",
+          "description" : "",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/instapaytransactionReq"
+          }
+        }, {
+          "$ref" : "#/parameters/clientinfo"
+        }, {
+          "$ref" : "#/parameters/tonikusertoken"
+        }, {
+          "$ref" : "#/parameters/Authorization"
+        }, {
+          "$ref" : "#/parameters/Accept"
+        }, {
+          "$ref" : "#/parameters/Content-Type"
+        } ],
+        "operationId" : "instapaytransaction",
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/instapaytransactionResp"
+            }
+          },
+          "400" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "401" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "403" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "404" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "405" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "429" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "500" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "501" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "502" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "504" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          }
+        },
+        "x-gw-metadata" : [ {
+          "x-gw-cache-resource" : [ "" ]
+        }, {
+          "x-gw-cache-timeout-unit" : [ "seconds" ]
+        }, {
+          "x-gw-cache-timeout" : [ "" ]
+        }, {
+          "x-gw-cache-key" : [ ]
+        } ],
+        "tags" : [ "Instapay Transaction" ],
+        "x-targetBasepath" : "/instapay/v1/instapay-transaction",
+        "security" : [ {
+          "oAuth2" : [ "tonik:read:write" ]
+        } ]
+      },
+      "put" : {
+        "summary" : "Updates instapay transaction, includes OTP key-ed in by the customer",
+        "description" : "Updates instapay transaction, includes OTP key-ed in by the customer",
+        "parameters" : [ {
+          "name" : "updateInstapaytransactionReq",
+          "in" : "body",
+          "description" : "",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/updateInstapaytransactionReq"
+          }
+        }, {
+          "$ref" : "#/parameters/clientinfo"
+        }, {
+          "$ref" : "#/parameters/tonikusertoken"
+        }, {
+          "$ref" : "#/parameters/Authorization"
+        }, {
+          "$ref" : "#/parameters/Accept"
+        }, {
+          "$ref" : "#/parameters/Content-Type"
+        } ],
+        "operationId" : "updateInstapaytransaction",
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/updateInstapaytransactionResp"
+            }
+          },
+          "400" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "401" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "403" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "404" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "405" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "429" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "500" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "501" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "502" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          },
+          "504" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/errorSchema"
+            }
+          }
+        },
+        "x-gw-metadata" : [ {
+          "x-gw-cache-resource" : [ "" ]
+        }, {
+          "x-gw-cache-timeout-unit" : [ "seconds" ]
+        }, {
+          "x-gw-cache-timeout" : [ "" ]
+        }, {
+          "x-gw-cache-key" : [ ]
+        } ],
+        "tags" : [ "Instapay Transaction" ],
+        "x-targetBasepath" : "/instapay/v1/instapay-transaction",
+        "security" : [ {
+          "oAuth2" : [ "tonik:read:write" ]
+        } ]
+      }
+    },
+    "/test" : {
+      "x-description" : "test"
+    }
+  },
+  "schemes" : [ "https" ],
+  "x-servers" : [ {
+    "description" : "Test Environment",
+    "url" : "https://testapi.tonikbank.com/v1/instapay"
+  }, {
+    "description" : "Dev Environment",
+    "url" : "https://devapi.tonikbank.com/v1/instapay"
+  }, {
+    "description" : "UAT Environment",
+    "url" : "https://uatapi.tonikbank.com/v1/instapay"
+  } ],
+  "consumes" : [ "application/json" ],
+  "produces" : [ "application/json" ],
+  "tags" : [ {
+    "name" : "Instapay Beneficiary",
+    "description" : "Tags to group all API resources related Instapay Beneficiary schema"
+  }, {
+    "name" : "Instapay Transaction",
+    "description" : "Tags to group all API resources related Instapay Transaction schema"
+  } ],
+  "basePath" : "/v1/insta",
+  "host" : "uatapi.tonikbank.com",
+  "definitions" : {
+    "instapaytransactionReq" : {
+      "description" : "",
+      "required" : [ "transferVia", "currency", "trxAmount", "feeAmount", "receiverName", "receiverAccountNo", "purpose", "bicfi", "submodule", "module" ],
+      "properties" : {
+        "transferVia" : {
+          "type" : "string",
+          "example" : "InstaPay",
+          "description" : "Transfer via insta pay"
+        },
+        "currency" : {
+          "type" : "string",
+          "example" : "PHP",
+          "description" : "Amount currency"
+        },
+        "trxAmount" : {
+          "type" : "string",
+          "example" : "200.00",
+          "description" : "cash out amount"
+        },
+        "feeAmount" : {
+          "type" : "string",
+          "example" : "0.0",
+          "description" : "cash out fee amount"
+        },
+        "receiverName" : {
+          "type" : "string",
+          "example" : "Mark Ryan To",
+          "description" : "Receiver Name"
+        },
+        "receiverAccountNo" : {
+          "type" : "string",
+          "example" : "1231232631231",
+          "description" : "Receiver account no"
+        },
+        "purpose" : {
+          "type" : "string",
+          "example" : "payment for services",
+          "description" : "Purpose"
+        },
+        "bicfi" : {
+          "type" : "string",
+          "example" : "BDOPHXXX",
+          "description" : "bicfi (bank code)"
+        },
+        "submodule" : {
+          "type" : "string",
+          "example" : "BNI",
+          "description" : "Sub module"
+        },
+        "module" : {
+          "type" : "string",
+          "example" : "COUT",
+          "description" : "Module"
+        }
+      },
+      "type" : "object"
+    },
+    "instapaytransactionResp" : {
+      "description" : "",
+      "type" : "object",
+      "required" : [ "data", "meta", "status" ],
+      "properties" : {
+        "data" : {
+          "required" : [ "userId", "custId", "requestId", "uid", "message", "trxAmount", "feeAmount", "totalTrxAmount", "submodule", "module" ],
+          "properties" : {
+            "userId" : {
+              "type" : "string",
+              "example" : "1d9de10ac3cb4963b92a336810775b33",
+              "description" : "User Id"
+            },
+            "custId" : {
+              "type" : "string",
+              "example" : "1013170",
+              "description" : "Customer Id"
+            },
+            "requestId" : {
+              "type" : "string",
+              "example" : "fd19b4c09f5b43f683fae744a",
+              "description" : "Request Id"
+            },
+            "uid" : {
+              "type" : "string",
+              "example" : "INT-b1a4327f9571419f80b4792b18858a6b",
+              "description" : "uid"
+            },
+            "message" : {
+              "type" : "string",
+              "example" : "We sent the OTP to 639409209125",
+              "description" : "Message sent"
+            },
+            "trxAmount" : {
+              "type" : "string",
+              "example" : "600.00",
+              "description" : "cash out amount"
+            },
+            "feeAmount" : {
+              "type" : "string",
+              "example" : "0.0",
+              "description" : "cash out fee amount"
+            },
+            "totalTrxAmount" : {
+              "type" : "string",
+              "example" : "600.00",
+              "description" : "total amount including fees"
+            },
+            "submodule" : {
+              "type" : "string",
+              "example" : "BNI",
+              "description" : "Sub module"
+            },
+            "module" : {
+              "type" : "string",
+              "example" : "COUT",
+              "description" : "Module"
+            }
+          },
+          "type" : "object"
+        },
+        "meta" : {
+          "required" : [ "totalPages" ],
+          "properties" : {
+            "totalPages" : {
+              "type" : "number",
+              "example" : 1
+            }
+          },
+          "type" : "object"
+        },
+        "status" : {
+          "required" : [ "code", "message" ],
+          "properties" : {
+            "code" : {
+              "type" : "string",
+              "example" : "00"
+            },
+            "message" : {
+              "type" : "string",
+              "example" : "Success"
+            }
+          },
+          "type" : "object"
+        }
+      }
+    },
+    "updateInstapaytransactionResp" : {
+      "description" : "",
+      "type" : "object",
+      "required" : [ "data", "meta", "status" ],
+      "properties" : {
+        "data" : {
+          "required" : [ "custId", "message", "totalTrxAmount", "trxAmount", "feeAmount", "submodule", "module", "status", "code" ],
+          "properties" : {
+            "custId" : {
+              "type" : "string",
+              "example" : "1013170",
+              "description" : "Customer Id"
+            },
+            "message" : {
+              "type" : "string",
+              "example" : "is transfered to Priya BPI",
+              "description" : "Message sent"
+            },
+            "totalTrxAmount" : {
+              "type" : "string",
+              "example" : "700.00",
+              "description" : "total amount including fees"
+            },
+            "trxAmount" : {
+              "type" : "string",
+              "example" : "700.00",
+              "description" : "cash out amount"
+            },
+            "feeAmount" : {
+              "type" : "string",
+              "example" : "0.00",
+              "description" : "cash out fee amount"
+            },
+            "submodule" : {
+              "type" : "string",
+              "example" : "BNI",
+              "description" : "Sub module"
+            },
+            "module" : {
+              "type" : "string",
+              "example" : "COUT",
+              "description" : "Module"
+            },
+            "status" : {
+              "type" : "string",
+              "example" : "P",
+              "description" : "Status S/F (Success/Failed)"
+            },
+            "code" : {
+              "type" : "string",
+              "example" : "000000",
+              "description" : "Code"
+            }
+          },
+          "type" : "object"
+        },
+        "meta" : {
+          "required" : [ "totalPages" ],
+          "properties" : {
+            "totalPages" : {
+              "type" : "number",
+              "example" : 1
+            }
+          },
+          "type" : "object"
+        },
+        "status" : {
+          "required" : [ "code", "message" ],
+          "properties" : {
+            "code" : {
+              "type" : "string",
+              "example" : "00"
+            },
+            "message" : {
+              "type" : "string",
+              "example" : "Success"
+            }
+          },
+          "type" : "object"
+        }
+      }
+    },
+    "updateInstapaytransactionReq" : {
+      "description" : "",
+      "required" : [ "transferVia", "submodule", "module", "uid", "code", "requestId" ],
+      "properties" : {
+        "transferVia" : {
+          "type" : "string",
+          "example" : "InstaPay",
+          "description" : "Transfer via(insta pay)"
+        },
+        "submodule" : {
+          "type" : "string",
+          "example" : "BNI",
+          "description" : "Sub module"
+        },
+        "module" : {
+          "type" : "string",
+          "example" : "COUT",
+          "description" : "Module"
+        },
+        "uid" : {
+          "type" : "string",
+          "example" : "323 a4868cb474729b883ade40080f990",
+          "description" : "Unique ID for OTP identification."
+        },
+        "code" : {
+          "type" : "string",
+          "example" : "313984",
+          "description" : "code"
+        },
+        "requestId" : {
+          "type" : "string",
+          "example" : "543a1a9beb6c4ffba91d2f612",
+          "description" : "Request Id"
+        }
+      },
+      "type" : "object"
+    },
+    "beneficiarymenulistResp" : {
+      "description" : "",
+      "type" : "object",
+      "required" : [ "data", "meta", "status" ],
+      "properties" : {
+        "data" : {
+          "required" : [ "beneficiaryList" ],
+          "properties" : {
+            "beneficiaryList" : {
+              "type" : "array",
+              "items" : {
+                "type" : "object",
+                "required" : [ "id", "beneficiaryName", "mobileNumber", "bankName", "bicfi", "module", "submodule", "fromPayer" ],
+                "properties" : {
+                  "id" : {
+                    "type" : "number",
+                    "example" : 366951,
+                    "description" : "Id"
+                  },
+                  "beneficiaryName" : {
+                    "type" : "string",
+                    "example" : "MARIA LOURDES J",
+                    "description" : "Beneficiary name"
+                  },
+                  "mobileNumber" : {
+                    "type" : "string",
+                    "example" : "639409209185",
+                    "description" : "Beneficiary mobile number"
+                  },
+                  "bankName" : {
+                    "type" : "string",
+                    "example" : "BDO",
+                    "description" : "Bank Name"
+                  },
+                  "bicfi" : {
+                    "type" : "string",
+                    "example" : "BNORPHMMXXX",
+                    "description" : "bicfi"
+                  },
+                  "module" : {
+                    "type" : "string",
+                    "example" : "COUT",
+                    "description" : "module"
+                  },
+                  "submodule" : {
+                    "type" : "string",
+                    "example" : "BNI",
+                    "description" : "sub module"
+                  },
+                  "fromPayer" : {
+                    "type" : "string",
+                    "example" : "My Tonik Account",
+                    "description" : "From payer account"
+                  }
+                }
+              }
+            },
+            "menuList" : {
+              "type" : "array",
+              "items" : {
+                "type" : "object",
+                "required" : [ "name", "module", "submodule", "maxLimit", "minLimit", "maxRange", "minRange", "transactionfee", "transactionPercent", "dailyLimit" ],
+                "properties" : {
+                  "name" : {
+                    "type" : "string",
+                    "example" : "G Cash",
+                    "description" : "Name"
+                  },
+                  "module" : {
+                    "type" : "string",
+                    "example" : "COUT",
+                    "description" : "Module"
+                  },
+                  "submodule" : {
+                    "type" : "string",
+                    "example" : "GCA",
+                    "description" : "Sub module"
+                  },
+                  "maxLimit" : {
+                    "type" : "string",
+                    "example" : "100000.0",
+                    "description" : "Max limit"
+                  },
+                  "minLimit" : {
+                    "type" : "string",
+                    "example" : "1.0",
+                    "description" : "Min limit"
+                  },
+                  "maxRange" : {
+                    "type" : "string",
+                    "example" : "NA",
+                    "description" : "Max range"
+                  },
+                  "minRange" : {
+                    "type" : "string",
+                    "example" : "NA",
+                    "description" : "Min Range"
+                  },
+                  "transactionfee" : {
+                    "type" : "string",
+                    "example" : "25",
+                    "description" : "Transaction fee"
+                  },
+                  "transactionPercent" : {
+                    "type" : "string",
+                    "example" : "0",
+                    "description" : "Transaction percent"
+                  },
+                  "dailyLimit" : {
+                    "type" : "string",
+                    "example" : "50000.0",
+                    "description" : "Daily limit"
+                  }
+                }
+              }
+            }
+          },
+          "type" : "object"
+        },
+        "meta" : {
+          "required" : [ "totalPages" ],
+          "properties" : {
+            "totalPages" : {
+              "type" : "number",
+              "example" : 1
+            }
+          },
+          "type" : "object"
+        },
+        "status" : {
+          "required" : [ "code", "message" ],
+          "properties" : {
+            "code" : {
+              "type" : "string",
+              "example" : "00"
+            },
+            "message" : {
+              "type" : "string",
+              "example" : "Success"
+            }
+          },
+          "type" : "object"
+        }
+      }
+    },
+    "beneficiarybanklistResp" : {
+      "description" : "",
+      "required" : [ "datamodel", "metadata", "code" ],
+      "properties" : {
+        "datamodel" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object",
+            "required" : [ "titles", "codedata" ],
+            "properties" : {
+              "titles" : {
+                "type" : "string",
+                "example" : "Popular banks",
+                "description" : "Title"
+              },
+              "codedata" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "required" : [ "bankName", "bankCode", "bicfi", "displayOrder" ],
+                  "properties" : {
+                    "bankName" : {
+                      "type" : "string",
+                      "example" : "BDO Unibank, Inc.",
+                      "description" : "Bank name"
+                    },
+                    "bankCode" : {
+                      "type" : "string",
+                      "example" : "BDO",
+                      "description" : "Bank code"
+                    },
+                    "bicfi" : {
+                      "type" : "string",
+                      "example" : "BDOPHXXX",
+                      "description" : "bicfi"
+                    },
+                    "displayOrder" : {
+                      "type" : "string",
+                      "example" : "1",
+                      "description" : "Display order"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "metadata" : {
+          "required" : [ "totalPages" ],
+          "properties" : {
+            "totalPages" : {
+              "type" : "number",
+              "example" : 1
+            }
+          },
+          "type" : "object"
+        },
+        "code" : {
+          "required" : [ "code" ],
+          "properties" : {
+            "code" : {
+              "type" : "string",
+              "example" : "00"
+            },
+            "messages" : {
+              "type" : "string",
+              "example" : "Success"
+            }
+          },
+          "type" : "object"
+        }
+      },
+      "type" : "object"
+    },
+    "errorSchema" : {
+      "description" : "",
+      "type" : "object",
+      "required" : [ "errors" ],
+      "properties" : {
+        "errors" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "code" : {
+                "type" : "string",
+                "example" : "Security-1001"
+              },
+              "userMessage" : {
+                "type" : "string",
+                "example" : "Invalid Access Token"
+              },
+              "info" : {
+                "type" : "string",
+                "example" : "https://developers.myapi.com/errors/#Security-1001"
+              }
+            }
+          }
+        }
+      }
+    },
+    "TESTING GLOBAL-ANALYST ROLE-DATA DICTIONARY" : {
+      "description" : "",
+      "type" : "string"
+    }
+  },
+  "securityDefinitions" : {
+    "oAuth2" : {
+      "type" : "oauth2",
+      "scopes" : {
+        "tonik:read:write" : "Tonik Global Scopes"
+      },
+      "flow" : "application",
+      "tokenUrl" : "https://uatapi.tonikbank.com/v1/security/oauth-token"
+    }
+  },
+  "parameters" : {
+    "clientinfo" : {
+      "name" : "clientinfo",
+      "in" : "header",
+      "required" : false,
+      "type" : "string",
+      "x-newAdded" : true
+    },
+    "tonikusertoken" : {
+      "name" : "tonikusertoken",
+      "in" : "header",
+      "required" : false,
+      "type" : "string",
+      "x-newAdded" : true
+    },
+    "Authorization" : {
+      "name" : "Authorization",
+      "in" : "header",
+      "required" : false,
+      "type" : "string",
+      "x-newAdded" : true
+    },
+    "Accept" : {
+      "name" : "Accept",
+      "in" : "header",
+      "required" : false,
+      "type" : "string",
+      "x-newAdded" : true
+    },
+    "Content-Type" : {
+      "name" : "Content-Type",
+      "in" : "header",
+      "required" : false,
+      "type" : "string",
+      "x-newAdded" : true
+    }
+  },
+  "x-mock" : true,
+  "x-metadata" : {
+    "metadata" : {
+      "swaggerName" : "e6e3e835f682413da6aac2cc7d765ggf",
+      "revision" : 1,
+      "documentation" : [ {
+        "title" : "test",
+        "summary" : "test",
+        "content" : "test"
+      } ],
+      "category" : [ {
+        "name" : "Unsorted",
+        "paths" : [ "/test" ],
+        "definitions" : [ "TESTING GLOBAL-ANALYST ROLE-DATA DICTIONARY" ]
+      }, {
+        "name" : "Instapay",
+        "paths" : [ "/beneficiary", "/beneficiarybanklist", "/transaction" ],
+        "definitions" : [ "instapaytransactionResp", "updateInstapaytransactionResp", "beneficiarymenulistResp", "errorSchema", "instapaytransactionReq", "updateInstapaytransactionReq", "beneficiarybanklistResp" ]
+      } ],
+      "models" : [ {
+        "dataDictionaryId" : "639c3ad617d6ae277b7f5ef8",
+        "dataDictionaryRevision" : "Revision 1",
+        "dataDictionary" : "TESTING GLOBAL-ANALYST ROLE-DATA DICTIONARY",
+        "modelName" : "TESTING GLOBAL-ANALYST ROLE-DATA DICTIONARY",
+        "modelId" : "f52e631342584aac88596aae7f6a56b8",
+        "revision" : 1
+      } ]
+    }
+  },
+  "security" : [ {
+    "oAuth2" : [ "tonik:read:write" ]
+  } ],
+  "responses" : {
+    "" : {
+      "description" : "",
+      "x-newAdded" : true,
+      "x-index" : 1
+    }
+  },
+  "servers" : [ ],
+  "components" : { }
+}
