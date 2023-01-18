@@ -1,6 +1,6 @@
 {
   "openapi" : "3.0.1",
-  "info" : {
+  "infoo" : {
     "title" : "test",
     "description" : "dummy",
     "version" : "1.0"
