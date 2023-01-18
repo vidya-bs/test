@@ -1,0 +1,804 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "title" : "APIWIZ-Astrum-api",
+    "description" : "Swagger Documentation for APIWIZ-Astrum",
+    "version" : "v1.0.0",
+    "termsOfService" : ""
+  },
+  "paths" : {
+    "/v1/lint/{astrumExecutionId}" : {
+      "parameters" : [ {
+        "name" : "astrumExecutionId",
+        "in" : "path",
+        "required" : true,
+        "description" : "",
+        "type" : "string"
+      } ],
+      "x-description" : "lint",
+      "post" : {
+        "summary" : "lint",
+        "description" : "lint",
+        "parameters" : [ {
+          "x-key" : "parameter1",
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "body",
+          "description" : "",
+          "required" : true,
+          "schema" : {
+            "description" : "",
+            "type" : "string"
+          }
+        } ],
+        "operationId" : "lint",
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ ]
+      }
+    },
+    "/lint" : {
+      "x-description" : "lint",
+      "post" : {
+        "summary" : "lintSwaggerByRuleSet",
+        "description" : "lintSwaggerByRuleSet",
+        "parameters" : [ {
+          "x-key" : "parameter1",
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "swaggerLintingInfo",
+          "in" : "body",
+          "description" : "",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/SwaggerLintingInfo"
+          }
+        } ],
+        "operationId" : "lintSwaggerByRuleSet",
+        "responses" : {
+          "202" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ ]
+      }
+    },
+    "/format" : {
+      "x-description" : "formatSwaggerFile",
+      "post" : {
+        "summary" : "formatSwaggerFile",
+        "description" : "formatSwaggerFile",
+        "parameters" : [ {
+          "x-key" : "parameter1",
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "operationId" : "formatSwaggerFile",
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ ]
+      }
+    },
+    "/lint/data-dictionary" : {
+      "x-description" : "lintDataDictionary",
+      "post" : {
+        "summary" : "lintDataDictionary",
+        "description" : "lintDataDictionary",
+        "parameters" : [ {
+          "x-key" : "parameter1",
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "dataDictionary",
+          "in" : "body",
+          "description" : "",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/DataDictionaryReport"
+          }
+        } ],
+        "operationId" : "lintDataDictionary",
+        "responses" : {
+          "202" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ ]
+      }
+    },
+    "/rule-set" : {
+      "x-description" : "createRuleSet",
+      "post" : {
+        "summary" : "createRuleSet",
+        "description" : "createRuleSet",
+        "parameters" : [ {
+          "x-key" : "parameter1",
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "ruleSet",
+          "in" : "body",
+          "description" : "",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/RuleSet"
+          }
+        } ],
+        "operationId" : "createRuleSet",
+        "responses" : {
+          "201" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ ]
+      }
+    },
+    "/rule-set/{ruleSetId}" : {
+      "parameters" : [ {
+        "name" : "ruleSetId",
+        "in" : "path",
+        "required" : true,
+        "description" : "",
+        "type" : "string"
+      } ],
+      "x-description" : "updateRuleSet",
+      "put" : {
+        "summary" : "updateRuleSet",
+        "description" : "updateRuleSet",
+        "parameters" : [ {
+          "x-key" : "parameter1",
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "ruleSet",
+          "in" : "body",
+          "description" : "",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/RuleSet"
+          }
+        } ],
+        "operationId" : "updateRuleSet",
+        "responses" : {
+          "202" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ ]
+      },
+      "delete" : {
+        "summary" : "deleteRuleSet",
+        "description" : "deleteRuleSet",
+        "parameters" : [ {
+          "x-key" : "parameter1",
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "",
+          "in" : "body",
+          "description" : "",
+          "required" : true,
+          "schema" : {
+            "description" : "",
+            "type" : "string"
+          }
+        } ],
+        "operationId" : "deleteRuleSet",
+        "responses" : {
+          "202" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ ]
+      },
+      "get" : {
+        "summary" : "getRuleSetByIdOrName",
+        "description" : "getRuleSetByIdOrName",
+        "parameters" : [ {
+          "x-key" : "parameter1",
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "operationId" : "getRuleSetByIdOrName",
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ ]
+      }
+    },
+    "/rule-set/" : {
+      "x-description" : "getAllRuleSets",
+      "get" : {
+        "summary" : "getAllRuleSets",
+        "description" : "getAllRuleSets",
+        "parameters" : [ {
+          "x-key" : "parameter1",
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "operationId" : "getAllRuleSets",
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ ]
+      }
+    },
+    "/lint/report/search" : {
+      "x-description" : "getLintingReport",
+      "get" : {
+        "summary" : "getLintingReport",
+        "description" : "getLintingReport",
+        "parameters" : [ {
+          "x-key" : "parameter1",
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "operationId" : "getLintingReport",
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ ]
+      }
+    },
+    "/lint/history" : {
+      "x-description" : "getLintingReportHistory",
+      "get" : {
+        "summary" : "getLintingReportHistory",
+        "description" : "getLintingReportHistory",
+        "parameters" : [ {
+          "x-key" : "parameter1",
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "operationId" : "getLintingReportHistory",
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ ]
+      }
+    },
+    "/lint/report/dashboard" : {
+      "x-description" : "getDashboardReport",
+      "get" : {
+        "summary" : "getDashboardReport",
+        "description" : "getDashboardReport",
+        "parameters" : [ {
+          "x-key" : "parameter1",
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "operationId" : "getDashboardReport",
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ ]
+      }
+    }
+  },
+  "schemes" : [ "https" ],
+  "x-servers" : [ ],
+  "consumes" : [ ],
+  "produces" : [ ],
+  "tags" : [ ],
+  "basePath" : "/v1/astrum",
+  "host" : "gcp-api.apiwiz.io",
+  "definitions" : {
+    "UserSession" : {
+      "description" : "",
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "userId" : {
+          "type" : "string"
+        },
+        "username" : {
+          "type" : "string"
+        },
+        "ipAddress" : {
+          "type" : "string"
+        },
+        "referer" : {
+          "type" : "string"
+        },
+        "host" : {
+          "type" : "string"
+        },
+        "userAgent" : {
+          "type" : "string"
+        },
+        "loginTimestamp" : {
+          "type" : "integer"
+        },
+        "expired" : {
+          "type" : "boolean"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "roles" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "loginId" : {
+          "type" : "string"
+        },
+        "lastName" : {
+          "type" : "string"
+        },
+        "firstName" : {
+          "type" : "string"
+        },
+        "userStatus" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "workspaceId" : {
+          "type" : "string"
+        }
+      }
+    },
+    "User" : {
+      "description" : "",
+      "type" : "object",
+      "properties" : {
+        "loginId" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "password" : {
+          "type" : "string"
+        },
+        "organizationInfo" : {
+          "type" : "string"
+        },
+        "roles" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "userRole" : {
+          "type" : "string"
+        },
+        "lastName" : {
+          "type" : "string"
+        },
+        "firstName" : {
+          "type" : "string"
+        },
+        "userStatus" : {
+          "type" : "string"
+        },
+        "displayMessage" : {
+          "type" : "string"
+        },
+        "verificationToken" : {
+          "type" : "string"
+        },
+        "userCount" : {
+          "type" : "integer"
+        },
+        "reason" : {
+          "type" : "string"
+        },
+        "userId" : {
+          "type" : "string"
+        },
+        "newPassword" : {
+          "type" : "string"
+        },
+        "oldPassword" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "tokenValidUpto" : {
+          "type" : "number"
+        }
+      }
+    },
+    "AstrumExecutorEntity" : {
+      "description" : "",
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer"
+        },
+        "tenant" : {
+          "type" : "string"
+        },
+        "astrumExecutionId" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "string"
+        },
+        "errorDescription" : {
+          "type" : "string"
+        }
+      }
+    },
+    "ExecutionContext" : {
+      "description" : "",
+      "type" : "object",
+      "properties" : {
+        "newProperty 1" : {
+          "$ref" : "#/definitions/AstrumExecution"
+        },
+        "tenant" : {
+          "type" : "string"
+        },
+        "astrumExecutorEntity" : {
+          "$ref" : "#/definitions/AstrumExecutorEntity"
+        }
+      }
+    },
+    "SwaggerLintingInfo" : {
+      "description" : "",
+      "type" : "object",
+      "properties" : {
+        "swaggerId" : {
+          "type" : "string"
+        },
+        "oasVersion" : {
+          "type" : "string"
+        },
+        "revision" : {
+          "type" : "integer"
+        },
+        "ruleSetIds" : {
+          "type" : "string"
+        },
+        "workspaceId" : {
+          "type" : "string"
+        }
+      }
+    },
+    "DataDictionaryReport" : {
+      "description" : "",
+      "type" : "object",
+      "properties" : {
+        "dictionaryId" : {
+          "type" : "string"
+        },
+        "modelIds" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "ruleSetId" : {
+          "type" : "string"
+        }
+      }
+    },
+    "SwaggerLinterRuleType" : {
+      "description" : "",
+      "type" : "object"
+    },
+    "Rule" : {
+      "description" : "",
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "oasVersion" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "string"
+        },
+        "objectPath" : {
+          "type" : "string"
+        },
+        "severity" : {
+          "type" : "string",
+          "enum" : [ "ERROR", "INFO", "WARN" ]
+        },
+        "ruleType" : {
+          "$ref" : "#/definitions/SwaggerLinterRuleType"
+        },
+        "cts" : {
+          "type" : "number"
+        },
+        "mts" : {
+          "type" : "number"
+        }
+      }
+    },
+    "RuleSet" : {
+      "description" : "",
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "ruleSetName" : {
+          "type" : "string"
+        },
+        "oasVersion" : {
+          "type" : "string"
+        },
+        "ruleSetDescription" : {
+          "type" : "string"
+        },
+        "ruleSetType" : {
+          "type" : "string",
+          "enum" : [ "SWAGGER", "DICTIONARY" ]
+        },
+        "ruleList" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Rule"
+          }
+        },
+        "cts" : {
+          "type" : "string"
+        },
+        "mts" : {
+          "type" : "string"
+        },
+        "createdBy" : {
+          "type" : "string"
+        },
+        "modifiedBy" : {
+          "type" : "string"
+        },
+        "modifiedUserName" : {
+          "type" : "string"
+        },
+        "createdUserName" : {
+          "type" : "string"
+        },
+        "isGlobalRuleSet" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "DashboardReport" : {
+      "description" : "",
+      "type" : "object",
+      "properties" : {
+        "total" : {
+          "type" : "number"
+        },
+        "swaggerId" : {
+          "type" : "string"
+        },
+        "passedRuns" : {
+          "type" : "number"
+        },
+        "failedRuns" : {
+          "type" : "number"
+        },
+        "successRatio" : {
+          "type" : "number"
+        },
+        "warnings" : {
+          "type" : "number"
+        },
+        "errors" : {
+          "type" : "number"
+        }
+      }
+    },
+    "BuildHistoryReport" : {
+      "description" : "",
+      "properties" : {
+        "total" : {
+          "type" : "number"
+        },
+        "offset" : {
+          "type" : "integer"
+        },
+        "pageSize" : {
+          "type" : "integer"
+        },
+        "data" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/AstrumLintingReport"
+          }
+        }
+      },
+      "type" : "object"
+    },
+    "SwaggerLintingReport" : {
+      "description" : "",
+      "properties" : {
+        "ruleName" : {
+          "type" : "string"
+        },
+        "message" : {
+          "type" : "string"
+        },
+        "lineNumber" : {
+          "type" : "integer"
+        },
+        "severity" : {
+          "type" : "string"
+        }
+      },
+      "type" : "object"
+    },
+    "AstrumLintingReport" : {
+      "description" : "",
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "ruleSetId" : {
+          "type" : "string"
+        },
+        "ruleSetName" : {
+          "type" : "string"
+        },
+        "ruleSetType" : {
+          "type" : "string",
+          "enum" : [ "SWAGGER", "DICTIONARY" ]
+        },
+        "swaggerId" : {
+          "type" : "string"
+        },
+        "swaggerName" : {
+          "type" : "string"
+        },
+        "oasVersion" : {
+          "type" : "string"
+        },
+        "swaggerRevision" : {
+          "type" : "integer"
+        },
+        "lintingReports" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/SwaggerLintingReport"
+          }
+        },
+        "cts" : {
+          "type" : "number"
+        },
+        "status" : {
+          "type" : "string"
+        },
+        "newProperty 12" : {
+          "type" : "string"
+        }
+      }
+    },
+    "AstrumExecution" : {
+      "description" : "",
+      "properties" : {
+        "ruleSetType" : {
+          "type" : "string",
+          "enum" : [ "swagger", "dictionary" ]
+        },
+        "ruleSetIds" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "swaggerId" : {
+          "type" : "string"
+        },
+        "oasVersion" : {
+          "type" : "string"
+        },
+        "revision" : {
+          "type" : "integer"
+        },
+        "dictionaryId" : {
+          "type" : "string"
+        },
+        "modelIds" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "status" : {
+          "type" : "string"
+        },
+        "workspaceId" : {
+          "type" : "string"
+        }
+      },
+      "type" : "object"
+    },
+    "testing required option" : {
+      "type" : "object",
+      "example" : "{\"test\":\"testing\"}",
+      "properties" : {
+        "test" : {
+          "type" : "string",
+          "example" : "testing"
+        }
+      },
+      "required" : [ "test" ]
+    }
+  },
+  "securityDefinitions" : { },
+  "parameters" : { },
+  "x-mock" : true,
+  "x-metadata" : {
+    "metadata" : {
+      "swaggerName" : "293090f68fec4311ae840f83aa5802bf",
+      "revision" : 1,
+      "documentation" : [ ],
+      "category" : [ {
+        "name" : "Unsorted",
+        "paths" : [ "/v1/lint/{astrumExecutionId}", "/lint", "/format", "/lint/data-dictionary", "/rule-set", "/rule-set/{ruleSetId}", "/rule-set/", "/lint/report/search", "/lint/history", "/lint/report/dashboard" ],
+        "definitions" : [ "UserSession", "User", "AstrumExecutorEntity", "ExecutionContext", "SwaggerLintingInfo", "DataDictionaryReport", "SwaggerLinterRuleType", "Rule", "RuleSet", "DashboardReport", "BuildHistoryReport", "SwaggerLintingReport", "AstrumLintingReport", "AstrumExecution", "testing required option" ]
+      } ],
+      "models" : [ {
+        "dataDictionaryId" : "631ed874f2aa3f570d91c1b0",
+        "dataDictionaryRevision" : "Revision 2",
+        "dataDictionary" : "DATA-DICTIONARY",
+        "modelName" : "testing required option",
+        "modelId" : "166f5c5727e3404180bdfb01479427ab",
+        "revision" : 1
+      } ]
+    }
+  }
+}
