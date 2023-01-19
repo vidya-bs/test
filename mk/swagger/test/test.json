@@ -11,7 +11,7 @@
   "paths" : {
     "/products" : {
       "get" : {
-        "tags" : [ "mock-01" ],
+        "tags" : [ "mock-02" ],
         "summary" : "test",
         "description" : "dummy",
         "operationId" : "test",
