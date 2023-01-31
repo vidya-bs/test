@@ -1,0 +1,234 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "Acme Deal Booking",
+    "description" : "Swagger Documentation for Acme Deal Booking",
+    "version" : "v1.0.0",
+    "contact" : {
+      "name" : "Charles Livington",
+      "url" : "",
+      "email" : "charles.liv@acmebank.com"
+    }
+  },
+  "paths" : {
+    "/v1/acme/fx/deal" : {
+      "summary" : "Deal Booking Operations for Acme Bank",
+      "x-description" : "Deal Booking Operations for Acme Bank",
+      "get" : {
+        "operationId" : "getDeals",
+        "summary" : "Get All deals by Trade Id",
+        "description" : "Get All deals by Trade Id",
+        "responses" : {
+          "200" : {
+            "description" : "List of Deals booked by the Trader specified by trade_id"
+          }
+        },
+        "parameters" : [ {
+          "$ref" : "#/components/parameters/trader_id"
+        } ]
+      },
+      "post" : {
+        "operationId" : "bookTrade",
+        "summary" : "Book a trade",
+        "description" : "Book a trade",
+        "parameters" : [ {
+          "$ref" : "#/components/parameters/hghfhf"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Deal Successfully Booked/Amendedhbhhgh"
+          }
+        },
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/dealBookingRequest",
+          "required" : true
+        }
+      },
+      "delete" : {
+        "operationId" : "closeTrade",
+        "summary" : "Close the specified trade position",
+        "description" : "Close the specified trade position",
+        "parameters" : [ {
+          "$ref" : "#/components/parameters/trader_id"
+        }, {
+          "name" : "trade_id",
+          "required" : false,
+          "style" : "simple",
+          "in" : "header",
+          "schema" : {
+            "description" : "",
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "204" : {
+            "description" : "Closed Trade Successfully"
+          }
+        }
+      }
+    }
+  },
+  "servers" : [ ],
+  "tags" : [ ],
+  "security" : [ ],
+  "components" : {
+    "schemas" : {
+      "DealBookingRequest" : {
+        "type" : "object",
+        "properties" : {
+          "asset_class" : {
+            "type" : "string",
+            "example" : "FX-OPT"
+          },
+          "subclass" : {
+            "type" : "string",
+            "example" : "VANILLA"
+          },
+          "notional" : {
+            "type" : "number",
+            "example" : 98765
+          },
+          "booking_date" : {
+            "type" : "number",
+            "example" : 20220113
+          },
+          "expire_date" : {
+            "type" : "number",
+            "example" : 20220423
+          },
+          "stop_event" : {
+            "type" : "string",
+            "example" : "M_CRASH"
+          },
+          "stop_threshold" : {
+            "type" : "number",
+            "example" : 44800
+          },
+          "buyer_id" : {
+            "type" : "string",
+            "example" : "GOLDMAN_SACHS_4567HIK"
+          },
+          "seller_id" : {
+            "type" : "string",
+            "example" : "ACMEBNK_34289HIK"
+          }
+        }
+      },
+      "Deal" : {
+        "type" : "object",
+        "properties" : {
+          "tradeId" : {
+            "type" : "number",
+            "example" : 67894567
+          },
+          "asset_class" : {
+            "type" : "string",
+            "example" : "FX-OPT"
+          },
+          "subclass" : {
+            "type" : "string",
+            "example" : "VANILLA"
+          },
+          "notional" : {
+            "type" : "number",
+            "example" : 98765
+          },
+          "booking_date" : {
+            "type" : "number",
+            "example" : 20220113
+          },
+          "expire_date" : {
+            "type" : "number",
+            "example" : 20220423
+          },
+          "stop_event" : {
+            "type" : "string",
+            "example" : "M_CRASH"
+          },
+          "stop_threshold" : {
+            "type" : "number",
+            "example" : 44800
+          },
+          "buyer_id" : {
+            "type" : "string",
+            "example" : "GOLDMAN_SACHS_4567HIK"
+          },
+          "seller_id" : {
+            "type" : "string",
+            "example" : "ACMEBNK_34289HIK"
+          }
+        }
+      }
+    },
+    "parameters" : {
+      "trader_id" : {
+        "name" : "trader_id",
+        "required" : false,
+        "style" : "simple",
+        "in" : "header",
+        "schema" : {
+          "description" : "",
+          "type" : "string"
+        }
+      }
+    },
+    "requestBodies" : {
+      "dealBookingRequest" : {
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "description" : "",
+              "$ref" : "#/components/schemas/DealBookingRequest",
+              "required" : true
+            }
+          }
+        }
+      }
+    }
+  },
+  "x-mock" : true,
+  "x-metadata" : {
+    "metadata" : {
+      "swaggerName" : "2e1ca3d1d676420ab91af9a042527df1",
+      "revision" : 1,
+      "documentation" : [ ],
+      "category" : [ {
+        "name" : "Unsorted",
+        "paths" : [ ]
+      }, {
+        "name" : "Deal Booking",
+        "paths" : [ "/v1/acme/fx/deal" ],
+        "definitions" : [ ]
+      } ],
+      "models" : [ {
+        "dataDictionaryId" : "637b5cef1dc34c7785cb935c",
+        "dataDictionaryRevision" : "Revision 1",
+        "dataDictionary" : "Deal Booking",
+        "modelName" : "DealBookingRequest",
+        "modelId" : "ff426ffe8e21489cbc9f989c8d1750b1",
+        "revision" : 1
+      }, {
+        "dataDictionaryId" : "637b5cef1dc34c7785cb935c",
+        "dataDictionaryRevision" : "Revision 1",
+        "dataDictionary" : "Deal Booking",
+        "modelName" : "Deal",
+        "modelId" : "7cc5b6d482e24229bfd602c375eead2c",
+        "revision" : 1
+      }, {
+        "dataDictionaryId" : "637b5cef1dc34c7785cb935c",
+        "dataDictionaryRevision" : "Revision 1",
+        "dataDictionary" : "Deal Booking",
+        "modelName" : "DealBookingRequest",
+        "modelId" : "ff426ffe8e21489cbc9f989c8d1750b1",
+        "revision" : 1
+      }, {
+        "dataDictionaryId" : "637b5cef1dc34c7785cb935c",
+        "dataDictionaryRevision" : "Revision 1",
+        "dataDictionary" : "Deal Booking",
+        "modelName" : "Deal",
+        "modelId" : "7cc5b6d482e24229bfd602c375eead2c",
+        "revision" : 1
+      } ]
+    }
+  }
+}
