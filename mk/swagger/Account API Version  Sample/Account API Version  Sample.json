@@ -1,0 +1,1000 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "Account API Version  Sample",
+    "description" : "Swagger Documentation for Account API Version 1 Sample",
+    "version" : "v1.0.0"
+  },
+  "paths" : {
+    "/info" : {
+      "summary" : "Account information",
+      "x-description" : "Account information",
+      "get" : {
+        "operationId" : "getAccountInfo",
+        "summary" : "Fetching account information",
+        "description" : "Fetching account information",
+        "parameters" : [ {
+          "$ref" : "#/components/parameters/clientinfo"
+        }, {
+          "$ref" : "#/components/parameters/tonikusertoken"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/GetAccountsResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Failure",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/Apigeerror"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/account" : {
+      "summary" : "Account",
+      "x-description" : "Account",
+      "post" : {
+        "operationId" : "postCreateAccount",
+        "summary" : "Create an Account",
+        "description" : "Create an Account",
+        "parameters" : [ {
+          "$ref" : "#/components/parameters/clientinfo"
+        }, {
+          "$ref" : "#/components/parameters/tonikusertoken"
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "description" : "",
+                "$ref" : "#/components/schemas/PostCreateAccountRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/PostCreateAccountResponse"
+                }
+              }
+            }
+          },
+          "201" : {
+            "description" : "created",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/testInheritance"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "failure",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/Apigeerror"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/emailtdcert" : {
+      "summary" : "Email Time Deposit Certificate to Customer",
+      "x-description" : "Email Time Deposit Certificate to Customer",
+      "post" : {
+        "operationId" : "postEmailtdCert",
+        "summary" : "Email Time Deposit Certificate to Customer",
+        "description" : "Email Time Deposit Certificate to Customer",
+        "parameters" : [ {
+          "$ref" : "#/components/parameters/clientinfo"
+        }, {
+          "$ref" : "#/components/parameters/tonikusertoken"
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "description" : "",
+                "$ref" : "#/components/schemas/EmailtdCertRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/EmailtdCertResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Failure",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/Apigeerror"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tsa/transactions" : {
+      "summary" : "Transaction details of the customer",
+      "x-description" : "Transaction details of the customer",
+      "get" : {
+        "operationId" : "getTransaction",
+        "summary" : "Get transaction details of the customer",
+        "description" : "Get transaction details of the customer",
+        "parameters" : [ {
+          "$ref" : "#/components/parameters/clientinfo"
+        }, {
+          "$ref" : "#/components/parameters/tonikusertoken"
+        }, {
+          "example" : "60810123110006",
+          "name" : "acctNumber",
+          "required" : true,
+          "style" : "form",
+          "in" : "query",
+          "description" : "customer's tsa account number for getting history",
+          "schema" : {
+            "description" : "",
+            "type" : "string"
+          }
+        }, {
+          "example" : "1",
+          "name" : "totalPages",
+          "required" : false,
+          "style" : "form",
+          "in" : "query",
+          "description" : "its for pagination purpose",
+          "schema" : {
+            "description" : "",
+            "type" : "integer"
+          }
+        }, {
+          "example" : "1",
+          "name" : "interval",
+          "required" : false,
+          "style" : "form",
+          "in" : "query",
+          "schema" : {
+            "description" : "",
+            "type" : "integer"
+          },
+          "description" : "its for identify the which 3 month"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/GetTransactionResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Failure",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/Apigeerror"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/groupstash" : {
+      "summary" : "Create and invite members to Group Stash",
+      "x-description" : "Create and invite members to Group Stash",
+      "post" : {
+        "operationId" : "postGroupstash",
+        "summary" : "Create and invite members to Group Stash",
+        "description" : "Create and invite members to Group Stash",
+        "parameters" : [ {
+          "$ref" : "#/components/parameters/clientinfo"
+        }, {
+          "$ref" : "#/components/parameters/tonikusertoken"
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "description" : "",
+                "$ref" : "#/components/schemas/PostGroupStash"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/PostGroupStashResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put" : {
+        "operationId" : "putGroupstash",
+        "summary" : "update member's action to Group Stash",
+        "description" : "update member's action to Group Stash",
+        "parameters" : [ {
+          "$ref" : "#/components/parameters/clientinfo"
+        }, {
+          "$ref" : "#/components/parameters/tonikusertoken"
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "description" : "",
+                "$ref" : "#/components/schemas/putGroupStashRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "description" : "",
+                  "$ref" : "#/components/schemas/putGroupstashResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "servers" : [ {
+    "x-hostName" : "devapi.tonikbank.com",
+    "url" : "https://devapi.tonikbank.com/v1/accounts/test",
+    "x-basePath" : "/v1/accounts/test",
+    "x-name" : "Dev Server",
+    "x-schema" : "https://"
+  }, {
+    "x-name" : "Uat Server",
+    "x-schema" : "https://",
+    "x-hostName" : "uatapi.tonikbank.com",
+    "url" : "https://uatapi.tonikbank.com/v1/accounts/test",
+    "x-basePath" : "/v1/accounts/test"
+  } ],
+  "tags" : [ ],
+  "security" : [ {
+    "Oauth" : [ "accounts" ]
+  } ],
+  "components" : {
+    "schemas" : {
+      "Apigeerror" : {
+        "type" : "object",
+        "required" : [ "errors" ],
+        "properties" : {
+          "errors" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object",
+              "properties" : {
+                "code" : {
+                  "type" : "string",
+                  "example" : "Security-1016"
+                },
+                "userMessage" : {
+                  "type" : "string",
+                  "example" : "Please check the request variables and try again later."
+                },
+                "info" : {
+                  "type" : "string",
+                  "example" : "https://developers.myapi.com/errors/#Security-1016"
+                }
+              }
+            }
+          }
+        }
+      },
+      "GetAccountsResponse" : {
+        "type" : "object",
+        "required" : [ "data", "meta", "status" ],
+        "properties" : {
+          "data" : {
+            "required" : [ "accountNumber", "accountName", "bankName", "isEmailVerified", "email" ],
+            "properties" : {
+              "accountNumber" : {
+                "type" : "string",
+                "example" : "60810123110006",
+                "description" : "Customer's TSA account number"
+              },
+              "accountName" : {
+                "type" : "string",
+                "example" : "ANTHONY ZIPAGAN",
+                "description" : "Account holder Name"
+              },
+              "bankName" : {
+                "type" : "string",
+                "example" : "Tonik Bank",
+                "description" : "Bank name"
+              },
+              "isEmailVerified" : {
+                "type" : "string",
+                "example" : "Y",
+                "description" : "email verification flag"
+              },
+              "email" : {
+                "type" : "string",
+                "example" : "maniraman071@gmail.com",
+                "description" : "customer's email"
+              }
+            },
+            "type" : "object",
+            "description" : "Response Object"
+          },
+          "meta" : {
+            "required" : [ "totalPages" ],
+            "properties" : {
+              "totalPages" : {
+                "type" : "number",
+                "example" : 0
+              }
+            },
+            "type" : "object",
+            "description" : "Meta information Object"
+          },
+          "status" : {
+            "required" : [ "code", "message" ],
+            "properties" : {
+              "code" : {
+                "type" : "string",
+                "example" : "00"
+              },
+              "message" : {
+                "type" : "string",
+                "example" : "Success"
+              }
+            },
+            "type" : "object",
+            "description" : "Status Object"
+          }
+        }
+      },
+      "PostCreateAccountRequest" : {
+        "type" : "object",
+        "required" : [ "userId" ],
+        "properties" : {
+          "userId" : {
+            "type" : "string",
+            "example" : "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI0YVRnd1RCblQ2ZVJFbzhVeDJnb3ZmYlVvRGkrUnlhM3dHL1c4d3Q3NUN4Qm4yaGJlUjZVOElIRmMxVnI0RTBockREQVIwdVozcGo2K29yNTVNM21qdz09IiwiZXhwIjoxNjQ4OTAwOTgxLCJ1c2VySWQiOiI0YVRnd1RCblQ2ZVJFbzhVeDJnb3ZmYlVvRGkrUnlhM3dHL1c4d3Q3NUN4Qm4yaGJlUjZVOElIRmMxVnI0RTBockREQVIwdVozcGo2K29yNTVNM21qdz09IiwiaWF0IjoxNjQ4ODE0NTgxLCJjaGFubmVsSWQiOiJuYmoyL3JhTEVETDB0OHJZZWxWdU5Ba0xwT01Yc3ZLenoxNTlmaG4yT0JvPSJ9.BNTJFlU9AmAeKcpXZx-ygnnznZF9umlDGQXIzWfbwSwLi3HL9OPTqwlgq98mLP1jv6228WgmTldu-2oYdvfUMQ",
+            "description" : "User ID of the customer"
+          }
+        }
+      },
+      "EmailtdCertRequest" : {
+        "type" : "object",
+        "required" : [ "tdAccountNo" ],
+        "properties" : {
+          "tdAccountNo" : {
+            "type" : "string",
+            "example" : "60812908580018",
+            "description" : "Account number of the Time Deposit Account"
+          },
+          "daysLeft" : {
+            "type" : "number",
+            "example" : 0,
+            "description" : "daysLeft for TD"
+          },
+          "totaldays" : {
+            "type" : "number",
+            "example" : 0,
+            "description" : "totaldays of TD"
+          },
+          "displayStatus" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "percentage" : {
+            "type" : "number",
+            "example" : 0,
+            "description" : "percentage of TD"
+          }
+        }
+      },
+      "GetTransactionResponse" : {
+        "type" : "object",
+        "required" : [ "data", "meta", "status" ],
+        "properties" : {
+          "data" : {
+            "required" : [ "totalPages", "transactions", "intervel" ],
+            "properties" : {
+              "totalPages" : {
+                "type" : "number",
+                "example" : 0
+              },
+              "transactions" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "transactionDate" : {
+                      "type" : "string",
+                      "example" : "04 Jan 2022"
+                    },
+                    "data" : {
+                      "type" : "array",
+                      "items" : {
+                        "type" : "object",
+                        "properties" : {
+                          "txnReferenceNo" : {
+                            "type" : "string",
+                            "example" : "0217e2542b4eekD5"
+                          },
+                          "txnAmount" : {
+                            "type" : "string",
+                            "example" : "100.00"
+                          },
+                          "txnRemarks" : {
+                            "type" : "string",
+                            "example" : "SCONTRI,T00,60810123110022"
+                          },
+                          "txnDate" : {
+                            "type" : "string",
+                            "example" : "04 Jan 2022, 09.23 PM"
+                          },
+                          "txnType" : {
+                            "type" : "string",
+                            "example" : "D"
+                          },
+                          "txnAmountStr" : {
+                            "type" : "string",
+                            "example" : "100.00"
+                          },
+                          "txnTime" : {
+                            "type" : "string",
+                            "example" : "04 Jan 2022, 09.23.55 PM"
+                          },
+                          "from" : {
+                            "type" : "string",
+                            "example" : "60810123110006"
+                          },
+                          "to" : {
+                            "type" : "string",
+                            "example" : "60810123110022"
+                          },
+                          "txnDecs" : {
+                            "type" : "string"
+                          },
+                          "txnSubType" : {
+                            "type" : "string",
+                            "example" : "CONTRI"
+                          },
+                          "txnTitle" : {
+                            "type" : "string",
+                            "example" : "04 Jan 2022"
+                          },
+                          "txnMsg" : {
+                            "type" : "string",
+                            "example" : "Vacation Trip3"
+                          },
+                          "txnSubmsg" : {
+                            "type" : "string",
+                            "example" : "Money contributed"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "intervel" : {
+                "type" : "number",
+                "example" : 1
+              }
+            },
+            "type" : "object"
+          },
+          "meta" : {
+            "required" : [ "totalPages" ],
+            "properties" : {
+              "totalPages" : {
+                "type" : "number",
+                "example" : 0
+              }
+            },
+            "type" : "object"
+          },
+          "status" : {
+            "required" : [ "code", "message" ],
+            "properties" : {
+              "code" : {
+                "type" : "string",
+                "example" : "00"
+              },
+              "message" : {
+                "type" : "string",
+                "example" : "Success"
+              }
+            },
+            "type" : "object"
+          }
+        }
+      },
+      "PostGroupStash" : {
+        "type" : "object",
+        "required" : [ "stashName", "stashId", "groupUserList" ],
+        "properties" : {
+          "stashName" : {
+            "type" : "string",
+            "example" : "Game Console",
+            "description" : "Name of the Stash to be created"
+          },
+          "stashId" : {
+            "type" : "string",
+            "example" : "S76408938608",
+            "description" : "Stash ID of the Stash created"
+          },
+          "groupUserList" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object",
+              "properties" : {
+                "mobileNo" : {
+                  "type" : "string",
+                  "example" : "09409209187",
+                  "description" : "Mobile number of the member whom request has to be sent to join the stash"
+                },
+                "name" : {
+                  "type" : "string",
+                  "example" : "Abhishek ",
+                  "description" : "Name of the member whom request has to be sent to join the stash"
+                }
+              }
+            },
+            "description" : "List of Users to be added in the stash"
+          }
+        }
+      },
+      "PostGroupStashResponse" : {
+        "type" : "object",
+        "required" : [ "data", "meta", "status" ],
+        "properties" : {
+          "data" : {
+            "required" : [ "stashId", "groupStashId", "name" ],
+            "properties" : {
+              "stashId" : {
+                "type" : "string",
+                "example" : "S76408938608",
+                "description" : "ID of the existing Stash"
+              },
+              "groupStashId" : {
+                "type" : "string",
+                "example" : "G22778819985",
+                "description" : "ID of the Group stash which is created"
+              },
+              "name" : {
+                "type" : "string",
+                "example" : "Game Console",
+                "description" : "Name of the Group stash which is created"
+              }
+            },
+            "type" : "object",
+            "description" : "Response Object"
+          },
+          "meta" : {
+            "required" : [ "totalPages" ],
+            "properties" : {
+              "totalPages" : {
+                "type" : "number",
+                "example" : 0
+              }
+            },
+            "type" : "object",
+            "description" : " Meta information Object "
+          },
+          "status" : {
+            "required" : [ "code", "message" ],
+            "properties" : {
+              "code" : {
+                "type" : "string",
+                "example" : "00"
+              },
+              "message" : {
+                "type" : "string",
+                "example" : "Success"
+              }
+            },
+            "type" : "object",
+            "description" : "Status Object"
+          }
+        }
+      },
+      "putGroupStashRequest" : {
+        "type" : "object",
+        "required" : [ "stashId", "groupStashId", "memberId", "action" ],
+        "properties" : {
+          "stashId" : {
+            "type" : "string",
+            "example" : "S24417277237",
+            "description" : "Stash ID for unique value of stash"
+          },
+          "groupStashId" : {
+            "type" : "string",
+            "example" : "G47714909488",
+            "description" : "groupStashId  for unique value of group  stash"
+          },
+          "memberId" : {
+            "type" : "string",
+            "example" : "M38935579814",
+            "description" : "memberid   for unique value of group  stash member"
+          },
+          "action" : {
+            "type" : "string",
+            "example" : "A",
+            "description" : "member action"
+          }
+        }
+      },
+      "PostCreateAccountResponse" : {
+        "type" : "object",
+        "required" : [ "data", "meta", "status" ],
+        "properties" : {
+          "data" : {
+            "required" : [ "totalPages", "transactions", "intervel" ],
+            "properties" : {
+              "totalPages" : {
+                "type" : "number",
+                "example" : 0
+              },
+              "transactions" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "transactionDate" : {
+                      "type" : "string",
+                      "example" : "04 Jan 2022",
+                      "description" : "Transaction Date"
+                    },
+                    "data" : {
+                      "type" : "array",
+                      "items" : {
+                        "type" : "object",
+                        "properties" : {
+                          "txnReferenceNo" : {
+                            "type" : "string",
+                            "example" : "0217e2542b4eekD5",
+                            "description" : "its for uniques values of transaction"
+                          },
+                          "txnAmount" : {
+                            "type" : "string",
+                            "example" : "100.00",
+                            "description" : "transaction amount"
+                          },
+                          "txnRemarks" : {
+                            "type" : "string",
+                            "example" : "SCONTRI,T00,60810123110022",
+                            "description" : "transaction remarks"
+                          },
+                          "txnDate" : {
+                            "type" : "string",
+                            "example" : "04 Jan 2022, 09.23 PM",
+                            "description" : "transaction date"
+                          },
+                          "txnType" : {
+                            "type" : "string",
+                            "example" : "D",
+                            "description" : "transaction type"
+                          },
+                          "txnAmountStr" : {
+                            "type" : "string",
+                            "example" : "100.00",
+                            "description" : "transaction amount"
+                          },
+                          "txnTime" : {
+                            "type" : "string",
+                            "example" : "04 Jan 2022, 09.23.55 PM",
+                            "description" : "transaction time"
+                          },
+                          "from" : {
+                            "type" : "string",
+                            "example" : "60810123110006",
+                            "description" : "from account numvet"
+                          },
+                          "to" : {
+                            "type" : "string",
+                            "example" : "60810123110022",
+                            "description" : "to account numvet"
+                          },
+                          "txnDecs" : {
+                            "type" : "string",
+                            "description" : "transaction decs"
+                          },
+                          "txnSubType" : {
+                            "type" : "string",
+                            "example" : "CONTRI",
+                            "description" : "transaction sub"
+                          },
+                          "txnTitle" : {
+                            "type" : "string",
+                            "example" : "04 Jan 2022",
+                            "description" : "transaction title"
+                          },
+                          "txnMsg" : {
+                            "type" : "string",
+                            "example" : "Vacation Trip3",
+                            "description" : "transaction msg"
+                          },
+                          "txnSubmsg" : {
+                            "type" : "string",
+                            "example" : "Money contributed",
+                            "description" : "transaction submsg"
+                          }
+                        }
+                      },
+                      "description" : "Response Object"
+                    }
+                  }
+                },
+                "description" : "Array of transactions"
+              },
+              "intervel" : {
+                "type" : "number",
+                "example" : 1,
+                "description" : "its for identify the which 3 month"
+              }
+            },
+            "type" : "object",
+            "description" : "Response Object"
+          },
+          "meta" : {
+            "required" : [ "totalPages" ],
+            "properties" : {
+              "totalPages" : {
+                "type" : "number",
+                "example" : 0,
+                "description" : "its for pagination purpose"
+              }
+            },
+            "type" : "object",
+            "description" : "Meta information Object"
+          },
+          "status" : {
+            "required" : [ "code", "message" ],
+            "properties" : {
+              "code" : {
+                "type" : "string",
+                "example" : "00"
+              },
+              "message" : {
+                "type" : "string",
+                "example" : "Success"
+              }
+            },
+            "type" : "object",
+            "description" : "Status Object"
+          }
+        }
+      },
+      "testInheritance" : {
+        "description" : "test",
+        "type" : "object",
+        "oneOf" : [ {
+          "$ref" : "#/components/schemas/GetAccountsResponse"
+        }, {
+          "$ref" : "#/components/schemas/GetTransactionResponse"
+        }, {
+          "$ref" : "#/components/schemas/EmailtdCertResponse"
+        }, {
+          "type" : "object"
+        } ]
+      },
+      "EmailtdCertResponse" : {
+        "type" : "object",
+        "required" : [ "data", "meta", "status" ],
+        "oneOf" : [ {
+          "$ref" : "#/components/schemas/Apigeerror"
+        }, {
+          "$ref" : "#/components/schemas/GetAccountsResponse"
+        }, {
+          "$ref" : "#/components/schemas/PostCreateAccountRequest"
+        }, {
+          "type" : "object",
+          "properties" : {
+            "data" : {
+              "type" : "object",
+              "description" : "Response Object"
+            },
+            "meta" : {
+              "required" : [ "totalPages" ],
+              "properties" : {
+                "totalPages" : {
+                  "type" : "number",
+                  "example" : 0
+                }
+              },
+              "type" : "object",
+              "description" : "Meta information Object"
+            },
+            "status" : {
+              "required" : [ "code", "message" ],
+              "properties" : {
+                "code" : {
+                  "type" : "string",
+                  "example" : "00"
+                },
+                "message" : {
+                  "type" : "string",
+                  "example" : "Success"
+                }
+              },
+              "type" : "object",
+              "description" : "Status Object"
+            }
+          }
+        } ]
+      },
+      "putGroupstashResponse" : {
+        "type" : "object",
+        "required" : [ "data", "meta", "status" ],
+        "properties" : {
+          "data" : {
+            "required" : [ "stashId", "groupStashId", "memberId", "message" ],
+            "type" : "object",
+            "description" : "Response Object",
+            "anyOf" : [ {
+              "$ref" : "#/components/schemas/GetAccountsResponse"
+            }, {
+              "$ref" : "#/components/schemas/PostCreateAccountRequest"
+            }, {
+              "$ref" : "#/components/schemas/EmailtdCertRequest"
+            }, {
+              "type" : "object",
+              "properties" : {
+                "stashId" : {
+                  "type" : "string",
+                  "example" : "S24417277237",
+                  "description" : "Stash ID for unique value of stash"
+                },
+                "groupStashId" : {
+                  "type" : "string",
+                  "example" : "G47714909488",
+                  "description" : "groupStashId  for unique value of group  stash"
+                },
+                "memberId" : {
+                  "type" : "string",
+                  "example" : "M38935579814",
+                  "description" : "memberid   for unique value of group  stash member"
+                },
+                "message" : {
+                  "type" : "string",
+                  "example" : "Updated successfully"
+                }
+              }
+            } ]
+          },
+          "meta" : {
+            "required" : [ "totalPages" ],
+            "properties" : {
+              "totalPages" : {
+                "type" : "number",
+                "example" : 0
+              }
+            },
+            "type" : "object",
+            "description" : "message"
+          },
+          "status" : {
+            "required" : [ "code", "message" ],
+            "properties" : {
+              "code" : {
+                "type" : "string",
+                "example" : "00"
+              },
+              "message" : {
+                "type" : "string",
+                "example" : "Success"
+              }
+            },
+            "type" : "object",
+            "description" : "Status Object"
+          }
+        }
+      }
+    },
+    "parameters" : {
+      "clientinfo" : {
+        "example" : "deviceos=Ios11&&devicename=tangy&&appversion=1.0&&deviceid=8c629fe466014c4ab5a22f72587fb4a3kdZ1F8Xx&&ip=192.168.0.10&&geoloc=1.280894:103.849252&&channelid=MB&&userId=11f1bb81381a44449f4d0a5b4be46d98",
+        "name" : "clientinfo",
+        "required" : false,
+        "style" : "simple",
+        "in" : "header",
+        "schema" : {
+          "description" : "",
+          "type" : "string"
+        },
+        "description" : "Client information"
+      },
+      "tonikusertoken" : {
+        "example" : "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5Q1hRY09DNmF4QmZLMDJGWFNJb2p3UlJaeTFoemVZamNlVWRxTzR2VzR3PSIsImV4cCI6MTY1MjI5OTEwNywidXNlcklkIjoiOUNYUWNPQzZheEJmSzAyRlhTSW9qd1JSWnkxaHplWWpjZVVkcU80dlc0dz0iLCJpYXQiOjE2NTIyNjMxMDcsImNoYW5uZWxJZCI6IkJ3RmFBYVJjYmxSMmJudTh1akpYbjRoVSsxMzEwODdNMitKbHgrOVg5VmM9In0.yFYwGCHrd7dynElBbVokpZRLDQrpWedRMkpTR459mPg-oo4-C74rDFxh44N5MXWXJT17EWRJHNFPznpCUHZLTw",
+        "name" : "tonikusertoken",
+        "required" : false,
+        "style" : "simple",
+        "in" : "header",
+        "schema" : {
+          "description" : "",
+          "type" : "string"
+        },
+        "description" : "Tonik user JWT token"
+      }
+    },
+    "securitySchemes" : {
+      "Oauth" : {
+        "type" : "oauth2",
+        "description" : "",
+        "flows" : {
+          "clientCredentials" : {
+            "tokenUrl" : "https://devapi.tonikbank.com/v1/security/oauth-token",
+            "scopes" : {
+              "accounts" : "oauthauthentication"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x-mock" : true,
+  "x-metadata" : {
+    "metadata" : {
+      "swaggerName" : "b711d75f5bde420c8217ef25cf284c3c",
+      "revision" : 1,
+      "documentation" : [ ],
+      "category" : [ {
+        "name" : "Unsorted",
+        "paths" : [ "/info", "/account", "/emailtdcert", "/tsa/transactions", "/groupstash" ]
+      } ]
+    }
+  }
+}
