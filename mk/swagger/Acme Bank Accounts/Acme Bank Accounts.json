@@ -1,0 +1,984 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "Acme Bank Accounts",
+    "version" : "v1",
+    "title" : "Acme Bank Accounts",
+    "termsOfService" : "Terms of service",
+    "contact" : {
+      "name" : "Charles Livington",
+      "url" : "http://acmebank.apiwiz.io",
+      "email" : "support@apiwiz.com"
+    },
+    "license" : {
+      "name" : "netbanking",
+      "url" : "http://acmebank.apiwiz.io"
+    }
+  },
+  "host" : "mock.apiwiz.io",
+  "basePath" : "/v1/acmebank/accounts",
+  "tags" : [ {
+    "name" : "bank-account-controller",
+    "description" : ""
+  }, {
+    "name" : "primary-account-controller",
+    "description" : ""
+  } ],
+  "paths" : {
+    "/bank-account" : {
+      "get" : {
+        "tags" : [ "bank-account-controller" ],
+        "summary" : "Find All Bank Accounts",
+        "operationId" : "findAllBankAccounts",
+        "produces" : [ "*/*" ],
+        "parameters" : [ {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "pageSize",
+          "required" : false,
+          "default" : 20,
+          "format" : "int32",
+          "x-key" : 1,
+          "type" : "integer"
+        }, {
+          "$ref" : "#/parameters/x-apikey"
+        }, {
+          "$ref" : "#/parameters/Accept"
+        }, {
+          "$ref" : "#/parameters/x-fin-acme"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/ResponseOfListOfBankAccount"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        },
+        "description" : "Find All Bank Accounts",
+        "security" : [ ]
+      },
+      "post" : {
+        "tags" : [ "bank-account-controller" ],
+        "summary" : "Add Bank Account",
+        "operationId" : "addBankAccount",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "*/*" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "request",
+          "description" : "request",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/BankAccount"
+          }
+        }, {
+          "$ref" : "#/parameters/Content-Type"
+        }, {
+          "$ref" : "#/parameters/x-fin-acme"
+        }, {
+          "$ref" : "#/parameters/x-apikey"
+        }, {
+          "$ref" : "#/parameters/x-fin-res"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/ResponseOfBankAccount"
+            }
+          },
+          "201" : {
+            "description" : "Created"
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        },
+        "description" : "Add Bank Account",
+        "security" : [ ]
+      },
+      "put" : {
+        "tags" : [ "bank-account-controller" ],
+        "summary" : "Update Bank Account",
+        "operationId" : "updateBankAccount",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "*/*" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "request",
+          "description" : "request",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/BankAccount"
+          }
+        }, {
+          "$ref" : "#/parameters/x-fin-acme"
+        }, {
+          "$ref" : "#/parameters/x-apikey"
+        }, {
+          "$ref" : "#/parameters/x-fin-res"
+        }, {
+          "$ref" : "#/parameters/Content-Type"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/ResponseOfBankAccount"
+            }
+          },
+          "201" : {
+            "description" : "Created"
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        },
+        "description" : "Update Bank Account",
+        "deprecated" : true,
+        "security" : [ ]
+      }
+    },
+    "/bank-account/deposit-amount" : {
+      "put" : {
+        "tags" : [ "bank-account-controller" ],
+        "summary" : "Deposit In Bank Account",
+        "operationId" : "depositInBankAccount",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "*/*" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "request",
+          "description" : "request",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/BankAccount"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/ResponseOfboolean"
+            }
+          },
+          "201" : {
+            "description" : "Created"
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        },
+        "description" : "Deposit In Bank Account",
+        "security" : [ ]
+      }
+    },
+    "/bank-account/withdraw-amount" : {
+      "put" : {
+        "tags" : [ "bank-account-controller" ],
+        "summary" : "Withdraw From Bank Account",
+        "operationId" : "withdrawFromBankAccount",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "*/*" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "request",
+          "description" : "request",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/BankAccount"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/ResponseOfboolean"
+            }
+          },
+          "201" : {
+            "description" : "Created"
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        },
+        "description" : "Withdraw From Bank Account",
+        "security" : [ ]
+      }
+    },
+    "/bank-account/{id}" : {
+      "get" : {
+        "tags" : [ "bank-account-controller" ],
+        "summary" : "Find Bank Account By Id",
+        "operationId" : "findBankAccountById",
+        "produces" : [ "*/*" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "id",
+          "required" : true,
+          "x-key" : 1,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/ResponseOfBankAccount"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        },
+        "description" : "Find Bank Account By Id",
+        "security" : [ ]
+      },
+      "delete" : {
+        "tags" : [ "bank-account-controller" ],
+        "summary" : "Delete Bank Account by Id",
+        "operationId" : "deleteBankAccountById",
+        "produces" : [ "*/*" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "id",
+          "required" : true,
+          "x-key" : 1,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/ResponseOfboolean"
+            }
+          },
+          "204" : {
+            "description" : "No Content"
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          }
+        },
+        "description" : "Delete Bank Account by Id",
+        "security" : [ ]
+      }
+    },
+    "/primary-account/deposit-amount/{id}" : {
+      "put" : {
+        "tags" : [ "primary-account-controller" ],
+        "summary" : "Deposit In Primary Account",
+        "operationId" : "depositInPrimaryAccount",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "*/*" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "id",
+          "required" : true,
+          "x-key" : 1,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "request",
+          "description" : "request",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/PrimaryAccount"
+          }
+        }, {
+          "$ref" : "#/parameters/x-fin-acme"
+        }, {
+          "$ref" : "#/parameters/x-apikey"
+        }, {
+          "$ref" : "#/parameters/x-fin-res"
+        }, {
+          "$ref" : "#/parameters/Content-Type"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/ResponseOfboolean"
+            }
+          },
+          "201" : {
+            "description" : "Created"
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        },
+        "description" : "Deposit In Primary Account",
+        "security" : [ ]
+      }
+    },
+    "/primary-account/primary-account" : {
+      "get" : {
+        "tags" : [ "primary-account-controller" ],
+        "summary" : "Find All Primary Accounts",
+        "operationId" : "findAllPrimaryAccounts",
+        "produces" : [ "*/*" ],
+        "parameters" : [ {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : "pageSize",
+          "required" : false,
+          "default" : 20,
+          "format" : "int32",
+          "x-key" : 1,
+          "type" : "integer"
+        }, {
+          "$ref" : "#/parameters/x-fin-acme"
+        }, {
+          "$ref" : "#/parameters/x-apikey"
+        }, {
+          "$ref" : "#/parameters/x-fin-res"
+        }, {
+          "$ref" : "#/parameters/Accept"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/ResponseOfListOfPrimaryAccount"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        },
+        "description" : "Find All Primary Accounts",
+        "security" : [ ]
+      },
+      "post" : {
+        "tags" : [ "primary-account-controller" ],
+        "summary" : "Add Primary Account",
+        "operationId" : "addPrimaryAccount",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "*/*" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "request",
+          "description" : "request",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/PrimaryAccount"
+          }
+        }, {
+          "$ref" : "#/parameters/x-fin-acme"
+        }, {
+          "$ref" : "#/parameters/x-apikey"
+        }, {
+          "$ref" : "#/parameters/x-fin-res"
+        }, {
+          "$ref" : "#/parameters/Content-Type"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/ResponseOfPrimaryAccount"
+            }
+          },
+          "201" : {
+            "description" : "Created"
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        },
+        "description" : "Add Primary Account",
+        "security" : [ ]
+      },
+      "put" : {
+        "tags" : [ "primary-account-controller" ],
+        "summary" : "Update Primary Account",
+        "operationId" : "updatePrimaryAccount",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "*/*" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "request",
+          "description" : "request",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/PrimaryAccount"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/ResponseOfPrimaryAccount"
+            }
+          },
+          "201" : {
+            "description" : "Created"
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        },
+        "description" : "Update Primary Account",
+        "security" : [ ]
+      }
+    },
+    "/primary-account/primary-account/{id}" : {
+      "get" : {
+        "tags" : [ "primary-account-controller" ],
+        "summary" : "Find Primary Account By Id",
+        "operationId" : "findPrimaryAccountById",
+        "produces" : [ "*/*" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "id",
+          "required" : true,
+          "x-key" : 1,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/ResponseOfPrimaryAccount"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        },
+        "description" : "Find Primary Account By Id",
+        "security" : [ ]
+      },
+      "delete" : {
+        "tags" : [ "primary-account-controller" ],
+        "summary" : "Delete Primary Account By Id",
+        "operationId" : "deletePrimaryAccountById",
+        "produces" : [ "*/*" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "id",
+          "required" : true,
+          "x-key" : 1,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/ResponseOfboolean"
+            }
+          },
+          "204" : {
+            "description" : "No Content"
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          }
+        },
+        "description" : "Delete Primary Account By Id",
+        "security" : [ ]
+      }
+    },
+    "/primary-account/withdraw-amount/{id}" : {
+      "put" : {
+        "tags" : [ "primary-account-controller" ],
+        "summary" : "Withdraw From Primary Account",
+        "operationId" : "withdrawFromPrimaryAccount",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "*/*" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "id",
+          "required" : true,
+          "x-key" : 1,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "request",
+          "description" : "request",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/PrimaryAccount"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/ResponseOfboolean"
+            }
+          },
+          "201" : {
+            "description" : "Created"
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        },
+        "description" : "Withdraw From Primary Account",
+        "security" : [ ]
+      }
+    }
+  },
+  "definitions" : {
+    "BankAccount" : {
+      "type" : "object",
+      "properties" : {
+        "accountBalance" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "accountNumber" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "createdBy" : {
+          "type" : "string"
+        },
+        "createdDate" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "id" : {
+          "type" : "string"
+        },
+        "inactive" : {
+          "type" : "boolean"
+        },
+        "modifiedBy" : {
+          "type" : "string"
+        },
+        "modifiedDate" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "user" : {
+          "$ref" : "#/definitions/NameDto"
+        },
+        "version" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      },
+      "title" : "BankAccount"
+    },
+    "Message" : {
+      "type" : "object",
+      "properties" : {
+        "key" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string",
+          "enum" : [ "INFO", "ERROR", "WARNING" ]
+        },
+        "value" : {
+          "type" : "string"
+        }
+      },
+      "title" : "Message"
+    },
+    "NameDto" : {
+      "type" : "object",
+      "properties" : {
+        "createdBy" : {
+          "type" : "string"
+        },
+        "createdDate" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "id" : {
+          "type" : "string"
+        },
+        "inactive" : {
+          "type" : "boolean"
+        },
+        "modifiedBy" : {
+          "type" : "string"
+        },
+        "modifiedDate" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "version" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      },
+      "title" : "NameDto"
+    },
+    "PrimaryAccount" : {
+      "type" : "object",
+      "properties" : {
+        "accountBalance" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "accountNumber" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "accountType" : {
+          "type" : "string",
+          "enum" : [ "SAVING", "CURRENT", "CREDIT" ]
+        },
+        "createdBy" : {
+          "type" : "string"
+        },
+        "createdDate" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "id" : {
+          "type" : "string"
+        },
+        "inactive" : {
+          "type" : "boolean"
+        },
+        "modifiedBy" : {
+          "type" : "string"
+        },
+        "modifiedDate" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "version" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      },
+      "title" : "PrimaryAccount"
+    },
+    "ResponseOfBankAccount" : {
+      "type" : "object",
+      "properties" : {
+        "data" : {
+          "$ref" : "#/definitions/BankAccount"
+        },
+        "errors" : {
+          "type" : "boolean"
+        },
+        "messages" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Message"
+          }
+        },
+        "requestId" : {
+          "type" : "string"
+        },
+        "requestTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "totalElements" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "totalPages" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "title" : "ResponseOfBankAccount"
+    },
+    "ResponseOfListOfBankAccount" : {
+      "type" : "object",
+      "properties" : {
+        "data" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/BankAccount"
+          }
+        },
+        "errors" : {
+          "type" : "boolean"
+        },
+        "messages" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Message"
+          }
+        },
+        "requestId" : {
+          "type" : "string"
+        },
+        "requestTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "totalElements" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "totalPages" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "title" : "ResponseOfListOfBankAccount"
+    },
+    "ResponseOfListOfPrimaryAccount" : {
+      "type" : "object",
+      "properties" : {
+        "data" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/PrimaryAccount"
+          }
+        },
+        "errors" : {
+          "type" : "boolean"
+        },
+        "messages" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Message"
+          }
+        },
+        "requestId" : {
+          "type" : "string"
+        },
+        "requestTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "totalElements" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "totalPages" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "title" : "ResponseOfListOfPrimaryAccount"
+    },
+    "ResponseOfPrimaryAccount" : {
+      "type" : "object",
+      "properties" : {
+        "data" : {
+          "$ref" : "#/definitions/PrimaryAccount"
+        },
+        "errors" : {
+          "type" : "boolean"
+        },
+        "messages" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Message"
+          }
+        },
+        "requestId" : {
+          "type" : "string"
+        },
+        "requestTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "totalElements" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "totalPages" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "title" : "ResponseOfPrimaryAccount"
+    },
+    "ResponseOfboolean" : {
+      "type" : "object",
+      "properties" : {
+        "data" : {
+          "type" : "boolean"
+        },
+        "errors" : {
+          "type" : "boolean"
+        },
+        "messages" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Message"
+          }
+        },
+        "requestId" : {
+          "type" : "string"
+        },
+        "requestTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "totalElements" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "totalPages" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "title" : "ResponseOfboolean"
+    }
+  },
+  "schemes" : [ "https", "http" ],
+  "x-servers" : [ ],
+  "consumes" : [ "application/json" ],
+  "produces" : [ "application/json" ],
+  "securityDefinitions" : { },
+  "parameters" : {
+    "x-fin-acme" : {
+      "name" : "x-fin-acme",
+      "in" : "header",
+      "required" : true,
+      "x-newAdded" : true,
+      "type" : "string"
+    },
+    "x-fin-stp-id" : {
+      "name" : "x-fin-stp-id",
+      "in" : "header",
+      "required" : false,
+      "x-newAdded" : true,
+      "type" : "string"
+    },
+    "x-apikey" : {
+      "name" : "x-apikey",
+      "in" : "header",
+      "required" : true,
+      "x-newAdded" : true,
+      "type" : "string"
+    },
+    "x-fin-res" : {
+      "name" : "x-fin-res",
+      "in" : "header",
+      "required" : true,
+      "x-newAdded" : true,
+      "type" : "string"
+    },
+    "Accept" : {
+      "name" : "Accept",
+      "in" : "header",
+      "required" : true,
+      "type" : "string",
+      "x-newAdded" : true,
+      "x-example" : "",
+      "default" : "application/json",
+      "enum" : [ "application/json" ]
+    },
+    "Content-Type" : {
+      "name" : "Content-Type",
+      "in" : "header",
+      "required" : true,
+      "type" : "string",
+      "x-newAdded" : true,
+      "default" : "application/json",
+      "enum" : [ "application/json" ]
+    }
+  },
+  "x-mock" : true,
+  "x-metadata" : {
+    "metadata" : {
+      "swaggerName" : "c1f84938ce9e456093973be801641528",
+      "revision" : 1,
+      "documentation" : [ ],
+      "category" : [ {
+        "name" : "Unsorted",
+        "paths" : [ "/bank-account", "/bank-account/deposit-amount", "/bank-account/withdraw-amount", "/bank-account/{id}", "/primary-account/deposit-amount/{id}", "/primary-account/primary-account", "/primary-account/primary-account/{id}", "/primary-account/withdraw-amount/{id}" ],
+        "definitions" : [ "BankAccount", "Message", "NameDto", "PrimaryAccount", "ResponseOfBankAccount", "ResponseOfListOfBankAccount", "ResponseOfListOfPrimaryAccount", "ResponseOfPrimaryAccount", "ResponseOfboolean" ]
+      } ]
+    }
+  }
+}
