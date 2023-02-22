@@ -1,0 +1,349 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "acme-bank-branch-location-v1-getListOfBranchLocations-200",
+    "version" : "1.0"
+  },
+  "servers" : [ {
+    "url" : "https://stage-mock.apiwiz.io/v1/acme-banking"
+  } ],
+  "paths" : {
+    "/branches" : {
+      "get" : {
+        "tags" : [ "Acme Bank Branch Location v1" ],
+        "summary" : "acme-bank-branch-location-v1-getListOfBranchLocations-200",
+        "operationId" : "acme-bank-branch-location-v1-getListOfBranchLocations-200",
+        "parameters" : [ {
+          "name" : "content-type",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "multipart/form-data"
+        }, {
+          "name" : "x-fin-res",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : ".*"
+        }, {
+          "name" : "x-apikey",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : ".*"
+        }, {
+          "name" : "x-tenant",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "b8e236df-4b26-49ef-9532-5e43ea0c10a4"
+        }, {
+          "name" : "x-fin-acme",
+          "in" : "header",
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : ".*"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Response for endpoint GET-branches",
+            "headers" : {
+              "date" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "content-length" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "server" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "expires" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-envoy-upstream-service-time" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "vary" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-frame-options" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-rate-limit-remaining" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "pragma" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "strict-transport-security" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-content-type-options" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-xss-protection" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "content-type" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "cache-control" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "required" : [ "data", "errors", "messages", "requestId", "requestTime", "totalElements", "totalPages" ],
+                  "type" : "object",
+                  "properties" : {
+                    "data" : {
+                      "type" : "array",
+                      "items" : {
+                        "required" : [ "access", "atmAtBranch", "branchMediatedServiceName", "branchName", "branchType", "createdBy", "createdDate", "customerSegment", "faxNumber", "id", "inactive", "modifiedBy", "modifiedDate", "version" ],
+                        "type" : "object",
+                        "properties" : {
+                          "access" : {
+                            "type" : "string"
+                          },
+                          "atmAtBranch" : {
+                            "type" : "string"
+                          },
+                          "branchMediatedServiceName" : {
+                            "type" : "string"
+                          },
+                          "branchName" : {
+                            "type" : "string"
+                          },
+                          "branchType" : {
+                            "type" : "string"
+                          },
+                          "createdBy" : {
+                            "type" : "string"
+                          },
+                          "createdDate" : {
+                            "type" : "string"
+                          },
+                          "customerSegment" : {
+                            "type" : "string"
+                          },
+                          "faxNumber" : {
+                            "type" : "string"
+                          },
+                          "id" : {
+                            "type" : "string"
+                          },
+                          "inactive" : {
+                            "type" : "boolean"
+                          },
+                          "modifiedBy" : {
+                            "type" : "string"
+                          },
+                          "modifiedDate" : {
+                            "type" : "string"
+                          },
+                          "version" : {
+                            "type" : "integer"
+                          }
+                        }
+                      }
+                    },
+                    "errors" : {
+                      "type" : "boolean"
+                    },
+                    "messages" : {
+                      "type" : "array",
+                      "items" : {
+                        "required" : [ "key", "type", "value" ],
+                        "type" : "object",
+                        "properties" : {
+                          "key" : {
+                            "type" : "string"
+                          },
+                          "type" : {
+                            "type" : "string"
+                          },
+                          "value" : {
+                            "type" : "string"
+                          }
+                        }
+                      }
+                    },
+                    "requestId" : {
+                      "type" : "string"
+                    },
+                    "requestTime" : {
+                      "type" : "string"
+                    },
+                    "totalElements" : {
+                      "type" : "integer"
+                    },
+                    "totalPages" : {
+                      "type" : "integer"
+                    }
+                  },
+                  "example" : "{\"data\":[{\"access\":\"DIR-100\",\"atmAtBranch\":\"HK50\",\"branchMediatedServiceName\":\"ACMBNK-HK\",\"branchName\":\"ACME BANK HK\",\"branchType\":\"SNG-TLU\",\"createdBy\":\"ACM-BNK-ORH\",\"createdDate\":\"2023-01-24T11:38:20Z\",\"customerSegment\":\"SG-457\",\"faxNumber\":\"555467891\",\"id\":\"8ad594c1-f0d3-46ca-b3d0-915863e2820d\",\"inactive\":false,\"modifiedBy\":\"ACMEBNK-HK\",\"modifiedDate\":\"2023-01-24T11:38:20Z\",\"version\":1}],\"errors\":false,\"messages\":[{\"key\":\"8ad594c1-f0d3-46ca-b3d0-915863e2820d\",\"type\":\"INFO\",\"value\":\"SUCCESS\"}],\"requestId\":\"8ad594c1-f0d3-46ca-b3d0-915863e2820d\",\"requestTime\":\"2023-01-24T11:38:20Z\",\"totalElements\":1,\"totalPages\":1}"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Response for endpoint GET-branches",
+            "headers" : {
+              "date" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "server" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "expires" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-envoy-upstream-service-time" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "transfer-encoding" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "vary" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-frame-options" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "pragma" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "strict-transport-security" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-content-type-options" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "x-xss-protection" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "content-type" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "cache-control" : {
+                "description" : "response header",
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "required" : [ "error" ],
+                  "type" : "object",
+                  "properties" : {
+                    "error" : {
+                      "required" : [ "statusCode", "userMessage" ],
+                      "type" : "object",
+                      "properties" : {
+                        "userMessage" : {
+                          "type" : "string"
+                        },
+                        "statusCode" : {
+                          "type" : "string"
+                        }
+                      }
+                    }
+                  },
+                  "example" : "{\"error\":{\"userMessage\":\"Internal server error. Please contact support for further instructions.\",\"statusCode\":\"General-1000\"}}"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : { },
+  "x-original-swagger-version" : "2.0"
+}
