@@ -1,0 +1,333 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "title" : "Rate Stream",
+    "description" : "Fetches a FX quote for the given ccyPair at duration (Spot,ON,TN) - Adds the ccyPair spread got from the FX Spread API",
+    "version" : "v1.0.0",
+    "termsOfService" : "",
+    "contact" : {
+      "name" : "Charles Livington",
+      "email" : "charles.liv@acmebank.com"
+    }
+  },
+  "paths" : {
+    "/rates/fx/ccy_list" : {
+      "x-description" : "lists all supported ccyPairs for active rate streams",
+      "get" : {
+        "summary" : "Get List of Supported Currency Pairs",
+        "description" : "Get List of Supported Currency Pairs",
+        "parameters" : [ {
+          "$ref" : "#/parameters/customer_id"
+        } ],
+        "operationId" : "getListOfSupportedCcyPairs",
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "tags" : [ "FX" ]
+      }
+    },
+    "/rates/fx/{ccyPair}" : {
+      "x-description" : "Get a quote for a ccyPair-settlement-notional",
+      "post" : {
+        "summary" : "subscribe to streamed rates for a specific ccyPair",
+        "description" : "subscribe to streamed rates for a specific ccyPair",
+        "parameters" : [ {
+          "x-key" : 1,
+          "name" : "ccyPair",
+          "in" : "query",
+          "required" : false,
+          "x-example" : "EURUSD",
+          "type" : "string"
+        }, {
+          "name" : "quoteSubscriptionRequest",
+          "in" : "body",
+          "description" : "",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/QuoteSubscriptionRequest"
+          }
+        }, {
+          "$ref" : "#/parameters/customer_id"
+        } ],
+        "operationId" : "subscribeCcy",
+        "responses" : {
+          "200" : {
+            "description" : ""
+          },
+          "401" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ "FX" ]
+      },
+      "parameters" : [ {
+        "name" : "ccyPair",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ],
+      "delete" : {
+        "summary" : "Unsubscribe from streamed rates for a specific ccyPair",
+        "description" : "Unsubscribe from streamed rates for a specific ccyPair",
+        "parameters" : [ {
+          "$ref" : "#/parameters/customer_id"
+        } ],
+        "operationId" : "Unsubscribe from quote",
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ "FX" ],
+        "security" : [ ]
+      }
+    },
+    "/rates/fx" : {
+      "x-description" : "Get a quote for a ccyPair-settlement-notional",
+      "post" : {
+        "summary" : "Get a quote for a ccyPair-settlement-notional",
+        "description" : "Get a quote for a ccyPair-settlement-notional",
+        "parameters" : [ {
+          "x-key" : 1,
+          "name" : "parameter1",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "x-key" : 2,
+          "name" : "parameter2",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "x-key" : 3,
+          "name" : "parameter3",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "x-key" : 4,
+          "name" : "parameter4",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "x-key" : 5,
+          "name" : "parameter5",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "x-key" : 6,
+          "name" : "Githubscm",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "quoteRequest",
+          "in" : "body",
+          "description" : "",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/QuoteRequest"
+          }
+        }, {
+          "$ref" : "#/parameters/customer_id"
+        } ],
+        "operationId" : "getQuote",
+        "responses" : {
+          "200" : {
+            "description" : "",
+            "schema" : {
+              "$ref" : "#/definitions/Quote"
+            }
+          },
+          "201" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ "FX" ]
+      }
+    }
+  },
+  "schemes" : [ "http" ],
+  "x-servers" : [ ],
+  "consumes" : [ "application/json" ],
+  "produces" : [ "application/json" ],
+  "tags" : [ {
+    "name" : "FX",
+    "description" : "The Rate Stream FX function"
+  } ],
+  "basePath" : "/v1/acme",
+  "host" : "34.121.145.236:9081",
+  "definitions" : {
+    "QuoteRequest" : {
+      "type" : "object",
+      "properties" : {
+        "ccyPair" : {
+          "type" : "string",
+          "example" : "EURUSD"
+        },
+        "settlementType" : {
+          "type" : "string",
+          "example" : "TN"
+        },
+        "notional" : {
+          "type" : "number",
+          "example" : 10000000
+        }
+      }
+    },
+    "QuoteSubscriptionRequest" : {
+      "description" : "",
+      "type" : "object",
+      "properties" : {
+        "mode" : {
+          "type" : "string"
+        },
+        "host" : {
+          "type" : "string"
+        },
+        "tenor" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Quote" : {
+      "type" : "object",
+      "properties" : {
+        "ON" : {
+          "type" : "number",
+          "example" : 23.56
+        },
+        "TOM" : {
+          "type" : "number",
+          "example" : 45.67
+        },
+        "SPOT" : {
+          "type" : "number",
+          "example" : 45.44
+        },
+        "1M" : {
+          "type" : "number",
+          "example" : 88.9
+        },
+        "3M" : {
+          "type" : "number",
+          "example" : 90.78
+        },
+        "6M" : {
+          "type" : "number",
+          "example" : 95.34
+        },
+        "9M" : {
+          "type" : "number",
+          "example" : 98.34
+        },
+        "1Y" : {
+          "type" : "number",
+          "example" : 103.45
+        }
+      }
+    }
+  },
+  "securityDefinitions" : { },
+  "parameters" : {
+    "customer_id" : {
+      "name" : "customer_id",
+      "in" : "header",
+      "required" : false,
+      "type" : "string",
+      "x-newAdded" : true
+    }
+  },
+  "x-mock" : true,
+  "x-metadata" : {
+    "metadata" : {
+      "swaggerName" : "a3af0a5fb1464cd7a6d3bd9209a70fb5",
+      "revision" : 1,
+      "documentation" : [ ],
+      "category" : [ {
+        "name" : "Unsorted",
+        "paths" : [ ],
+        "definitions" : [ "QuoteRequest", "QuoteSubscriptionRequest", "Quote" ]
+      }, {
+        "name" : "FXRates",
+        "paths" : [ "/rates/fx/ccy_list", "/rates/fx/{ccyPair}", "/rates/fx" ],
+        "definitions" : [ ]
+      } ],
+      "models" : [ {
+        "dataDictionaryId" : "637b55b5dfc2983200f07c99",
+        "dataDictionaryRevision" : "Revision 1",
+        "dataDictionary" : "Rate Stream",
+        "modelName" : "QuoteRequest",
+        "modelId" : "60279ea0616e4b969eb39a6375816fe6",
+        "revision" : 1
+      }, {
+        "dataDictionaryId" : "637b55b5dfc2983200f07c99",
+        "dataDictionaryRevision" : "Revision 1",
+        "dataDictionary" : "Rate Stream",
+        "modelName" : "QuoteSubscriptionRequest",
+        "modelId" : "e3175e122754443a9d9530b6bbcd3b2f",
+        "revision" : 1
+      }, {
+        "dataDictionaryId" : "637b55b5dfc2983200f07c99",
+        "dataDictionaryRevision" : "Revision 1",
+        "dataDictionary" : "Rate Stream",
+        "modelName" : "Quote",
+        "modelId" : "ce966deaac2148e8ba3147855babd8a7",
+        "revision" : 1
+      }, {
+        "dataDictionaryId" : "637b55b5dfc2983200f07c99",
+        "dataDictionaryRevision" : "Revision 1",
+        "dataDictionary" : "Rate Stream",
+        "modelName" : "QuoteRequest",
+        "modelId" : "60279ea0616e4b969eb39a6375816fe6",
+        "revision" : 1
+      }, {
+        "dataDictionaryId" : "637b55b5dfc2983200f07c99",
+        "dataDictionaryRevision" : "Revision 1",
+        "dataDictionary" : "Rate Stream",
+        "modelName" : "QuoteSubscriptionRequest",
+        "modelId" : "e3175e122754443a9d9530b6bbcd3b2f",
+        "revision" : 1
+      }, {
+        "dataDictionaryId" : "637b55b5dfc2983200f07c99",
+        "dataDictionaryRevision" : "Revision 1",
+        "dataDictionary" : "Rate Stream",
+        "modelName" : "Quote",
+        "modelId" : "ce966deaac2148e8ba3147855babd8a7",
+        "revision" : 1
+      }, {
+        "dataDictionaryId" : "637b55b5dfc2983200f07c99",
+        "dataDictionaryRevision" : "Revision 1",
+        "dataDictionary" : "Rate Stream",
+        "modelName" : "QuoteRequest",
+        "modelId" : "60279ea0616e4b969eb39a6375816fe6",
+        "revision" : 1
+      }, {
+        "dataDictionaryId" : "637b55b5dfc2983200f07c99",
+        "dataDictionaryRevision" : "Revision 1",
+        "dataDictionary" : "Rate Stream",
+        "modelName" : "QuoteSubscriptionRequest",
+        "modelId" : "e3175e122754443a9d9530b6bbcd3b2f",
+        "revision" : 1
+      }, {
+        "dataDictionaryId" : "637b55b5dfc2983200f07c99",
+        "dataDictionaryRevision" : "Revision 1",
+        "dataDictionary" : "Rate Stream",
+        "modelName" : "Quote",
+        "modelId" : "ce966deaac2148e8ba3147855babd8a7",
+        "revision" : 1
+      } ]
+    }
+  }
+}
