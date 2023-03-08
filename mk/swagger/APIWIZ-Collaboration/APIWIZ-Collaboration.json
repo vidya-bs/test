@@ -1,0 +1,360 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "title" : "APIWIZ-Collaboration",
+    "description" : "Swagger Documentation for APIWIZ-Collaboration",
+    "version" : "v1.0.0"
+  },
+  "paths" : {
+    "/v1/teams" : {
+      "x-description" : "createTeam",
+      "post" : {
+        "summary" : "createTeam",
+        "description" : "createTeam",
+        "parameters" : [ {
+          "x-key" : "parameter1",
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "swaggerTeam",
+          "in" : "body",
+          "description" : "",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/SwaggerTeam"
+          }
+        } ],
+        "operationId" : "createTeam",
+        "responses" : {
+          "201" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ ]
+      },
+      "get" : {
+        "summary" : "getTeamNames",
+        "description" : "getTeamNames",
+        "parameters" : [ {
+          "x-key" : "parameter1",
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "operationId" : "getTeamNames",
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ ]
+      }
+    },
+    "/v1/teams/{teamname}" : {
+      "parameters" : [ {
+        "name" : "teamname",
+        "in" : "path",
+        "required" : true,
+        "description" : "",
+        "type" : "string"
+      } ],
+      "x-description" : "updateTeam",
+      "put" : {
+        "summary" : "updateTeam",
+        "description" : "updateTeam",
+        "parameters" : [ {
+          "x-key" : "parameter1",
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "swaggerTeam",
+          "in" : "body",
+          "description" : "",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/SwaggerTeam"
+          }
+        } ],
+        "operationId" : "updateTeam",
+        "responses" : {
+          "204" : {
+            "description" : "",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        },
+        "tags" : [ ]
+      },
+      "get" : {
+        "summary" : "getTeam",
+        "description" : "getTeam",
+        "parameters" : [ {
+          "x-key" : "parameter1",
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "operationId" : "getTeam",
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ ]
+      },
+      "post" : {
+        "summary" : "deleteTeam",
+        "description" : "deleteTeam",
+        "parameters" : [ {
+          "x-key" : "parameter1",
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "operationId" : "deleteTeam",
+        "responses" : {
+          "204" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ ]
+      }
+    },
+    "/v1/swaggers/{swaggername}/associate-team" : {
+      "parameters" : [ {
+        "name" : "swaggername",
+        "in" : "path",
+        "required" : true,
+        "description" : "",
+        "type" : "string"
+      } ],
+      "x-description" : "assoiateTeam",
+      "post" : {
+        "summary" : "assoiateTeam",
+        "description" : "assoiateTeam",
+        "parameters" : [ {
+          "x-key" : "parameter1",
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "swaggerVO",
+          "in" : "body",
+          "description" : "",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/SwaggerVO"
+          }
+        } ],
+        "operationId" : "assoiateTeam",
+        "responses" : {
+          "204" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ ]
+      },
+      "get" : {
+        "summary" : "getAssoiatedTeams",
+        "description" : "getAssoiatedTeams",
+        "parameters" : [ {
+          "x-key" : "parameter1",
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "operationId" : "getAssoiatedTeams",
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ ]
+      }
+    },
+    "/v1/teams/permission" : {
+      "x-description" : "getTeamPermissions",
+      "get" : {
+        "summary" : "getTeamPermissions",
+        "description" : "getTeamPermissions",
+        "parameters" : [ {
+          "x-key" : 1,
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "x-key" : "parameter1",
+          "name" : "parameter1",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "operationId" : "getTeamPermissions",
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ ]
+      }
+    },
+    "/v1/teams/search" : {
+      "x-description" : "teamSearch",
+      "get" : {
+        "summary" : "teamSearch",
+        "description" : "teamSearch",
+        "parameters" : [ {
+          "x-key" : "parameter1",
+          "name" : "JSESSIONID",
+          "in" : "header",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "operationId" : "teamSearch",
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ ]
+      }
+    }
+  },
+  "schemes" : [ "https" ],
+  "x-servers" : [ ],
+  "consumes" : [ ],
+  "produces" : [ ],
+  "tags" : [ ],
+  "basePath" : "/v1/teams",
+  "host" : "gcp-api.apiwiz.io",
+  "definitions" : {
+    "SwaggerContacts" : {
+      "description" : "",
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "role" : {
+          "type" : "string"
+        }
+      }
+    },
+    "SwaggerTeam" : {
+      "description" : "",
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "displayName" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "contacts" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/SwaggerContacts"
+          }
+        },
+        "swaggers" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "projects" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "swagger3" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "SwaggerVO" : {
+      "description" : "",
+      "type" : "object",
+      "properties" : {
+        "revision" : {
+          "type" : "integer"
+        },
+        "status" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "lock" : {
+          "type" : "boolean"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "swagger" : {
+          "type" : "string"
+        },
+        "proxies" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "teams" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "products" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "portfolios" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions" : { },
+  "parameters" : { },
+  "x-mock" : true,
+  "x-metadata" : {
+    "metadata" : {
+      "swaggerName" : "9e99a20e681a43958844d73e93b8f245",
+      "revision" : 1,
+      "documentation" : [ ],
+      "category" : [ {
+        "name" : "Unsorted",
+        "paths" : [ "/v1/teams", "/v1/teams/{teamname}", "/v1/swaggers/{swaggername}/associate-team", "/v1/teams/permission", "/v1/teams/search" ],
+        "definitions" : [ "SwaggerContacts", "SwaggerTeam", "SwaggerVO" ]
+      } ]
+    }
+  }
+}
