@@ -13,6 +13,6 @@
     "2" : "{\"name\":\"Nested_data_dictionary\",\"definitions\":{\"Nested_data_dictionary\":{\"type\":\"object\",\"allOf\":[{\"$ref\":\"Nested_data_Dictionary_Referenced\"},{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"object\",\"allOf\":[{\"$ref\":\"Nested_data_Dictionary_Referenced\"},{\"type\":\"object\",\"properties\":{\"q\":{\"type\":\"object\",\"allOf\":[{\"$ref\":\"Nested_data_Dictionary_Referenced\"},{\"type\":\"object\",\"properties\":{\"limit\":{\"type\":\"object\",\"properties\":{\"skip\":{\"type\":\"object\",\"properties\":{\"Menuid\":{\"type\":\"string\"}}}}}}}]}}}]}}}]}}}"
   },
   "import json_schema_1" : {
-    "1" : "{\"definitions\":{\"import json_schema_1\":{\"type\":\"object\",\"allOf\":[{\"$ref\":\"Nested_data_dictionary\"},{\"type\":\"object\",\"properties\":{\"Itorix\":{\"type\":\"string\"}}}]}},\"name\":\"import json_schema_1\"}"
+    "1" : "{\"definitions\":{\"import json_schema_1\":{\"type\":\"object\",\"allOf\":[{\"$ref\":\"Nested_data_dictionary\"},{\"type\":\"object\",\"properties\":{\"Itorix\":{\"type\":\"string\"},\"test\":{\"type\":\"integer\"}}}]}},\"name\":\"import json_schema_1\"}"
   }
 }
