@@ -1,0 +1,17 @@
+{
+  "import1" : {
+    "1" : "{\"definitions\":{\"import1\":{\"type\":\"object\",\"default\":\"test\",\"description\":\"test\",\"required\":true,\"example\":\"{\\n    \\\"type\\\":\\\"testing\\\"\\n}\",\"discriminator\":true,\"externalDocs\":{\"description\":\"test\",\"url\":\"test\"},\"xml\":{\"name\":\"test\",\"prefix\":\"test\",\"namespace\":\"test\"},\"allOf\":[{\"$ref\":\"Nested_data_dictionary\"},{\"type\":\"object\",\"properties\":{\"Itorix\":{\"type\":\"string\"}}}]}},\"name\":\"import1\"}"
+  },
+  "import" : {
+    "1" : "{\"definitions\":{\"import\":{\"type\":\"object\",\"allOf\":[{\"$ref\":\"Nested_data_dictionary\"},{\"type\":\"object\",\"properties\":{\"Itorix\":{\"type\":\"string\"}}}]}},\"name\":\"import\"}"
+  },
+  "Nested_data_Dictionary_Referenced" : {
+    "1" : "{\"definitions\":{\"Nested_data_Dictionary_Referenced\":{\"type\":\"object\",\"default\":\"test\",\"description\":\"test\",\"required\":true,\"example\":\"{\\n    \\\"type\\\":\\\"testing\\\"\\n}\",\"discriminator\":true,\"externalDocs\":{\"description\":\"test\",\"url\":\"test\"},\"xml\":{\"name\":\"test\",\"prefix\":\"test\",\"namespace\":\"test\"},\"allOf\":[{\"$ref\":\"Nested_data_dictionary\"},{\"type\":\"object\",\"properties\":{\"Itorix\":{\"type\":\"string\"}}}]}},\"name\":\"Nested_data_Dictionary_Referenced\"}"
+  },
+  "Nested_data_dictionary" : {
+    "1" : "{\"definitions\":{\"Nested_data_dictionary\":{\"type\":\"object\",\"allOf\":[{\"$ref\":\"Nested_data_Dictionary_Referenced\"},{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"object\",\"allOf\":[{\"$ref\":\"Nested_data_Dictionary_Referenced\"},{\"type\":\"object\",\"properties\":{\"q\":{\"type\":\"object\",\"allOf\":[{\"$ref\":\"Nested_data_Dictionary_Referenced\"},{\"type\":\"object\",\"properties\":{\"limit\":{\"type\":\"object\",\"properties\":{\"skip\":{\"type\":\"object\",\"properties\":{\"Menuid\":{\"type\":\"string\"}}}}}}}]}}}]}}}]}},\"name\":\"Nested_data_dictionary\"}"
+  },
+  "import json_schema" : {
+    "1" : "{\"definitions\":{\"import json_schema\":{\"type\":\"object\",\"allOf\":[{\"$ref\":\"Nested_data_dictionary\"},{\"type\":\"object\",\"properties\":{\"Itorix\":{\"type\":\"string\"}}}]}},\"name\":\"import json_schema\"}"
+  }
+}
